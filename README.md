@@ -42,6 +42,6 @@ Dengan menggunakan modul ini, kami harap Anda dapat memahami dasar-dasar pemrogr
 Jika Anda memiliki pertanyaan atau masukan, silakan hubungi:
 
 - Nama: Moh. Iqbal Fatchurozi
-- Email: zer0-911
+- Github: zer0-911
 
 Terima kasih atas partisipasi Anda dalam modul praktikum ini. Selamat belajar dan semoga sukses!
