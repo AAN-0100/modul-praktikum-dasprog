@@ -1,0 +1,42 @@
+\documentclass[titlepage,11pt]{article}
+
+
+\usepackage{graphicx,tabularx,multirow}
+
+\usepackage[onehalfspacing]{setspace}
+
+
+\usepackage{xcolor}
+\definecolor{visigrey}{rgb}{.1,.15,.15}
+\usepackage[
+	allcolors=visigrey,
+	colorlinks=true,
+]{hyperref} 
+
+\usepackage[a4paper,left=2cm,right=2cm]{geometry}
+\geometry{top=1cm,bottom=.5cm}
+\savegeometry{titlepage}
+\geometry{top=2cm,bottom=2cm}
+\savegeometry{main}
+
+
+\def\bspace{\(\qquad\qquad\qquad\)}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{tgheros}
+\renewcommand*\familydefault{\sfdefault}
+
+\setcounter{tocdepth}{6}
+
+\def\autor{Laboratorium }
+\def\lab{Multimedia dan Internet of Things}
+\def\departemen{Departemen Teknik Komputer}
+\def\institut{Institut Teknologi Sepuluh Nopember}
+\def\praktikum{Praktikum \\ Dasar Pemrograman}
+\def\judul{Pengenalan Bahasa C}
+\def\tahun{2023}
+\begin{document}
+
+    \input{Header.tex}
+
+\end{document}
