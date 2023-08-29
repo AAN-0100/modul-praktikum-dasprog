@@ -8,10 +8,14 @@ Modul Praktikum Dasar Pemrograman ini dirancang untuk membantu mahasiswa memaham
 
 ## Isi Modul
 
-1. **Lorem Ipsum**
-
-   - Lorem Ipsum
-   - Lorem Ipsum
+1. **Pengenalan Bahasa C**
+   - Tujuan
+   - Mengenal Bahasa C
+   - IDE (Integrated Development Environment)
+   - Membuat proyek baru pada IDE Code::Blocks
+   - Struktur Bahasa Pemrograman C
+   - Tipe Data dan Variabel
+   - Output dan Input
 
 ## Persyaratan
 
