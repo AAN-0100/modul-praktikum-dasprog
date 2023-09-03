@@ -246,7 +246,7 @@ Tabel di bawah menunjukkan beberapa operator penugasan.
     \captionof{table}{Operator Penugasan \label{tab:operatorpenugasan}}
 	\begin{tabular}{|c|c|c|}
 		\hline
-		\multicolumn{1}{|l|}{Operator} & \multicolumn{1}{l|}{Example}       & \multicolumn{1}{l|}{Arti yang sama}  \\ \hline
+		\multicolumn{1}{|l|}{Operator} & \multicolumn{1}{l|}{Contoh}       & \multicolumn{1}{l|}{Arti yang sama}  \\ \hline
 		=   & x = 5   & x = 5      \\ \hline
 		+=  & x += 3  & x = x + 3  \\ \hline
 		-=  & x -= 3  & x = x - 3  \\ \hline
@@ -268,6 +268,25 @@ Singkatan ini digunakan seperti berikut.
     ++x;
     --x;
 \end{verbatim}
+
+\subsubsection{Operator Bitwise}
+Bitwise adalah operator khusus untuk menangani operasi logika bilangan biner dalam bentuk bit. \\
+Bilangan biner sendiri merupakan jenis bilangan yang hanya terdiri dari 2 jenis angka, yakni 0 dan 1.
+Jika nilai asal yang dipakai bukan bilangan biner, akan dikonversi secara otomatis oleh compiler C menjadi bilangan biner. Misalnya 7 desimal = 0111 dalam bilangan biner.
+\\
+\begin{center}
+    \captionof{table}{Operator Bitwise \label{tab:operatorbitwise}}
+	\begin{tabular}{|c|c|c|c|c|c|}
+	\hline
+	\multicolumn{1}{|l|}{Operator} & \multicolumn{1}{|l|}{Nama} & \multicolumn{1}{|l|}{Contoh} & \multicolumn{1}{|l|}{Biner} & \multicolumn{1}{|l|}{Hasil (biner)} & \multicolumn{1}{|l|}{Hasil (decimal)} \\ \hline
+	\&                                    & AND                               & 10 \& 12                            & 1010 \& 1100                       & 1000                                       & 8                                            \\ \hline
+	|                                     & OR                                & 10 | 12                             & 1010 | 1100                        & 1110                                       & 14                                           \\ \hline
+	\textasciicircum{}                    & XOR                               & 10 \textasciicircum 12              & 1010 \textasciicircum 1100         & 0110                                       & 6                                            \\ \hline
+	$\sim$                                & NOT                               & $\sim$10                            & $\sim$1010                         & 0101                                       & -11 (two complement)                         \\ \hline
+	\textless{}\textless{}                & Left shift                        & 10 \textless{}\textless 1           & 1010 \textless{}\textless 1        & 10100                                      & 20                                           \\ \hline
+	\textgreater{}\textgreater{}          & Right shift                       & 10 \textgreater{}\textgreater 1     & 1010 \textgreater{}\textgreater 1  & 101                                        & 5                                            \\ \hline
+	\end{tabular}
+\end{center}
 
 \begin{center}
 	\colorbox{pink}{\parbox{0.8\linewidth}{\textbf{Catatan:} Terdapat beberapa operator dalam Bahasa C. Silahkan pelajari dengan mencari referensi secara mandiri.}}
@@ -303,7 +322,7 @@ Format specifier untuk beberapa tipe data dapat dilihat pada Tabel \ref{tab:form
 
 
 \begin{description}
-	\item[Contoh \thesection.1]  Mencetak teks ke layar.
+	\item[Contoh \thesubsection.1]  Mencetak teks ke layar.
 	\begin{lstlisting}[language=c,caption = Mencetak Tulisan "C Programming" Ke layar,captionpos=t]
 		#include <stdio.h>    
 		int main()
@@ -321,7 +340,7 @@ Format specifier untuk beberapa tipe data dapat dilihat pada Tabel \ref{tab:form
 		% \item \verb*|return 0;| statement in the \verb*|main()| function tells the program to exit.
 		\item \verb*|return 0;| pernyataan di \verb*|main()| fungsi memberitahu program untuk keluar.
 	\end{itemize}
-	\item [Contoh \thesection.2] Mencetak integer.
+	\item [Contoh \thesubsection.2] Mencetak integer.
 	\begin{lstlisting}[language=c,captionpos=t]
 		#include <stdio.h>
 		int main()
@@ -336,7 +355,7 @@ Format specifier untuk beberapa tipe data dapat dilihat pada Tabel \ref{tab:form
 	Pada contoh ini digunakan format specifier \verb*|%d| untuk mencetak tipe data \verb*|int|. \verb*|%d| pada tex akan digantikan oleh isi dari \verb*|testInteger|. 
 	% The code above uses the format specifier \verb*|%d| to prints \verb*|int| data type. The \verb*|%d| part of the string will be replaced with the value of \verb*|testInteger|.
 
-	\item[Contoh \thesection.3] Keluaran bilangan real (float atau double)
+	\item[Contoh \thesubsection.3] Keluaran bilangan real (float atau double)
 	\begin{itemize}\label{eq:LuasSegitiga}
 		\item \verb|Base|  : menggunakan \verb|float| tipe data.
 		\item \verb|Height|: menggunakan \verb|float| tipe data.
@@ -395,7 +414,7 @@ Fungsi  \verb*|scanf(const char *format, ...)| membaca input dengan format.
 \end{enumerate}
 
 \begin{description}
-	\item  [Contoh \thesection.4] Menghitung luas segitiga dengan  dengan alas \verb*|Alas|   dan tinggi \verb*|Tinggi| yang diinputkan dari keyboard. 
+	\item  [Contoh \thesubsection.4] Menghitung luas segitiga dengan  dengan alas \verb*|Alas|   dan tinggi \verb*|Tinggi| yang diinputkan dari keyboard. 
 	\begin{lstlisting}[language=c]
 #include <stdio.h>
 
@@ -426,7 +445,7 @@ int main()
 	\item [Baris 13]\verb|printf("Triangle Area = %.2f", Luas);|,  \verb|.2| si \verb|%.2f| menandakan bahwa hanya 2 angka di belakang koma(decimal point) yang perlu dicetak.
 \end{description}
 
-	\item[Contoh \thesection.5] Program untuk memasukkan nama dan email.\\
+	\item[Contoh \thesubsection.5] Program untuk memasukkan nama dan email.\\
 	Pada contoh ini dipelajari bagaimana cara menginputkan string atau text dari keyboard dan mencetak kelayar. Input dari contoh program ini ada dua yang terdiri dari \verb|snama| dan \verb|sAlamatEmail|. Oleh karena text berisi banyak karakter maka masing-masing variabel dideklarasikan sebagai kumpulan karakter dengan jumlah karakter untuk sNama=20 dan sAlamatEmail=30. 
 	% This example shows how to input string or text from keyboard and outputs it on the screen. Input from this program consist of \verb|sName| and \verb|sEmail|.
 	\begin{figure}[H]
@@ -478,7 +497,7 @@ Escape Sequence adalah urutan karakter yang digunakan untuk memformat output dan
 \end{table}
 
 \begin{description}
-	\item[Contoh \thesection.6] Mengubah baris dengan escape sequence \verb*|\n|.
+	\item[Contoh \thesubsection.6] Mengubah baris dengan escape sequence \verb*|\n|.
 	\begin{lstlisting}
 #include <stdio.h>
 
@@ -495,7 +514,7 @@ int main()
 	\label{fig:screenshot0006}
 \end{figure}
 
-\item[Contoh \thesection.7] Menggunakan escape sequence \verb*|\t| mengubah tab.
+\item[Contoh \thesubsection.7] Menggunakan escape sequence \verb*|\t| mengubah tab.
 \begin{lstlisting}[language=c]
 #include <stdio.h>
 int main(void)
