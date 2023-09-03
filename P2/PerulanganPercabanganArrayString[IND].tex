@@ -12,6 +12,7 @@
     % \item Students are able to use one dimensional or multidimensional array
     \item Mahasiswa mampu memanfaatkan perulangan untuk mengolah data pada array.
     % \item Students are able to use loops to process data on arrays
+	\item Mahasiswa  dapat mengenal dan menggunakan  string.
 \end{itemize}
 \section{Ekspresi Logika dan Perbandingan}
 \subsection{Ekspresi Perbandingan}
@@ -440,6 +441,15 @@ int main()
 	return 0;
 }
 \end{lstlisting}
+\begin{center}
+	\colorbox{pink}{\parbox{0.8\linewidth}{\textbf{Catatan:} Terdapat keyword break dan continue digunakan untuk mengendalikan (kontrol) alur pada perulangan. Pelajari secara mandiri!}}
+\end{center}
+
+\subsection{Tugas Pendahuluan}
+\begin{enumerate}
+	\item Implementasikan program dalam bahasa C yang menghitung faktorial dari sebuah bilangan bulat non-negatif yang dimasukkan oleh pengguna menggunakan loop do-while. Tampilkan hasilnya.
+	\item Implementasikan program dalam bahasa C untuk mencari bilangan prima antara 1 dan 100. Gunakan loop for untuk mengiterasi melalui semua angka dan pernyataan continue untuk mengabaikan angka yang bukan prima. Tampilkan semua bilangan prima yang ditemukan.
+\end{enumerate}
 
 \section{Array}
 Array atau biasa disebut larik adalah koleksi data dimana setiap elemen mempunyai nama yang sama dan bertipe sama. Setiap elemen diakses berdasarkan  indeks elemennya.
@@ -563,7 +573,7 @@ Semua string harus memiliki karakter “khusus” untuk menandakan akhir dari st
 Tanda \verb|‘\0’| mewakili karakter null yang dipakai oleh compiler bahasa C sebagai tanda akhir sebuah string.
 
 Contoh source code penggunaan \verb|scanf| untuk membaca string:
-\begin{lstlisting}[language=c,caption = Contoh String dengan scanf,label=lst:array1d01]
+\begin{lstlisting}[language=c,caption = Contoh String dengan scanf,label=lst:scanf]
 	#include <stdio.h>
 
 	int main() {
@@ -593,4 +603,40 @@ Contoh source code penggunaan \verb|scanf| untuk membaca string:
 	}
 \end{lstlisting}
 
-Contoh source code penggunaan 
+
+Contoh source code penggunaan \verb|gets| untuk membaca string:
+\begin{lstlisting}[language=c,caption = Contoh String dengan gets,label=lst:gets]
+#include <stdio.h>
+
+int main () {
+  
+	char arr[100];
+	while(true)
+	{
+		gets(arr);
+		
+		printf("-- %s\n", arr);
+	}
+  return 0;
+
+}
+\end{lstlisting}
+
+String yang dibaca dengan mengunakan scanf atau gets akan secara otomatis memiliki \verb|null| character di akhir.
+
+\subsection{Fungsi-Fungsi String}
+Dalam bahasa pemrograman C, terdapat library yang dibuat dengan tujuan memudahkan pengguna dalam mengolah string. 
+Library tersebut tersimpan dalam \verb|<string.h>|,
+oleh karena itu, untuk mengakses library ini, diperlukan tambahan preprocessor, yaitu:
+\begin{lstlisting}[language=c]
+	#include <string.h>
+\end{lstlisting}
+	
+Pelajari berbagai fungsinya di \href{http://www.cplusplus.com/}{www.cplusplus.com}.
+
+\subsection{Tugas Pendahuluan}
+\begin{enumerate}
+	\item Buatlah program dalam bahasa C yang mengambil dua string dari pengguna dan menentukan apakah kedua string tersebut anagram (mengandung karakter yang sama dalam urutan yang berbeda). 
+	Tampilkan pesan yang sesuai.
+	\item Jelaskan perbedaan antara string yang dideklarasikan sebagai array karakter (char array) dan string yang dideklarasikan sebagai tipe data string (string literal) dalam bahasa C. Berikan contoh penggunaan keduanya.
+\end{enumerate}
