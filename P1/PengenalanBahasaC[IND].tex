@@ -204,7 +204,7 @@ Pada bahasa C, terdapat beberapa tipe data untuk merepresentasikan data yang ber
 	\end{tabular}
 \end{center}
 Untuk menampilkan data pada layar, setiap tipe data memiliki format specifier yang dapat digunakan pada formatted string. Berikut adalah format specifier untuk beberapa tipe data.
-To show the data on screen, every data type has a format specifier that can be used on formatted string. The following is the format specifier for several data types.
+% To show the data on screen, every data type has a format specifier that can be used on formatted string. The following is the format specifier for several data types.
 \begin{center}
     \captionof{table}{Format Specifier \label{tab:formatspecifier}}
 	\begin{tabular}{|l|l|}
@@ -219,6 +219,22 @@ To show the data on screen, every data type has a format specifier that can be u
 \end{center}
 Masih ada lebih banyak tipe data dari pada yang dituliskan pada Tabel \ref{tab:tipedata}. Tipe-tipe data ini dan spesifikasinya bisa ditemukan dengan mudah di internet.
 % There are still more data types that what was written on Table \ref{tab:tipedata}. These data types and its specification can be found easily on the internet.
+
+\subsubsection{Modifier}
+Secara garis besar modifier merupakan sebuah kata, frasa atau klausa yang mengubah makna atau menjelaskan kata benda(noun) atau kata kerja (verb) dalam sebuah kalimat. 
+Sedangkan modifier dalam bahasa pemrograman dalah sebuah kata kunci atau keyword yang digunakan untuk mengubah perilaku atau sifat suatu elemen dalam program, seperti variabel, fungsi, atau kelas.
+Kita menggunakan modifier untuk mengubah range dari tipe data dasar untuk menyesuaikan dengan keperluan pemrograman. Ada empat modifier, yaitu:
+\begin{enumerate}
+	\item signed \\
+	\verb|int value = -10;| (Menggunakan tanda negatif pada variabel bertipe int yang secara default adalah signed integer.)
+	\item unsigned \\
+	\verb|unsigned int count = 100;|  (Menggunakan variabel unsigned integer untuk menyimpan bilangan bulat positif tanpa tanda.)
+	\item long \\ 
+	\verb|long population = 7500000000;| (Menggunakan tipe data long untuk menyimpan nilai yang lebih besar daripada tipe data int.)
+	\item short \\
+	\verb|short temperature = 20;| (Menggunakan tipe data short untuk menghemat memori ketika kita tahu bahwa nilai yang akan disimpan akan relatif kecil.)
+\end{enumerate}
+
 
 \subsection{Variabel}
 Variabel merupakan tempat menyimpan data. Mendeklarasikan suatu variabel dapat dilakukan dengan cara sebagai berikut.
