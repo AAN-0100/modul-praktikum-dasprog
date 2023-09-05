@@ -186,21 +186,19 @@ Pada bahasa C, terdapat beberapa tipe data untuk merepresentasikan data yang ber
 % In C programming language, there are several data types to represent integer, real number, characters, string, and etc.
 \begin{center}
     \captionof{table}{Beberapa tipe data di C \label{tab:tipedata}}
-	% \begin{tabular}{|l|l|l|}
-	% 	\hline
-	% 	Data Types & Size         & Description                                         \\ \hline
-	% 	int       & 2 or 4 bytes & saves integers                        \\ \hline
-	% 	float     & 4 bytes      & saves real numbers to 8 digit behind decimal point. \\ \hline
-	% 	double    & 8 bytes      & saves real numbers to 15 digits behind decimal point. \\ \hline
-	% 	char      & 1 byte       & saves a character                     \\ \hline
-	% \end{tabular}
 	\begin{tabular}{|l|l|l|}
 		\hline
-		Tipe Data & Ukuran       & Deskripsi                                         \\ \hline
-		int       & 2 atau 4 bytes & menyimpan integers.                        \\ \hline
-		float     & 4 bytes      & menyimpan bilangan real (8 digit dibelakang desimal). \\ \hline
-		double    & 8 bytes      & menimpan bilangan real (15 digit dibelakang desimal). \\ \hline
-		char      & 1 byte       & menyimpan sebuah karakter.                     \\ \hline
+		Tipe Data                       & Ukuran   & Rentang Nilai                              \\ \hline
+		Int (or signed int)            & 2 bytes  & -32,768 to 32,767                          \\ \hline
+		unsigned int                   & 2 bytes  & 0 to 65,535                                \\ \hline
+		Short int(or signed short int) & 2 bytes  & -32,768 to 32,767                          \\ \hline
+		Long(or singed short int)      & 4 bytes  & -2,147,483,648 to 2,147,483,647            \\ \hline
+		unsigned long                  & 4 bytes  & 0 to 4,294,967,295                         \\ \hline
+		float                          & 4 bytes  & 1.2E-38 to 3.4E+38     						\\ \hline
+		double                         & 8 bytes  & 2.3E-308 to 1.7E+308    					\\ \hline
+		Long double                    & 10 bytes & 3.4E-4932 to 1.1E+4932 						 \\ \hline
+		char(or signed char)           & 1 byte   & -128 to 127                                \\ \hline
+		unsigned char                  & 1 byte   & 0 to 255                                   \\ \hline
 	\end{tabular}
 \end{center}
 Untuk menampilkan data pada layar, setiap tipe data memiliki format specifier yang dapat digunakan pada formatted string. Berikut adalah format specifier untuk beberapa tipe data.
@@ -248,7 +246,7 @@ Tabel di bawah menunjukkan beberapa operator aritmatika di C.
     \captionof{table}{Operator Aritmatika di C \label{tab:operatoraritmatika}}
 	\begin{tabular}{|c|l|c|}
 		\hline
-		\multicolumn{1}{|l|}{\textbf{Operator}} & \textbf{Nama} & \multicolumn{1}{l|}{\textbf{Contoh}} \\ \hline
+		\multicolumn{1}{|l|}{Operator} & Nama & \multicolumn{1}{l|}{Contoh} \\ \hline
 		+  & Penambahan &\verb|x + y |  \\ \hline
 		-  & Pengurangan &\verb|x = y|   \\ \hline
 		*  & Perkalian   & \verb|x * y|  \\ \hline
@@ -492,8 +490,8 @@ Escape Sequence adalah urutan karakter yang digunakan untuk memformat output dan
 % Some characters can't be written on the format string because they are used to format the outputs.
 % So, to outputs those special characters we use escape sequences.
 
-\begin{table}[H]
-	\centering
+
+\begin{center}
 	\captionof{table}{Escape Sequence \label{tab:escapesequence}}
 	\begin{tabular}{|l|l|l|}
 		\hline
@@ -510,7 +508,8 @@ Escape Sequence adalah urutan karakter yang digunakan untuk memformat output dan
 		\textbackslash{}? & Tanda tanya  \\ \hline
 		\textbackslash{}\textbackslash{} & Backslash   \\ \hline
 	\end{tabular}
-\end{table}
+\end{center}
+
 
 \begin{description}
 	\item[Contoh \thesubsection.6] Mengubah baris dengan escape sequence \verb*|\n|.
