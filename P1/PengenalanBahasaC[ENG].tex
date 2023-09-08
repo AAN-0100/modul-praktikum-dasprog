@@ -183,6 +183,7 @@ Code on Listing \ref{lst:helloworld} is a simple program to print "Halo Dunia" t
 In C programming language, there are several data types to represent integer, real number, characters, string, and etc.
 % In C programming language, there are several data types to represent integer, real number, characters, string, and etc.
 \begin{center}
+
     \captionof{table}{Some data types in C programming language \label{tab:tipedata}}
 	\begin{tabular}{|l|l|l|}
 		\hline
@@ -197,6 +198,23 @@ In C programming language, there are several data types to represent integer, re
 		Long double                    & 10 bytes & 3.4E-4932 to 1.1E+4932 						 \\ \hline
 		char(or signed char)           & 1 byte   & -128 to 127                                \\ \hline
 		unsigned char                  & 1 byte   & 0 to 255                                   \\ \hline
+
+%     \captionof{table}{Beberapa tipe data di C \label{tab:tipedata}}
+% 	% \begin{tabular}{|l|l|l|}
+% 	% 	\hline
+% 	% 	Data Types & Size         & Description                                         \\ \hline
+% 	% 	int       & 2 or 4 bytes & saves integers                        \\ \hline
+% 	% 	float     & 4 bytes      & saves real numbers to 8 digit behind decimal point. \\ \hline
+% 	% 	double    & 8 bytes      & saves real numbers to 15 digits behind decimal point. \\ \hline
+% 	% 	char      & 1 byte       & saves a character                     \\ \hline
+% 	% \end{tabular}
+% 	\begin{tabular}{|l|l|l|}
+% 		\hline
+% 		Tipe Data & Ukuran       & Deskripsi                                         \\ \hline
+% 		int       & 2 atau 4 bytes & menyimpan integers.                        \\ \hline
+% 		float     & 4 bytes      & menyimpan bilangan real (8 digit dibelakang desimal). \\ \hline
+% 		double    & 8 bytes      & menimpan bilangan real (15 digit dibelakang desimal). \\ \hline
+% 		char      & 1 byte       & menyimpan sebuah karakter.                     \\ \hline
 	\end{tabular}
 \end{center}
 % Untuk menampilkan data pada layar, setiap tipe data memiliki format specifier yang dapat digunakan pada formatted string. Berikut adalah format specifier untuk beberapa tipe data.
@@ -242,16 +260,20 @@ The table below shows some arithmetic operators in C
     \captionof{table}{Arithmetic operator in C programming language\label{tab:operatoraritmatika}}
 	\begin{tabular}{|c|l|c|}
 		\hline
-		\multicolumn{1}{|l|}{Operator} & Name & \multicolumn{1}{l|}{Example} \\ \hline
-		+  & Penambahan &\verb|x + y |  \\ \hline
-		-  & Pengurangan &\verb|x = y|   \\ \hline
-		*  & Perkalian   & \verb|x * y|  \\ \hline
-		/  & Pembagian   & \verb|x/y|  \\ \hline
-		\% & Modulo     & \verb|x % y| \\ \hline
-	\end{tabular}
-\end{center}
 
-Tabel di bawah menunjukkan beberapa operator penugasan.
+		\multicolumn{1}{|l|}{Operator} & Name & \multicolumn{1}{l|}{Example} \\ \hline
+
+% 		\multicolumn{1}{|l|}{\textbf{Operator}} & \textbf{Nama} & \multicolumn{1}{l|}{\textbf{Contoh}} \\ \hline
+
+% 		+  & Penambahan &\verb|x + y |  \\ \hline
+% 		-  & Pengurangan &\verb|x = y|   \\ \hline
+% 		*  & Perkalian   & \verb|x * y|  \\ \hline
+% 		/  & Pembagian   & \verb|x/y|  \\ \hline
+% 		\% & Modulo     & \verb|x % y| \\ \hline
+% 	\end{tabular}
+% \end{center}
+
+% Tabel di bawah menunjukkan beberapa operator penugasan.
 \begin{center}
     \captionof{table}{Assignment operator \label{tab:operatorpenugasan}}
 	\begin{tabular}{|c|c|c|}
@@ -482,8 +504,8 @@ int main()
 % Escape Sequence adalah urutan karakter yang digunakan untuk memformat output dan tidak ditampilkan ketika dicetak ke layar. Setiap karakter mempunyai fungsi tertentu. 
 Some characters can't be written on the format string because they are used to format the outputs. So, to outputs those special characters we use escape sequences.
 
-
-\begin{center}
+\begin{table}[H]
+	\centering
 	\captionof{table}{Escape Sequence \label{tab:escapesequence}}
 	\begin{tabular}{|l|l|l|}
 		\hline
@@ -500,8 +522,7 @@ Some characters can't be written on the format string because they are used to f
 		\textbackslash{}? & Question Mark  \\ \hline
 		\textbackslash{}\textbackslash{} & Backslash   \\ \hline
 	\end{tabular}
-\end{center}
-
+\end{table}
 
 \begin{description}
 	\item[Contoh \thesubsection.6] Change row with escape sequence \verb*|\n|.
