@@ -16,6 +16,23 @@ Modul Praktikum Dasar Pemrograman ini dirancang untuk membantu mahasiswa memaham
    - Struktur Bahasa Pemrograman C
    - Tipe Data dan Variabel
    - Output dan Input
+2. **Perulangan, Percabangan, Array, dan String**
+   - Tujuan
+   - Ekspresi Logika dan Perbandingan
+   - Percabangan
+   - Perulangan
+   - Array
+   - String
+3. **Fungsi dan Rekursi**
+   - Tujuan
+   - Fungsi
+   - Rekursi
+4. **Pointer,Struct, dan Algoritma**
+   - Tujuan
+   - Pointer
+   - Struct
+   - ALgoritma Sorting
+   - Algoritma Searching
 
 ## Persyaratan
 
