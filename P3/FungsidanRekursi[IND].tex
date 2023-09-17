@@ -159,31 +159,33 @@ Passing parameter merupakan aktivitas menyalurkan nilai pada parameter saat mema
 \subsubsection{Passing Parameter by Value}
 
 \begin{lstlisting}[language=c,caption = Passing by Value,label=lst:passbyvalue01]
-#include<cstdio>
-int swapAndReturnTheSum(int x, int y) {
-    int z;
-    z = x;
-    x = y;
-    y = z;
-    return x+y;
-}
-int main()
-{
-    int a = 1;
-    int b = 2;
-    int sum = swapAndReturnTheSum(a,b);
-    printf("sum: %d\n",sum);
-    printf("values of a dan b now:\n");
-    printf("a: %d\n",a);
-    printf("b: %d\n",b);
-}
+    #include <stdio.h>
+
+    int swapDanKembalikanJumlah(int x, int y) {
+        int z;
+        z = x;
+        x = y;
+        y = z;
+        return x + y;
+    }
+    
+    int main() {
+        int a = 1;
+        int b = 2;
+        int jumlah = swapDanKembalikanJumlah(a, b);
+        printf("Jumlah: %d\n", jumlah);
+        printf("Nilai a dan b sekarang:\n");
+        printf("a: %d\n", a);
+        printf("b: %d\n", b);
+        return 0;
+    }
 \end{lstlisting}
 
 Perhatikan potongan kode pada Listing \ref{lst:passbyvalue01}. Baris 3-6 dari kode tersebut adalah operasi untuk menukar nilai dari 2 variabel. Namun, apabila program tersebut dijalankan, maka akan muncul output
 % line 3-6 of the code in Listing \ref{lst:passbyvalue01} is a set of assignments to swap the values of 2 variable. However, when the program is executed, the output would be the following.
 \begin{verbatim}
-    sum: 3
-    values a and b now:
+    Jumlah: 3
+    Nilai a dan b sekarang:
     a: 1
     b: 2
 \end{verbatim}
@@ -194,30 +196,39 @@ Nilai dari a dan b tidak bertukar. Untuk passing parameter by value, apapun yang
 Perhatikan baris 2 pada potongan kode berikut:
 % Look at line 2 of the following code.
 \begin{lstlisting}[language=c,caption = Passing by Reference,label=lst:passbyreference01]
-#include<cstdio>
-int swapAndReturnTheSum(int &x, int &y) {
+#include <stdio.h>
+
+void swap(int *x, int *y) {
     int z;
-    z = x;
-    x = y;
-    y = z;
-    return x+y;
+    z = *x;
+    *x = *y;
+    *y = z;
 }
-int main()
-{
+
+int main() {
     int a = 1;
     int b = 2;
-    int sum = swapAndReturnTheSum(a,b);
-    printf("sum: %d\n",sum);
-    printf("values of a dan b now:\n");
-    printf("a: %d\n",a);
-    printf("b: %d\n",b);
+    
+    printf("Before swapping:\n");
+    printf("a: %d\n", a);
+    printf("b: %d\n", b);
+    
+    swap(&a, &b);
+    
+    printf("After swapping:\n");
+    printf("a: %d\n", a);
+    printf("b: %d\n", b);
+    
+    return 0;
 }
 \end{lstlisting}
 Apabila program tersebut dijalankan, maka akan muncul output
 % When this program is executed, it will output the following.
 \begin{verbatim}
-    sum: 3
-    values of a and b now
+    Before swapping:
+    a: 1
+    b: 2
+    After swapping:
     a: 2
     b: 1
 \end{verbatim}
@@ -247,10 +258,10 @@ int factorial(int n) {
     return n*factorial(n-1);
 }
 \end{lstlisting}
-The factorial function calls another factorial function in line 4.
-%Dapat dilihat bahwa fungsi factorial pada function bodynya memanggil factorial pada baris 4.
-Initialy, the function $factorial(n)$ is called. This function however will return 
-%Pada awalnya jika fungsi $factorial(n)$ dipanggil maka dia akan mencoba untuk mengembalikan
+% The factorial function calls another factorial function in line 4.
+Dapat dilihat bahwa fungsi factorial pada function bodynya memanggil factorial pada baris 4.
+% Initialy, the function $factorial(n)$ is called. This function however will return 
+Pada awalnya jika fungsi $factorial(n)$ dipanggil maka dia akan mencoba untuk mengembalikan
 % $n\times factorial(n-1)$, then $factorial(n-1)$ akan mengembalikan $(n-1)\times factorial(n-1-1)$.
 $n\times factorial(n-1)$, kemudian $factorial(n-1)$ akan mengembalikan $(n-1)\times factorial(n-1-1)$.
 % Eventually it became like this:
