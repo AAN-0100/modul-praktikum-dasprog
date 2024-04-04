@@ -56,7 +56,7 @@ jobs:
       pages: write
       id-token: write
     environment:
-      name: github-pages
+      name: P1_PengenalanBahasaC_IND
       url: ${{ steps.deployment.outputs.page_url }}
     concurrency:
       group: pages
