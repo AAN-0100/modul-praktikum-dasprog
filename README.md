@@ -60,9 +60,6 @@ Modul Praktikum Dasar Pemrograman ini dilisensikan di bawah [lisensi MIT](LICENS
 
 Dengan menggunakan modul ini, kami harap Anda dapat memahami dasar-dasar pemrograman komputer dan menjadi pemrogram yang lebih mahir. Selamat belajar!
 
-Jika Anda memiliki pertanyaan atau masukan, silakan hubungi:
-
-- Nama: Moh. Iqbal Fatchurozi
-- Github: zer0-911
+Jika Anda memiliki pertanyaan atau masukan, silakan hubungi admin
 
 Terima kasih atas partisipasi Anda dalam modul praktikum ini. Selamat belajar dan semoga sukses!
