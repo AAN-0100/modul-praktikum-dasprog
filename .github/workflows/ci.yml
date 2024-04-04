@@ -1,0 +1,67 @@
+name: CI
+on:
+  workflow_dispatch:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  compile:
+    name: Compile Module
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        module:
+          [
+            P1/PengenalanBahasaC_IND,
+            P2/PerulanganPercabanganArrayString_IND,
+            P3/FungsidanRekursi_IND,
+            P4/PointerdanStruct_IND,
+          ]
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup LaTeX
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: Cover/main.tex
+          pre_compile: |
+            sed -i '/\\input{.*}/d' main.tex
+            echo "\\input{${{ matrix.module }}.tex}" >> main.tex
+          docker_image: ghcr.io/xu-cheng/texlive-full:20240315
+
+      - name: Rename and Move Compiled PDF
+        run: |
+          mkdir -p output
+          mv main.pdf output/${{ matrix.module | replace('/', '_') }}.pdf
+
+      - name: Upload Compiled PDF
+        uses: actions/upload-artifact@v3
+        with:
+          name: Compiled-${{ matrix.module | replace('/', '_') }}
+          path: output/
+
+  deploy:
+    name: Deploy
+    if: github.event_name != 'pull_request'
+    needs: compile
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    concurrency:
+      group: pages
+      cancel-in-progress: false
+    steps:
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
+      - name: Deploy to Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
