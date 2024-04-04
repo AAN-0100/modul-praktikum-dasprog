@@ -26,7 +26,7 @@ jobs:
       - name: Setup LaTeX
         uses: xu-cheng/latex-action@v3
         with:
-          root_file:main.tex
+          root_file: main.tex
           pre_compile: |
             sed -i '/\\input{.*}/d' main.tex
             echo "\\input{${{ matrix.module }}.tex}" >> main.tex
