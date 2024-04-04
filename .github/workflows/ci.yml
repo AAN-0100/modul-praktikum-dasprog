@@ -42,6 +42,10 @@ jobs:
       - name: Upload Compiled PDF
         uses: actions/upload-pages-artifact@v3
         with:
+          run: |
+            MODULE_NAME="${{ matrix.module }}"
+            MODULE_NAME=${MODULE_NAME//\//_}
+          name: $MODULE_NAME
           path: dist/
 
   deploy:
