@@ -26,10 +26,10 @@ jobs:
       - name: Setup LaTeX
         uses: xu-cheng/latex-action@v3
         with:
-          root_file: Cover/main.tex
+          root_file:main.tex
           pre_compile: |
-            sed -i '/\\input{.*}/d' Cover/main.tex
-            echo "\\input{${{ matrix.module }}.tex}" >> Cover/main.tex
+            sed -i '/\\input{.*}/d' main.tex
+            echo "\\input{${{ matrix.module }}.tex}" >> main.tex
           docker_image: ghcr.io/xu-cheng/texlive-full:20240315
 
       - name: Rename and Move Compiled PDF
