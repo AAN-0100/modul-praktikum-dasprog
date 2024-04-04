@@ -59,7 +59,7 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     concurrency:
-      group: pages
+      group: ${{ github.job }}-${{ github.ref }}
       cancel-in-progress: false
     strategy:
       matrix:
