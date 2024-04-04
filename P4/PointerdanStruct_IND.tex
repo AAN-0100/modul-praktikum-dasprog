@@ -1,5 +1,5 @@
 \section{Tujuan}
-\begin{itemize}[label=$\bullet$, itemsep=-1pt, leftmargin=*]   
+\begin{itemize}[label=$\bullet$, itemsep=-1pt, leftmargin=*]
     \item Mahasiswa mengerti tentang konsep pointer pada bahasa pemrograman C.
     \item Mahasiswa mengerti cara membuat dan memanggil struct pada bahasa pemrograman C.
     \item Mahasiswa mengerti tentang algoritma sorting pada bahasa pemrograman C.
@@ -18,10 +18,10 @@ Jika  terdapat variabel \verb|var| di program Anda, \verb|&var| akan memberi ala
     printf("%p\n", &var);
 \end{lstlisting}
 \begin{center}
-	\colorbox{pink}{\parbox{0.8\linewidth}{\textbf{Catatan:} Output bisa berbeda-beda di tiap eksekusi.}}
+    \colorbox{pink}{\parbox{0.8\linewidth}{\textbf{Catatan:} Output bisa berbeda-beda di tiap eksekusi.}}
 \end{center}
 
-\subsection{Pengenalan Pointer} 
+\subsection{Pengenalan Pointer}
 
 Pointer (variabel penunjuk) adalah variabel khusus yang digunakan untuk menyimpan alamat, bukan nilai.
 
@@ -67,46 +67,46 @@ Berikut adalah cara kerja dari pointer.
 Penjelasan Program:\\
 \begin{enumerate}
     \item \verb|int* pc, c;|
-    \begin{figure}[H]
-        \centering
-        \includegraphics[width=0.2\linewidth]{../P4/img/screenshot001.png}
-        \caption{}
-        \label{fig:satu}
-    \end{figure}
+          \begin{figure}[H]
+              \centering
+              \includegraphics[width=0.2\linewidth]{P4/img/screenshot001.png}
+              \caption{}
+              \label{fig:satu}
+          \end{figure}
     \item \verb|c = 22;|
-    \begin{figure}[H]
-        \centering
-        \includegraphics[width=0.2\linewidth]{../P4/img/screenshot002.png}
-        \caption{}
-        \label{fig:dua}
-    \end{figure}
+          \begin{figure}[H]
+              \centering
+              \includegraphics[width=0.2\linewidth]{P4/img/screenshot002.png}
+              \caption{}
+              \label{fig:dua}
+          \end{figure}
     \item \verb|pc = &c;|
-    \begin{figure}[H]
-        \centering
-        \includegraphics[width=0.2\linewidth]{../P4/img/screenshot003.png}
-        \caption{}
-        \label{fig:tiga}
-    \end{figure}
+          \begin{figure}[H]
+              \centering
+              \includegraphics[width=0.2\linewidth]{P4/img/screenshot003.png}
+              \caption{}
+              \label{fig:tiga}
+          \end{figure}
     \item \verb|c = 11;|
-    \begin{figure}[H]
-        \centering
-        \includegraphics[width=0.2\linewidth]{../P4/img/screenshot004.png}
-        \caption{}
-        \label{fig:empat}
-    \end{figure}
+          \begin{figure}[H]
+              \centering
+              \includegraphics[width=0.2\linewidth]{P4/img/screenshot004.png}
+              \caption{}
+              \label{fig:empat}
+          \end{figure}
     \item \verb|*pc = 2;|
-    \begin{figure}[H]
-        \centering
-        \includegraphics[width=0.2\linewidth]{../P4/img/screenshot005.png}
-        \caption{}
-        \label{fig:lima}
-    \end{figure}
+          \begin{figure}[H]
+              \centering
+              \includegraphics[width=0.2\linewidth]{P4/img/screenshot005.png}
+              \caption{}
+              \label{fig:lima}
+          \end{figure}
 \end{enumerate}
 
 \subsection{Double Pointer}
-Variabel pointer juga dapat menunjuk variabel pointer lainnya. 
-Hal ini disebut dengan double pointer (pointer to pointer). 
-Untuk mendeklarasikan variabel double pointer, digunakan dua simbol *. 
+Variabel pointer juga dapat menunjuk variabel pointer lainnya.
+Hal ini disebut dengan double pointer (pointer to pointer).
+Untuk mendeklarasikan variabel double pointer, digunakan dua simbol *.
 Kegunaan paling umum dari variabel double pointer adalah untuk membuat array dua dimensi secara dinamis.
 \begin{lstlisting}[language=c]
     int **dbPtr;
@@ -130,15 +130,15 @@ int main(void)
 
 \subsection{Tugas Pendahuluan}
 \begin{enumerate}
-   \item Bagaimana cara mendeklarasikan pointer ke array multidimensi?
-   \item Buatlah program dalam bahasa C atau C++ yang mengimplementasikan 
-   fungsi void printMatrix(int **matrix, int rows, int cols) untuk mencetak matriks 2D menggunakan pointer ke pointer. Lalu, dalam fungsi main, 
-   buatlah matriks 2D dan panggil fungsi printMatrix untuk mencetak matriks tersebut.
+    \item Bagaimana cara mendeklarasikan pointer ke array multidimensi?
+    \item Buatlah program dalam bahasa C atau C++ yang mengimplementasikan
+          fungsi void printMatrix(int **matrix, int rows, int cols) untuk mencetak matriks 2D menggunakan pointer ke pointer. Lalu, dalam fungsi main,
+          buatlah matriks 2D dan panggil fungsi printMatrix untuk mencetak matriks tersebut.
 \end{enumerate}
 
 \section{Struct}
-Dalam pemrograman C, struct (atau struktur) adalah kumpulan variabel (bisa dari tipe berbeda) di bawah satu nama. 
-Tidak seperti array yang hanya dapat menyimpan elemen dengan tipe data sama, 
+Dalam pemrograman C, struct (atau struktur) adalah kumpulan variabel (bisa dari tipe berbeda) di bawah satu nama.
+Tidak seperti array yang hanya dapat menyimpan elemen dengan tipe data sama,
 struct dapat mengelompokkan elemen dengan tipe data yang berbeda-beda.
 
 
@@ -166,11 +166,11 @@ struct Mahasiswa
 };
 \end{lstlisting}
 \begin{center}
-	\colorbox{pink}{\parbox{0.8\linewidth}{\textbf{Catatan:}  Menggunakan pointer * untuk data string}}
+    \colorbox{pink}{\parbox{0.8\linewidth}{\textbf{Catatan:}  Menggunakan pointer * untuk data string}}
 \end{center}
 
-Setelah dideklarasikan, sebuah struct akan menjadi tipe data baru. 
-Maka dalam kasus ini, struct Mahasiswa di sini menjadi tipe data baru dengan member-member berupa \verb|nama|, \verb|address|, dan \verb|age|. 
+Setelah dideklarasikan, sebuah struct akan menjadi tipe data baru.
+Maka dalam kasus ini, struct Mahasiswa di sini menjadi tipe data baru dengan member-member berupa \verb|nama|, \verb|address|, dan \verb|age|.
 Untuk membuat variabel dengan tipe data struct, dilakukan dengan sintaks berikut.
 
 \begin{lstlisting}[language=c]
@@ -221,7 +221,7 @@ Intinya pada iterasi melakukan perbandingan antara dua data.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.7\linewidth]{../P4/img/screenshot006.png}
+    \includegraphics[width=0.7\linewidth]{P4/img/screenshot006.png}
     \caption{}
     \label{fig:enam}
 \end{figure}
@@ -251,11 +251,11 @@ void bubbleSort(int arr[], int n) {
 
 \subsection{Insertion Sort}
 Insertion sort merupakan teknik sorting dengan cara menyisipkan atau memasukan setiap elemen secara berulang berulang.
-Konsep insertion sort bisa diibaratkan sebuah kartu. 
+Konsep insertion sort bisa diibaratkan sebuah kartu.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.5\linewidth]{../P4/img/screenshot007.png}
+    \includegraphics[width=0.5\linewidth]{P4/img/screenshot007.png}
     \caption{}
     \label{fig:tujuh}
 \end{figure}
@@ -276,14 +276,14 @@ void insertionSort(int arr[]. int n) {
 \end{lstlisting}
 
 \begin{center}
-	\colorbox{pink}{\parbox{0.8\linewidth}{\textbf{Catatan:} Terdapat berbagai algoritma sorting lain. Pelajari secara mandiri}}
+    \colorbox{pink}{\parbox{0.8\linewidth}{\textbf{Catatan:} Terdapat berbagai algoritma sorting lain. Pelajari secara mandiri}}
 \end{center}
 
 \subsection{Tugas Pendahuluan}
 \begin{enumerate}
     \item Urutkan array berikut menggunakan algoritma Bubble Sort:
 
-    Array: [5, 2, 9, 1, 5, 6]
+          Array: [5, 2, 9, 1, 5, 6]
     \item Hitung kompleksitas waktu (Big O) dari algoritma Insertion Sort saat mengurutkan sebuah array dengan panjang n, dan jelaskan bagaimana kompleksitas ini dihitung.
 \end{enumerate}
 
@@ -309,11 +309,11 @@ int linearSearch(int arr[], int n, int item) {
     }
     return -1;
 }
-\end{lstlisting}   
+\end{lstlisting}
 
 \subsection{Binary Search}
-Binary Search adalah teknik pencarian di mana untuk setiap iterasinya kita membagi space pencarian menjadi hanya setengah 
-dari space pencarian awal hingga kita menemukan yang kita cari.    
+Binary Search adalah teknik pencarian di mana untuk setiap iterasinya kita membagi space pencarian menjadi hanya setengah
+dari space pencarian awal hingga kita menemukan yang kita cari.
 
 \begin{lstlisting}[language=c,caption=Implementasi Binary Search],   
 bool f(int k, int a, int b, int n) {
@@ -339,14 +339,14 @@ int binser(int a, int b, int n) {
 \end{lstlisting}
 
 \begin{center}
-	\colorbox{pink}{\parbox{0.8\linewidth}{\textbf{Catatan:} Terdapat berbagai algoritma searching lain. Pelajari secara mandiri}}
+    \colorbox{pink}{\parbox{0.8\linewidth}{\textbf{Catatan:} Terdapat berbagai algoritma searching lain. Pelajari secara mandiri}}
 \end{center}
 
 \subsection{Tugas Pendahuluan}
 \begin{enumerate}
-    \item Anda memiliki daftar nama berikut: ["Alice", "Bob", "Charlie", "David", "Eve", "Frank"]. 
-    Gunakan algoritma binary search untuk mencari apakah nama "Eve" ada dalam daftar ini. 
-    Jika ya, berapa langkah yang dibutuhkan?
+    \item Anda memiliki daftar nama berikut: ["Alice", "Bob", "Charlie", "David", "Eve", "Frank"].
+          Gunakan algoritma binary search untuk mencari apakah nama "Eve" ada dalam daftar ini.
+          Jika ya, berapa langkah yang dibutuhkan?
     \item Jelaskan perbedaan antara pencarian linear (sequential search) dan pencarian biner (binary search).
-     Kapan Anda akan memilih salah satu metode ini daripada yang lain?
+          Kapan Anda akan memilih salah satu metode ini daripada yang lain?
 \end{enumerate}

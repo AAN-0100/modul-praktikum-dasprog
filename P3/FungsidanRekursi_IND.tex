@@ -3,11 +3,11 @@
 \begin{itemize}[label=$\bullet$, itemsep=-1pt, leftmargin=*]
     % \item Students understand how to create and call functions in C .
     \item Mahasiswa mengerti cara membuat dan memanggil fungsi pada bahasa pemrograman C.
-    % \item Students able to pass parameter by value and by reference in C.
+          % \item Students able to pass parameter by value and by reference in C.
     \item Mahasiswa mampu menggunakan passing parameter by value dan by reference pada bahasa pemrograman C.
-    % \item Students understand and able to apply recursion in C. 
+          % \item Students understand and able to apply recursion in C. 
     \item Mahasiswa mampu mengerti dan mengaplikasikan konsep rekursi pada bahasa pemrograman C.
-    
+
 \end{itemize}
 
 \section{Fungsi}
@@ -15,11 +15,11 @@ Fungsi adalah sebuah kumpulan statement untuk melakukan tugas spesifik, yang bis
 % The advantages of using functions in C programming language are:
 Keuntungan menggunakan fungsi pada bahasa pemrograman C adalah:
 \begin{itemize}
-	% \item Some code snippets can be reusable when using functions. 
+    % \item Some code snippets can be reusable when using functions. 
     \item Beberapa cuplikan kode dapat digunakan kembali saat menggunakan fungsi.
-    % \item We can call C functions any number of times in a program and from any place in a program.
-    Kita dapat memanggil fungsi C berapa kali pun dalam suatu program dan dari mana saja dalam suatu program.
-    % \item Large C codes can be splitted to several function, thus easier to track.
+          % \item We can call C functions any number of times in a program and from any place in a program.
+          Kita dapat memanggil fungsi C berapa kali pun dalam suatu program dan dari mana saja dalam suatu program.
+          % \item Large C codes can be splitted to several function, thus easier to track.
     \item Program c yang besar dapat dibagi ke dalam beberapa fungsi sehingga dapat dengan mudah untuk dilacak.
 \end{itemize}
 \subsection{Function Declaration}
@@ -33,20 +33,20 @@ Syntax :
     }
 \end{verbatim}
 \begin{itemize}
-	% \item Return Type.\\ The data type a function has to return.
-	\item Return Type.\\ Tipe data yang harus dikembalikan suatu fungsi.
-	% \item \verb*|function_name|.\\ The name of the function
+    % \item Return Type.\\ The data type a function has to return.
+    \item Return Type.\\ Tipe data yang harus dikembalikan suatu fungsi.
+          % \item \verb*|function_name|.\\ The name of the function
     \item \verb*|function_name|.\\ Nama fungsi
-	% \item parameters list.\\ 
-    % The parameters of the function. 
-    \item parameters list.\\ 
-    Parameter dari fungsi.
-	% \item Function body.\\ The block of code that will be executed when the function is called.
+          % \item parameters list.\\ 
+          % The parameters of the function. 
+    \item parameters list.\\
+          Parameter dari fungsi.
+          % \item Function body.\\ The block of code that will be executed when the function is called.
     \item Function body.\\ Kumpulan statemen yang mendefinisikan apa yang dilakukan oleh fungsi.
-	% \item \verb|return something;|\\ A statement to return a value (\verb|something|). Returning the function causes the function to end.
-    % For functions that doesn't return a value (\verb|void| type function), ending the function can be done by using \verb|return;|
+          % \item \verb|return something;|\\ A statement to return a value (\verb|something|). Returning the function causes the function to end.
+          % For functions that doesn't return a value (\verb|void| type function), ending the function can be done by using \verb|return;|
     \item \verb|return something;|\\ merupakan statement untuk mengembalikan nilai dari fungsi. Untuk fungsi yang tidak mengembalikan nilai, dapat digunakan \verb|return_type| \verb|void|. Untuk keluar dari fungsi itu hanya perlu menggunakan statement \verb*|return|
-\end{itemize}  
+\end{itemize}
 
 % Example
 Contoh
@@ -62,13 +62,13 @@ float TriangleArea(float Base, float Height)
 
 
 % \subsection{Calling a Function}
-\subsection{Memanggil Fungsi} 
+\subsection{Memanggil Fungsi}
 
 \begin{figure}[H]
-	\centering
-	\includegraphics[width=0.45\linewidth]{../P3/img/screenshot005.png}
-	\caption{}
-	\label{fig:memanggilfungsi}
+    \centering
+    \includegraphics[width=0.45\linewidth]{P3/img/screenshot005.png}
+    \caption{}
+    \label{fig:memanggilfungsi}
 \end{figure}
 
 \begin{lstlisting}[language=c]
@@ -92,15 +92,15 @@ int main()
 }
 \end{lstlisting}
 \begin{enumerate}
-	% \item Line 5-10: Defining the function \verb|Triangle Area| with 
-    \item Baris 5-10:Mendefinisikan fungsi \verb*|TriangleArea| dengan 
-	\begin{itemize}
-		% \item Two input parameter :\\
-        \item 2 paramater input/masukan:
-	% input \verb*|Base| and \verb*|Height|  with \verb*|float| data type.
-    input \verb*|Base| dan \verb*|Height|  dengan tipe data \verb*|float|.
-	    \item Output bernilai tunggal dengan tipe data \verb*|float|.
-    \end{itemize}
+    % \item Line 5-10: Defining the function \verb|Triangle Area| with 
+    \item Baris 5-10:Mendefinisikan fungsi \verb*|TriangleArea| dengan
+          \begin{itemize}
+              % \item Two input parameter :\\
+              \item 2 paramater input/masukan:
+                    % input \verb*|Base| and \verb*|Height|  with \verb*|float| data type.
+                    input \verb*|Base| dan \verb*|Height|  dengan tipe data \verb*|float|.
+              \item Output bernilai tunggal dengan tipe data \verb*|float|.
+          \end{itemize}
 \end{enumerate}
 % \subsection{Function with Arguments}
 \subsection{Fungsi dengan Argumen}
@@ -110,49 +110,49 @@ int main()
 
 Jika suatu fungsi diharapkan untuk menggunakan argumen, maka variabel sebagai parameter yang menerima nilai dari argumen tersebut harus di dedeklarasikan terlebih dahulu. \\
 \begin{enumerate}
-	\item  \textbf{Parameter :}
-\begin{enumerate}
-	\item Parameter adalah variabel dalam fungsi untuk merujuk ke salah satu bagian dari
-	data yang diberikan sebagai input ke fungsi.
-    % \item Parameters are the variable in the function that points to the part of the data that is inputted to the function.
-	\item Data ini disebut argumen.
-    % \item These data is called arguments.
-	
-\end{enumerate}
+    \item  \textbf{Parameter :}
+          \begin{enumerate}
+              \item Parameter adalah variabel dalam fungsi untuk merujuk ke salah satu bagian dari
+                    data yang diberikan sebagai input ke fungsi.
+                    % \item Parameters are the variable in the function that points to the part of the data that is inputted to the function.
+              \item Data ini disebut argumen.
+                    % \item These data is called arguments.
 
-\item \textbf{Formal Parameter:}
-\begin{enumerate}
-	\item Parameter yang Ditulis dalam Definisi Fungsi Disebut "Parameter Formal".
-    % \item Parameter that is written within the function definition is called formal parameter.
-	\item Parameter formal selalu variabel, sedangkan parameter aktual tidak harus variabel.
-	% \item Formal Parameter is always a variable, Actual Parameter however doesn't necessarily has to be a variable.
-	
-\end{enumerate}
+          \end{enumerate}
+
+    \item \textbf{Formal Parameter:}
+          \begin{enumerate}
+              \item Parameter yang Ditulis dalam Definisi Fungsi Disebut "Parameter Formal".
+                    % \item Parameter that is written within the function definition is called formal parameter.
+              \item Parameter formal selalu variabel, sedangkan parameter aktual tidak harus variabel.
+                    % \item Formal Parameter is always a variable, Actual Parameter however doesn't necessarily has to be a variable.
+
+          \end{enumerate}
 
 
-\item \textbf{Actual Parameter:}
-\begin{enumerate}
-	
-    % \item Parameter that is used when calling the function
-    \item Parameter yang Ditulis ketika memanggil fungsi.
-    % \item Actual Parameter could take the form of number, expression, or another function call.
-	\item Dapat berupa angka, ekspresi, atau bahkan panggilan fungsi.
+    \item \textbf{Actual Parameter:}
+          \begin{enumerate}
+
+              % \item Parameter that is used when calling the function
+              \item Parameter yang Ditulis ketika memanggil fungsi.
+                    % \item Actual Parameter could take the form of number, expression, or another function call.
+              \item Dapat berupa angka, ekspresi, atau bahkan panggilan fungsi.
+          \end{enumerate}
+          \begin{figure}[H]
+              \centering
+              \includegraphics[width=0.5\linewidth]{P3/img/screenshot006.png}
+              \caption{}
+              \label{fig:parameterformalaktual}
+          \end{figure}
 \end{enumerate}
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.5\linewidth]{../P3/img/screenshot006.png}
-	\caption{}
-	\label{fig:parameterformalaktual}
-\end{figure}
-\end{enumerate}
-\subsection{Parameter Passing} 
+\subsection{Parameter Passing}
 Passing parameter merupakan aktivitas menyalurkan nilai pada parameter saat memanggil fungsi. Pada umumnya, dikenal dua macam passing parameter yaitu:
 % To use a function with parameter, the parameters must be passed to the function first.
 % In general, there are two ways to pass paramater to a function
 \begin{itemize}
-	% \item Pass parameter by value, pass the value of the variable to the function.
+    % \item Pass parameter by value, pass the value of the variable to the function.
     \item Pass parameter by value, yaitu menyalurkan \textbf{nilai} dari tiap parameter yang diberikan.
-	% \item Pass parameter by reference, pass the reference of a variable (its memory address) to the function. 
+          % \item Pass parameter by reference, pass the reference of a variable (its memory address) to the function. 
     \item Pass parameter by reference, yaitu menyalurkan \textbf{alamat} dari tiap parameter yang diberikan.
 \end{itemize}
 
@@ -238,10 +238,10 @@ Ketika fungsi \verb|swapAndReturnTheSum(a,b)| dipanggil, alamat memori variabel 
 
 \subsection{Tugas Pendahuluan}
 \begin{enumerate}
-   \item Buatlah fungsi yang dapat menerima 2 buah bilangan bulat a dan b kemudian mengembalikan nilai dari $a^b$
-    % \item Create a function that can take 2 integer a and b then returns $a^b$
-   \item Masalah-masalah apa yang akan lebih mudah diselesaikan dengan menggunakan fungsi?
-    % \item What problems that can be solved easier with functions?
+    \item Buatlah fungsi yang dapat menerima 2 buah bilangan bulat a dan b kemudian mengembalikan nilai dari $a^b$
+          % \item Create a function that can take 2 integer a and b then returns $a^b$
+    \item Masalah-masalah apa yang akan lebih mudah diselesaikan dengan menggunakan fungsi?
+          % \item What problems that can be solved easier with functions?
 \end{enumerate}
 
 \section{Rekursi}
@@ -277,5 +277,5 @@ Akhirnya menjadi seperti ini:
 
 \subsection{Tugas Pendahuluan}
 \begin{enumerate}
-   \item Diberikan sebuah baris bilangan 1, 5, 14, 30, ... dst. Buatlah sebuah program yang mengimplementasikan fungsi rekursif untuk menentukan bilangan ke-n dari pola tersebut.
+    \item Diberikan sebuah baris bilangan 1, 5, 14, 30, ... dst. Buatlah sebuah program yang mengimplementasikan fungsi rekursif untuk menentukan bilangan ke-n dari pola tersebut.
 \end{enumerate}
