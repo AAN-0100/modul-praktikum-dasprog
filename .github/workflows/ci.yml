@@ -87,6 +87,7 @@ jobs:
     compile:
       name: Compile
       runs-on: ubuntu-latest
+      needs: job1
       strategy:
         matrix:
           module:
