@@ -1,17 +1,17 @@
 \section{Goals}
 \begin{itemize}[label=$\bullet$, itemsep=-1pt, leftmargin=*]
-    \item Students are familiar with and able to use logical and comparison expressions in the C programming language.
-    \item Students are familiar with and able to use logical and comparison expressions in the C programming language.
-    \item Students can recognize and use while loops in the C language.
-    % \item Students are able to use while-loop on C
-    \item Students can recognize and use do-while loops in the C language.
-    % \item Students are able to use do-while loop on C
-    \item Students can recognize and use for loops in the C language.
-    % \item Students are able to use for loop on C
-    \item Students can recognize and use for loops in the C language.
-    % \item Students are able to use one dimensional or multidimensional array
-    \item Students can recognize and use for loops in the C language.
-    % \item Students are able to use loops to process data on arrays
+	\item Students are familiar with and able to use logical and comparison expressions in the C programming language.
+	\item Students are familiar with and able to use logical and comparison expressions in the C programming language.
+	\item Students can recognize and use while loops in the C language.
+	      % \item Students are able to use while-loop on C
+	\item Students can recognize and use do-while loops in the C language.
+	      % \item Students are able to use do-while loop on C
+	\item Students can recognize and use for loops in the C language.
+	      % \item Students are able to use for loop on C
+	\item Students can recognize and use for loops in the C language.
+	      % \item Students are able to use one dimensional or multidimensional array
+	\item Students can recognize and use for loops in the C language.
+	      % \item Students are able to use loops to process data on arrays
 	\item Students can recognize and use strings.
 \end{itemize}
 \section{Logical and Comparasion Expressions}
@@ -19,16 +19,16 @@
 % Berikut adalah operator-operator yang digunakan pada suatu ekspresi perbandingan
 The following are the operators used in comparison expressions.
 \begin{center}
-    \captionof{table}{Comparasion Operator\label{tab:operatorcomp}}
+	\captionof{table}{Comparasion Operator\label{tab:operatorcomp}}
 	\begin{tabular}{|c|l|c|}
 		\hline
-		Operator        & Name                                 & \multicolumn{1}{l|}{Expression Example} \\ \hline
-		==              & Equal To	                             & x == y                       \\ \hline
-		!=              & Not Equal To                         & x != y                       \\ \hline
-		\textgreater{}  & Greater Than                         & x \textgreater y             \\ \hline
-		\textless{}     & Less Than                           & x \textless y                \\ \hline
-		\textgreater{}= & Greater Than Equal To		 	 & x \textgreater{}= y          \\ \hline
-		\textless{}=    & Less Than Equal To           		 & x \textless{}= y             \\ \hline
+		Operator        & Name                  & \multicolumn{1}{l|}{Expression Example} \\ \hline
+		==              & Equal To              & x == y                                  \\ \hline
+		!=              & Not Equal To          & x != y                                  \\ \hline
+		\textgreater{}  & Greater Than          & x \textgreater y                        \\ \hline
+		\textless{}     & Less Than             & x \textless y                           \\ \hline
+		\textgreater{}= & Greater Than Equal To & x \textgreater{}= y                     \\ \hline
+		\textless{}=    & Less Than Equal To    & x \textless{}= y                        \\ \hline
 	\end{tabular}
 \end{center}
 
@@ -44,13 +44,13 @@ As example:
 % Berikut adalah operator-operator logika yang digunakan pada suatu ekspresi logika
 The following are the logical operators used on a Logical Expression
 \begin{center}
-    \captionof{table}{Logical Expression \label{tab:operatorlogic}}
+	\captionof{table}{Logical Expression \label{tab:operatorlogic}}
 	\begin{tabular}{|c|l|c|}
 		\hline
-		Operator & \multicolumn{1}{c|}{Name} & Expression Example \\ \hline
-		$\&\&$    &  AND                & $x<5\; \&\& \;x<10$\\ \hline
-		$||$    &  OR                 & $x < 5\; ||\; x < 4  $     \\ \hline
-		$!$        & NOT                & $!(x <5 \&\& x < 10) $\\ \hline
+		Operator & \multicolumn{1}{c|}{Name} & Expression Example     \\ \hline
+		$\&\&$   & AND                       & $x<5\; \&\& \;x<10$    \\ \hline
+		$||$     & OR                        & $x < 5\; ||\; x < 4  $ \\ \hline
+		$!$      & NOT                       & $!(x <5 \&\& x < 10) $ \\ \hline
 	\end{tabular}
 \end{center}
 % Sama seperti ekspresi perbandingan, ekspresi logika akan mengembalikan nilai berupa true atau false
@@ -69,7 +69,7 @@ if (Condition)
 // Block code after if
 \end{verbatim}
 % Sebagai contoh, perhatikan program berikut
-As example, look at the following code 
+As example, look at the following code
 \begin{lstlisting}[language=c,caption =If Statement Example,label=lst:ifexample01]
 	include <stdio.h>
 	
@@ -87,7 +87,7 @@ As example, look at the following code
 		printf("hehe");
 		return 0;
 	}
-\end{lstlisting}                        
+\end{lstlisting}
 Output of the program
 \begin{verbatim}
     hehe
@@ -136,7 +136,7 @@ The following is an example of using if-else statement:
 		printf("hehe");
 		return 0;
 	}
-\end{lstlisting}                        
+\end{lstlisting}
 Below is the output of that program
 \begin{verbatim}
     I can buy that bread
@@ -210,7 +210,7 @@ Below are an example of if-else statement
 		printf("hehe");
 		return 0;
 	}
-\end{lstlisting}                        
+\end{lstlisting}
 Output of this program are below
 \begin{verbatim}
     I can't buy that bread
@@ -294,7 +294,7 @@ Below is an example of using nested if
 \subsection{Pre-lab Assignment}
 \begin{enumerate}
 	% \item Buatlah program yang menerima input 3 buah bilangan bulat A, B, dan C. Outputkanlah 3 bilangan bulat itu ke layar dengan urutan paling kecil ke paling besar. Lakukanlah ini dengan menggunakan statement if, if else, if else if, atau nested if.
-	\item Try to make a program that receives 3 integer input A, B, and C. Then outputs those 3 integers to the screen sorted from smallest to largest. Do this only using conditional statements.	
+	\item Try to make a program that receives 3 integer input A, B, and C. Then outputs those 3 integers to the screen sorted from smallest to largest. Do this only using conditional statements.
 \end{enumerate}
 
 \section{Loop}
@@ -304,10 +304,10 @@ While loop will run the code block within it repeatedly as long as the loop cond
 
 
 \begin{figure}[H]
-		\centering
-		\includegraphics[width=0.4\linewidth]{../P2/img/whileloop.png}
-		\caption{Flow chart loop while}
-		\label{fig:whileloop}
+	\centering
+	\includegraphics[width=0.4\linewidth]{P2/img/whileloop.png}
+	\caption{Flow chart loop while}
+	\label{fig:whileloop}
 \end{figure}
 
 % Syntaxnya pada bahasa C adalah sebagai berikut:
@@ -335,7 +335,7 @@ int main()
 	printf("I don't have enough money");
 	return 0;
 }
-\end{lstlisting}  
+\end{lstlisting}
 Output in program \ref{lst:whileexample01} are below
 \begin{verbatim}
     Buy 1 bread, my money left 8000
@@ -347,17 +347,17 @@ Output in program \ref{lst:whileexample01} are below
 \end{verbatim}
 
 % Pada contoh ini, operasi pada baris 9 membuat variabel \verb|myMoney| berkurang 2000 pada setiap pengulangan hingga akhirnya nilai \verb|myMoney| tidak lebih dari atau sama dengan \verb|breadPrice| lagi.
-You can see the line 9 of the code causes the variable \verb|myMoney| to have its value substracted by 2000 for every loop until \verb|myMoney| is no longer greater than equal to \verb|breadPrice|. 
+You can see the line 9 of the code causes the variable \verb|myMoney| to have its value substracted by 2000 for every loop until \verb|myMoney| is no longer greater than equal to \verb|breadPrice|.
 The loop condition will be invalid and finaly exits the loop. Then it prints "Uang saya tidak cukup lagi", the command after the while loop statement.
 % Kondisi perulangan akan menjadi tidak valid dan akhirnya keluar dari perulangan. Kemudian ia mencetak "Uang saya tidak cukup lagi", perintah setelah pernyataan while loop.
 \subsection{Do-while loop}
 % do-while loop sebenarnya sama seperti while loop hanya saja do-while akan menjalankan perintah pada blok kode didalamnya terlebih dahulu sebelum melakukan pengecekan kondisi.
 do-while loop is very similar to while loop. The only difference is that do-while loop will execute the code block inside it once, and then checks the condition.
 \begin{figure}[H]
-		\centering
-		\includegraphics[width=0.4\linewidth]{../P2/img/dowhileloop.png}
-		\caption{Do-while statement}
-		\label{fig:dowhileloop}
+	\centering
+	\includegraphics[width=0.4\linewidth]{P2/img/dowhileloop.png}
+	\caption{Do-while statement}
+	\label{fig:dowhileloop}
 \end{figure}
 % Syntaxnya pada bahasa C adalah sebagai berikut:
 Its syntax in C is as follows:
@@ -381,7 +381,7 @@ int main()
 	printf("Uang saya tidak cukup lagi");
 	return 0;
 }
-\end{lstlisting}  
+\end{lstlisting}
 The output of the code above in Listing \ref{lst:dowhileexample01} are
 % The output of the code above are
 \begin{verbatim}
@@ -463,15 +463,15 @@ Syntax:
 \end{verbatim}
 \begin{enumerate}
 	\item \verb*|DataType|.\\
-    The data type of the elements in the array, e.g. \verb|float|, \verb|int|, etc.
-	% Jenis elemen data elemen array :\verb*|float|,\verb*|int|,\verb*|char| dsb
+	      The data type of the elements in the array, e.g. \verb|float|, \verb|int|, etc.
+	      % Jenis elemen data elemen array :\verb*|float|,\verb*|int|,\verb*|char| dsb
 	\item \verb*|variableName|\\
-	% Namariabel mengikuti aturan pemberian nama variabel,
-    variableName follows the variable naming convention
-	
+	      % Namariabel mengikuti aturan pemberian nama variabel,
+	      variableName follows the variable naming convention
+
 	\item \verb*|arraySize| \\
-    Integer more than 0. Defining the number of element an array has.
-	% konstanta integer lebih besar dari 0. \\
+	      Integer more than 0. Defining the number of element an array has.
+	      % konstanta integer lebih besar dari 0. \\
 \end{enumerate}
 
 % Untuk menginisialisasi array dimensi satu, dapat dilakukan dengan cara seperti berikut:
@@ -527,25 +527,25 @@ To initialize multidimensional array, you can do the following:
 
 \subsection{Pre-lab Assignment}
 \begin{enumerate}
-    % \item Cobalah inisialisasi suatu array multidimensi dengan menggunakan perulangan for.
-    \item Try to initialize a multidimensional array with for loop
-    % \item Buatlah suatu program untuk mengisi data pada suatu array perdasarkan input dari keyboard.
-    \item Create a program to fill the data of an array by keyboard input.
-    % \item Apakah yang akan terjadi jika suatu array \verb|arr| diakses dengan \verb|arr[-1]|?
-    \item What would happen if an array \verb|arr| is accessed with \verb|arr[-1]|?
-    % \item Apakah yang akan terjadi jika suatu array \verb|arr| dengan ukuran 5 diakses dengan \verb|arr[5]|?
-    \item What would happen if an array \verb|arr| with size 5 is accessed with \verb|arr[5]|?
-    % \item Lihatlah kode berikut
+	% \item Cobalah inisialisasi suatu array multidimensi dengan menggunakan perulangan for.
+	\item Try to initialize a multidimensional array with for loop
+	      % \item Buatlah suatu program untuk mengisi data pada suatu array perdasarkan input dari keyboard.
+	\item Create a program to fill the data of an array by keyboard input.
+	      % \item Apakah yang akan terjadi jika suatu array \verb|arr| diakses dengan \verb|arr[-1]|?
+	\item What would happen if an array \verb|arr| is accessed with \verb|arr[-1]|?
+	      % \item Apakah yang akan terjadi jika suatu array \verb|arr| dengan ukuran 5 diakses dengan \verb|arr[5]|?
+	\item What would happen if an array \verb|arr| with size 5 is accessed with \verb|arr[5]|?
+	      % \item Lihatlah kode berikut
 	\item Look at the following code
-    \begin{verbatim}
+	      \begin{verbatim}
         for(i=0;i<10;i++){
             for(j=i;j<10;j++){
                 printf("A");
             }
         }
     \end{verbatim}
-    How many "A" will be printed on the screen if that block of code is executed?
-    % Ada berapa banyakah huruf A yang akan muncul pada layar jika program tersebut dijalankan?
+	      How many "A" will be printed on the screen if that block of code is executed?
+	      % Ada berapa banyakah huruf A yang akan muncul pada layar jika program tersebut dijalankan?
 \end{enumerate}
 
 \section{String}
@@ -631,11 +631,11 @@ therefore, to access this library, an additional preprocessor directive is requi
 \begin{lstlisting}[language=c]
 	#include <string.h>
 \end{lstlisting}
-	
+
 Learn other function in \href{http://www.cplusplus.com/}{www.cplusplus.com}.
 
 \subsection{Pre-lab Assignment}
 \begin{enumerate}
 	\item Create a program in C programming languae that takes 2 string from the user input and decide whether those 2 string are an anagram (contains the same characters even in different order)
-	\item Explain the difference between string that is declared as an array of charater (char array) and a string that is declared as a string data types (string literal). Explain example of using both 
+	\item Explain the difference between string that is declared as an array of charater (char array) and a string that is declared as a string data types (string literal). Explain example of using both
 \end{enumerate}
