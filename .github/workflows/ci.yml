@@ -74,12 +74,14 @@ jobs:
       - name: Configure Pages
         uses: actions/configure-pages@v5
 
-      - name: Deploy to Pages
-        uses: actions/deploy-pages@v3
+      - name: Configure env
         run: |
           MODULE_NAME="${{ matrix.module }}"
           MODULE_NAME=${MODULE_NAME//\//_}f
           echo "MODULE_NAME_SANITIZED=${MODULE_NAME}" >> $GITHUB_ENV
+
+      - name: Deploy to Pages
+        uses: actions/deploy-pages@v3
         with:
           artifact-name: ${{ env.MODULE_NAME_SANITIZED }}
           folder: dist
