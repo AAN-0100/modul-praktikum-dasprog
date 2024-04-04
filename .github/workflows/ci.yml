@@ -6,156 +6,156 @@ on:
     branches: [main]
 # INDONESIAN
 jobs:
-  compile:
-    name: Compile
-    runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        module:
-          [
-            P1/PengenalanBahasaC_IND,
-            P2/PerulanganPercabanganArrayString_IND,
-            P3/FungsidanRekursi_IND,
-            P4/PointerdanStruct_IND,
-          ]
+  job1:
+    compile:
+      name: Compile
+      runs-on: ubuntu-latest
+      strategy:
+        matrix:
+          module:
+            [
+              P1/PengenalanBahasaC_IND,
+              P2/PerulanganPercabanganArrayString_IND,
+              P3/FungsidanRekursi_IND,
+              P4/PointerdanStruct_IND,
+            ]
 
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+      steps:
+        - name: Checkout
+          uses: actions/checkout@v4
 
-      - name: Setup LaTeX
-        uses: xu-cheng/latex-action@v3
-        with:
-          root_file: main.tex
-          pre_compile: |
-            sed -i 's|% \\input{'${{ matrix.module }}'.tex|\\input{'${{ matrix.module }}'.tex|' main.tex
-          working_directory: .
-          docker_image: ghcr.io/xu-cheng/texlive-full:20240315
+        - name: Setup LaTeX
+          uses: xu-cheng/latex-action@v3
+          with:
+            root_file: main.tex
+            pre_compile: |
+              sed -i 's|% \\input{'${{ matrix.module }}'.tex|\\input{'${{ matrix.module }}'.tex|' main.tex
+            working_directory: .
+            docker_image: ghcr.io/xu-cheng/texlive-full:20240315
 
-      - name: Rename and Move Compiled PDF
-        run: |
-          mkdir -p dist
-          MODULE_NAME="${{matrix.module}}"
-          MODULE_NAME=${MODULE_NAME//\//_}
-          mv main.pdf dist/$MODULE_NAME.pdf
-          echo "MODULE_NAME_SANITIZED=${MODULE_NAME}" >> $GITHUB_ENV
+        - name: Rename and Move Compiled PDF
+          run: |
+            mkdir -p dist
+            MODULE_NAME="${{matrix.module}}"
+            MODULE_NAME=${MODULE_NAME//\//_}
+            mv main.pdf dist/$MODULE_NAME.pdf
+            echo "MODULE_NAME_SANITIZED=${MODULE_NAME}" >> $GITHUB_ENV
 
-      - name: Upload Compiled PDF
-        uses: actions/upload-pages-artifact@v3
-        with:
-          name: ${{env.MODULE_NAME_SANITIZED}}
-          path: dist
+        - name: Upload Compiled PDF
+          uses: actions/upload-pages-artifact@v3
+          with:
+            name: ${{env.MODULE_NAME_SANITIZED}}
+            path: dist
 
-  deploy:
-    name: Deploy
-    if: github.event_name != 'pull_request'
-    needs: compile
-    runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      pages: write
-      id-token: write
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    strategy:
-      matrix:
-        module:
-          [
-            P1/PengenalanBahasaC_IND,
-            P2/PerulanganPercabanganArrayString_IND,
-            P3/FungsidanRekursi_IND,
-            P4/PointerdanStruct_IND,
-          ]
-    steps:
-      - name: Configure Pages
-        uses: actions/configure-pages@v5
+    deploy:
+      name: Deploy
+      if: github.event_name != 'pull_request'
+      needs: compile
+      runs-on: ubuntu-latest
+      permissions:
+        contents: read
+        pages: write
+        id-token: write
+      environment:
+        name: github-pages
+        url: ${{ steps.deployment.outputs.page_url }}
+      strategy:
+        matrix:
+          module:
+            [
+              P1/PengenalanBahasaC_IND,
+              P2/PerulanganPercabanganArrayString_IND,
+              P3/FungsidanRekursi_IND,
+              P4/PointerdanStruct_IND,
+            ]
+      steps:
+        - name: Configure Pages
+          uses: actions/configure-pages@v5
 
-      - name: Configure env
-        run: |
-          MODULE_NAME="${{matrix.module}}"
-          MODULE_NAME=${MODULE_NAME//\//_}
-          echo "MODULE_NAME_SANITIZED=${MODULE_NAME}" >> $GITHUB_ENV
+        - name: Configure env
+          run: |
+            MODULE_NAME="${{matrix.module}}"
+            MODULE_NAME=${MODULE_NAME//\//_}
+            echo "MODULE_NAME_SANITIZED=${MODULE_NAME}" >> $GITHUB_ENV
 
-      - name: Deploy to Pages
-        uses: actions/deploy-pages@v4
-        with:
-          artifact_name: ${{ env.MODULE_NAME_SANITIZED }}
+        - name: Deploy to Pages
+          uses: actions/deploy-pages@v4
+          with:
+            artifact_name: ${{ env.MODULE_NAME_SANITIZED }}
 
-jobs:
-  compile:
-    name: Compile
-    runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        module:
-          [
-            P1/PengenalanBahasaC_ENG,
-            P2/PerulanganPercabanganArrayString_ENG,
-            P3/FungsidanRekursi_ENG,
-            P4/PointerdanStruct_ENG,
-          ]
+  job2:
+    compile:
+      name: Compile
+      runs-on: ubuntu-latest
+      strategy:
+        matrix:
+          module:
+            [
+              P1/PengenalanBahasaC_ENG,
+              P2/PerulanganPercabanganArrayString_ENG,
+              P3/FungsidanRekursi_ENG,
+              P4/PointerdanStruct_ENG,
+            ]
 
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+      steps:
+        - name: Checkout
+          uses: actions/checkout@v4
 
-      - name: Setup LaTeX
-        uses: xu-cheng/latex-action@v3
-        with:
-          root_file: main.tex
-          pre_compile: |
-            sed -i 's|% \\input{'${{ matrix.module }}'.tex|\\input{'${{ matrix.module }}'.tex|' main.tex
-          working_directory: .
-          docker_image: ghcr.io/xu-cheng/texlive-full:20240315
+        - name: Setup LaTeX
+          uses: xu-cheng/latex-action@v3
+          with:
+            root_file: main.tex
+            pre_compile: |
+              sed -i 's|% \\input{'${{ matrix.module }}'.tex|\\input{'${{ matrix.module }}'.tex|' main.tex
+            working_directory: .
+            docker_image: ghcr.io/xu-cheng/texlive-full:20240315
 
-      - name: Rename and Move Compiled PDF
-        run: |
-          mkdir -p dist
-          MODULE_NAME="${{matrix.module}}"
-          MODULE_NAME=${MODULE_NAME//\//_}
-          mv main.pdf dist/$MODULE_NAME.pdf
-          echo "MODULE_NAME_SANITIZED=${MODULE_NAME}" >> $GITHUB_ENV
+        - name: Rename and Move Compiled PDF
+          run: |
+            mkdir -p dist
+            MODULE_NAME="${{matrix.module}}"
+            MODULE_NAME=${MODULE_NAME//\//_}
+            mv main.pdf dist/$MODULE_NAME.pdf
+            echo "MODULE_NAME_SANITIZED=${MODULE_NAME}" >> $GITHUB_ENV
 
-      - name: Upload Compiled PDF
-        uses: actions/upload-pages-artifact@v3
-        with:
-          name: ${{env.MODULE_NAME_SANITIZED}}
-          path: dist
+        - name: Upload Compiled PDF
+          uses: actions/upload-pages-artifact@v3
+          with:
+            name: ${{env.MODULE_NAME_SANITIZED}}
+            path: dist
 
-  deploy:
-    name: Deploy
-    if: github.event_name != 'pull_request'
-    needs: compile
-    runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      pages: write
-      id-token: write
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    strategy:
-      matrix:
-        module:
-          [
-            P1/PengenalanBahasaC_ENG,
-            P2/PerulanganPercabanganArrayString_ENG,
-            P3/FungsidanRekursi_ENG,
-            P4/PointerdanStruct_ENG,
-          ]
-    steps:
-      - name: Configure Pages
-        uses: actions/configure-pages@v5
+    deploy:
+      name: Deploy
+      if: github.event_name != 'pull_request'
+      needs: compile
+      runs-on: ubuntu-latest
+      permissions:
+        contents: read
+        pages: write
+        id-token: write
+      environment:
+        name: github-pages
+        url: ${{ steps.deployment.outputs.page_url }}
+      strategy:
+        matrix:
+          module:
+            [
+              P1/PengenalanBahasaC_ENG,
+              P2/PerulanganPercabanganArrayString_ENG,
+              P3/FungsidanRekursi_ENG,
+              P4/PointerdanStruct_ENG,
+            ]
+      steps:
+        - name: Configure Pages
+          uses: actions/configure-pages@v5
 
-      - name: Configure env
-        run: |
-          MODULE_NAME="${{matrix.module}}"
-          MODULE_NAME=${MODULE_NAME//\//_}
-          echo "MODULE_NAME_SANITIZED=${MODULE_NAME}" >> $GITHUB_ENV
+        - name: Configure env
+          run: |
+            MODULE_NAME="${{matrix.module}}"
+            MODULE_NAME=${MODULE_NAME//\//_}
+            echo "MODULE_NAME_SANITIZED=${MODULE_NAME}" >> $GITHUB_ENV
 
-      - name: Deploy to Pages
-        uses: actions/deploy-pages@v4
-        with:
-          artifact_name: ${{ env.MODULE_NAME_SANITIZED }}
-
+        - name: Deploy to Pages
+          uses: actions/deploy-pages@v4
+          with:
+            artifact_name: ${{ env.MODULE_NAME_SANITIZED }}
