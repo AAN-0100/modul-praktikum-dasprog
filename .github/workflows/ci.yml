@@ -45,7 +45,7 @@ jobs:
           run: |
             MODULE_NAME="${{ matrix.module }}"
             MODULE_NAME=${MODULE_NAME//\//_}
-          name: compiled-${{ matrix.module }}
+          name: compiled-${{ matrix.module // '/' / '_' }} # Sanitize the module name for the artifact name
           path: dist/
 
   deploy:
