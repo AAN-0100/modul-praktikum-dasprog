@@ -28,7 +28,7 @@ jobs:
         with:
           root_file: main.tex
           pre_compile: |
-            sed -i 's|% \\input{'${{ matrix.module }}'.tex|\\input{'${{ matrix.module }}'.tex}|' main.tex
+            sed -i 's|% \\input{'${{ matrix.module }}'.tex|\\input{'${{ matrix.module }}'.tex|' main.tex
           working_directory: .
           docker_image: ghcr.io/xu-cheng/texlive-full:20240315
 
