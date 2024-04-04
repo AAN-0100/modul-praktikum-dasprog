@@ -7,7 +7,7 @@ on:
 
 jobs:
   compile:
-    name: Compile Module
+    name: Compile
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -40,9 +40,9 @@ jobs:
           mv main.pdf dist/$MODULE_NAME.pdf
 
       - name: Upload Compiled PDF
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-pages-artifact@v3
         with:
-          path: dist/
+          path: dist
 
   deploy:
     name: Deploy
@@ -61,8 +61,8 @@ jobs:
       cancel-in-progress: false
     steps:
       - name: Configure Pages
-        uses: actions/configure-pages@v4.0.0
+        uses: actions/configure-pages@v5
 
       - name: Deploy to Pages
         id: deployment
-        uses: actions/deploy-pages@v4.0.5
+        uses: actions/deploy-pages@v4
