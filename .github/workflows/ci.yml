@@ -62,6 +62,10 @@ jobs:
       group: pages
       cancel-in-progress: false
     steps:
+      - name: Download All Artifacts
+        uses: actions/download-artifact@v2
+        with:
+          path: dist
       - name: Configure Pages
         uses: actions/configure-pages@v5
 
