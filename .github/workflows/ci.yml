@@ -34,14 +34,16 @@ jobs:
 
       - name: Rename and Move Compiled PDF
         run: |
-          mkdir -p output
-          mv main.pdf output/${{ matrix.module | replace('/', '_') }}.pdf
+          mkdir -p dist
+          MODULE_NAME="${{ matrix.module }}"
+          MODULE_NAME=${MODULE_NAME//\//_}
+          mv main.pdf dist/$MODULE_NAME.pdf
 
       - name: Upload Compiled PDF
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v2
         with:
-          name: Compiled-${{ matrix.module | replace('/', '_') }}
-          path: output/
+          name: Compiled-${{ matrix.module }}
+          path: dist/
 
   deploy:
     name: Deploy
