@@ -42,7 +42,6 @@ jobs:
       - name: Upload Compiled PDF
         uses: actions/upload-artifact@v2
         with:
-          name: Compiled-${{ matrix.module }}
           path: dist/
 
   deploy:
