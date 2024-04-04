@@ -42,7 +42,8 @@ jobs:
       - name: Upload Compiled PDF
         uses: actions/upload-pages-artifact@v3
         with:
-          path: dist
+          name: MODULE_NAME
+          path: dist/$MODULE_NAME.pdf
 
   deploy:
     name: Deploy
