@@ -45,7 +45,7 @@ jobs:
           run: |
             MODULE_NAME="${{ matrix.module }}"
             MODULE_NAME=${MODULE_NAME//\//_}
-          name: $MODULE_NAME
+          name: compiled-${{ matrix.module }}
           path: dist/
 
   deploy:
