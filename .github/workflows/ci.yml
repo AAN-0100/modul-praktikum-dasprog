@@ -38,14 +38,12 @@ jobs:
           MODULE_NAME="${{ matrix.module }}"
           MODULE_NAME=${MODULE_NAME//\//_}
           mv main.pdf dist/$MODULE_NAME.pdf
+          echo "MODULE_NAME_SANITIZED=${MODULE_NAME}" >> $GITHUB_ENV
 
       - name: Upload Compiled PDF
         uses: actions/upload-pages-artifact@v3
         with:
-          run: |
-            MODULE_NAME="${{ matrix.module }}"
-            MODULE_NAME=${MODULE_NAME//\//_}
-          name: compiled-${{ matrix.module // '/' / '_' }} # Sanitize the module name for the artifact name
+          name: ${{ env.MODULE_NAME_SANITIZED }}
           path: dist/
 
   deploy:
