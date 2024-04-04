@@ -55,21 +55,31 @@ jobs:
       contents: read
       pages: write
       id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     concurrency:
       group: pages
       cancel-in-progress: false
+    strategy:
+      matrix:
+        module:
+          [
+            P1/PengenalanBahasaC_IND,
+            P2/PerulanganPercabanganArrayString_IND,
+            P3/FungsidanRekursi_IND,
+            P4/PointerdanStruct_IND,
+          ]
     steps:
-      - name: Download Compiled PDF
-        uses: actions/download-artifact@v3
-        with:
-          name: ${{ needs.compile.outputs.MODULE_NAME_SANITIZED }}
-          path: dist
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
 
       - name: Deploy to Pages
-        uses: peaceiris/actions-gh-pages@v3
+        uses: actions/deploy-pages@v3
+        run: |
+          MODULE_NAME="${{ matrix.module }}"
+          MODULE_NAME=${MODULE_NAME//\//_}f
+          echo "MODULE_NAME_SANITIZED=${MODULE_NAME}" >> $GITHUB_ENV
         with:
-          personal_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: dist
-          publish_branch: gh-pages
-          force_orphan: true
-          clean: true
+          artifact-name: ${{ env.MODULE_NAME_SANITIZED }}
+          folder: dist
