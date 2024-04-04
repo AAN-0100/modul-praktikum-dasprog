@@ -89,7 +89,7 @@ jobs:
   deploy:
     name: Deploy
     if: github.event_name != 'pull_request'
-    needs: compile
+    needs: [compile_and_deploy_IND, compile_and_deploy_ENG]
     runs-on: ubuntu-latest
     permissions:
       contents: read
