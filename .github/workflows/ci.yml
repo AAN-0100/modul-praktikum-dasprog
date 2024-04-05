@@ -71,9 +71,9 @@ jobs:
       - name: Setup LaTeX
         uses: xu-cheng/latex-action@v3
         with:
-          root_file: main[ENG].tex
+          root_file: main_ENG.tex
           pre_compile: |
-            sed -i 's|% \\input{'${{ matrix.module }}'.tex|\\input{'${{ matrix.module }}'.tex|' main[ENG].tex
+            sed -i 's|% \\input{'${{ matrix.module }}'.tex|\\input{'${{ matrix.module }}'.tex|' main_ENG.tex
           working_directory: .
           docker_image: ghcr.io/xu-cheng/texlive-full:20240315
 
