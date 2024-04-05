@@ -86,42 +86,29 @@ jobs:
           name: ${{env.MODULE_NAME_SANITIZED}}
           path: dist
 
-  deploy:
-    name: Deploy
-    if: github.event_name != 'pull_request'
+  organize-and-deploy:
     needs: [compile_and_deploy_IND, compile_and_deploy_ENG]
     runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      pages: write
-      id-token: write
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    strategy:
-      matrix:
-        module:
-          [
-            P1/PengenalanBahasaC_IND,
-            P2/PerulanganPercabanganArrayString_IND,
-            P3/FungsidanRekursi_IND,
-            P4/PointerdanStruct_IND,
-            P1/PengenalanBahasaC_ENG,
-            P2/PerulanganPercabanganArrayString_ENG,
-            P3/FungsidanRekursi_ENG,
-            P4/PointerdanStruct_ENG,
-          ]
     steps:
-      - name: Configure Pages
-        uses: actions/configure-pages@v5
+      - uses: actions/checkout@v2
 
-      - name: Configure env
-        run: |
-          MODULE_NAME="${{matrix.module}}"
-          MODULE_NAME=${MODULE_NAME//\//_}
-          echo "MODULE_NAME_SANITIZED=${MODULE_NAME}" >> $GITHUB_ENV
-
-      - name: Deploy to Pages
-        uses: actions/deploy-pages@v4
+      - name: Download all artifacts
+        uses: actions/download-artifact@v2
         with:
-          artifact_name: ${{ env.MODULE_NAME_SANITIZED }}
+          path: artifacts/
+
+      - name: Reorganize Artifacts
+        run: |
+          mkdir -p deploy
+          for module in artifacts/*; do
+            MODULE_NAME=$(basename $module)
+            echo "Reorganizing $MODULE_NAME..."
+            mkdir -p "deploy/$MODULE_NAME"
+            cp -R "$module/*" "deploy/$MODULE_NAME/"
+          done
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./deploy
