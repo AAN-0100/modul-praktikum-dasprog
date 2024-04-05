@@ -82,7 +82,7 @@ jobs:
           mkdir -p dist
           MODULE_NAME="${{matrix.module}}"
           MODULE_NAME=${MODULE_NAME//\//_}
-          mv main.pdf dist/$MODULE_NAME.pdf
+          mv main_ENG.pdf dist/$MODULE_NAME.pdf
           echo "MODULE_NAME_SANITIZED=${MODULE_NAME}" >> $GITHUB_ENV
 
       - name: Upload Compiled PDF
