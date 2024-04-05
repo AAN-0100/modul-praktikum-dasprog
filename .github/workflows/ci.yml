@@ -34,17 +34,15 @@ jobs:
 
       - name: Rename and Move Compiled PDF
         run: |
-          mkdir -p dist
           MODULE_NAME="${{matrix.module}}"
           MODULE_NAME=${MODULE_NAME//\//_}
-          mv main.pdf dist/$MODULE_NAME.pdf
+          mv main.pdf $MODULE_NAME.pdf
           echo "MODULE_NAME_SANITIZED=${MODULE_NAME}" >> $GITHUB_ENV
 
       - name: Upload Compiled PDF
         uses: actions/upload-pages-artifact@v3
         with:
           name: ${{env.MODULE_NAME_SANITIZED}}
-          path: dist
 
   compile_and_deploy_ENG:
     name: Compile
@@ -84,7 +82,6 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           name: ${{env.MODULE_NAME_SANITIZED}}
-          path: dist
 
   merge-artifacts:
     runs-on: ubuntu-latest
