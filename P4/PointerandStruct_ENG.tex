@@ -1,15 +1,15 @@
 % \section{Tujuan}
 \section{Goals}
-\begin{itemize}[label=$\bullet$, itemsep=-1pt, leftmargin=*]   
+\begin{itemize}[label=$\bullet$, itemsep=-1pt, leftmargin=*]
     % \item Mahasiswa mengerti tentang konsep pointer pada bahasa pemrograman C.
     \item Students are able to understand the concept of pointers in C.
-    % \item Mahasiswa mengerti cara membuat dan memanggil struct pada bahasa pemrograman C.
+          % \item Mahasiswa mengerti cara membuat dan memanggil struct pada bahasa pemrograman C.
     \item Students are able to create and call a struct in C.
-    % \item Mahasiswa mengerti tentang algoritma sorting pada bahasa pemrograman C.
+          % \item Mahasiswa mengerti tentang algoritma sorting pada bahasa pemrograman C.
     \item Students are able to understand about sorting algorithm in C.
-    % \item Mahasiswa mengerti tentang algoritma searching pada bahasa pemrograman C.
+          % \item Mahasiswa mengerti tentang algoritma searching pada bahasa pemrograman C.
     \item Students are able to understand about searching algorithm in C.
-    % \item Mahasiswa mampu mengaplikasikan konsep algoritma searching dan sorting pada bahasa pemrograman C.
+          % \item Mahasiswa mampu mengaplikasikan konsep algoritma searching dan sorting pada bahasa pemrograman C.
     \item Students are able to apply the conceptof searching and sorting algorithm in C.
 \end{itemize}
 
@@ -19,7 +19,7 @@
 \subsection{Memory Address}
 % Setiap variabel, fungsi, struct, ataupun objek lain yang dibuat dalam program mempunyai lokasi masing-masing pada memori. 
 % Alokasi setiap variabel disimpan dalam alamat memori tertentu.
-Every variables, functions, structs, or any object in a program have their own memory allocation. 
+Every variables, functions, structs, or any object in a program have their own memory allocation.
 Said Allocations are saved in certain memory addresses
 
 % Jika  terdapat variabel \verb|var| di program Anda, \verb|&var| akan memberi alamatnya di memori.
@@ -30,7 +30,7 @@ If there are any variable \verb|var| in your program, \verb|&var| will return it
     printf("%p\n", &var);
 \end{lstlisting}
 \begin{center}
-	% \colorbox{pink}{\parbox{0.8\linewidth}{\textbf{Catatan:} Output bisa berbeda-beda di tiap eksekusi.}}
+    % \colorbox{pink}{\parbox{0.8\linewidth}{\textbf{Catatan:} Output bisa berbeda-beda di tiap eksekusi.}}
     \colorbox{pink}{\parbox{0.8\linewidth}{\textbf{Catatan:} Output may differ in each execution.}}
 \end{center}
 
@@ -86,40 +86,40 @@ The following is to show how pointers work.
 Explanation:\\
 \begin{enumerate}
     \item \verb|int* pc, c;|
-    \begin{figure}[H]
-        \centering
-        \includegraphics[width=0.2\linewidth]{../P4/img/screenshot001.png}
-        \caption{}
-        \label{fig:satu}
-    \end{figure}
+          \begin{figure}[H]
+              \centering
+              \includegraphics[width=0.2\linewidth]{P4/img/screenshot001.png}
+              \caption{}
+              \label{fig:satu}
+          \end{figure}
     \item \verb|c = 22;|
-    \begin{figure}[H]
-        \centering
-        \includegraphics[width=0.2\linewidth]{../P4/img/screenshot002.png}
-        \caption{}
-        \label{fig:dua}
-    \end{figure}
+          \begin{figure}[H]
+              \centering
+              \includegraphics[width=0.2\linewidth]{P4/img/screenshot002.png}
+              \caption{}
+              \label{fig:dua}
+          \end{figure}
     \item \verb|pc = &c;|
-    \begin{figure}[H]
-        \centering
-        \includegraphics[width=0.2\linewidth]{../P4/img/screenshot003.png}
-        \caption{}
-        \label{fig:tiga}
-    \end{figure}
+          \begin{figure}[H]
+              \centering
+              \includegraphics[width=0.2\linewidth]{P4/img/screenshot003.png}
+              \caption{}
+              \label{fig:tiga}
+          \end{figure}
     \item \verb|c = 11;|
-    \begin{figure}[H]
-        \centering
-        \includegraphics[width=0.2\linewidth]{../P4/img/screenshot004.png}
-        \caption{}
-        \label{fig:empat}
-    \end{figure}
+          \begin{figure}[H]
+              \centering
+              \includegraphics[width=0.2\linewidth]{P4/img/screenshot004.png}
+              \caption{}
+              \label{fig:empat}
+          \end{figure}
     \item \verb|*pc = 2;|
-    \begin{figure}[H]
-        \centering
-        \includegraphics[width=0.2\linewidth]{../P4/img/screenshot005.png}
-        \caption{}
-        \label{fig:lima}
-    \end{figure}
+          \begin{figure}[H]
+              \centering
+              \includegraphics[width=0.2\linewidth]{P4/img/screenshot005.png}
+              \caption{}
+              \label{fig:lima}
+          \end{figure}
 \end{enumerate}
 
 \subsection{Double Pointer}
@@ -128,7 +128,7 @@ Explanation:\\
 % Untuk mendeklarasikan variabel double pointer, digunakan dua simbol *. 
 % Kegunaan paling umum dari variabel double pointer adalah untuk membuat array dua dimensi secara dinamis.
 A pointer could also point to another pointer variable. This is called a double pointer (pointer to pointer).
-To declare a double pointer, we use two \verb|*| operator between the data type and its variable name. 
+To declare a double pointer, we use two \verb|*| operator between the data type and its variable name.
 The general usage of this double pointer variable is ti create a two dimensional array dinamically.
 \begin{lstlisting}[language=c]
     int **dbPtr;
@@ -157,14 +157,14 @@ int main(void)
 % \subsection{Tugas Pendahuluan}
 \subsection{Pre-lab Assignment}
 \begin{enumerate}
-%    \item Bagaimana cara mendeklarasikan pointer ke array multidimensi?
-   \item Explain how to declare a pointer to a multidimensional array?
-%    \item Buatlah program dalam bahasa C atau C++ yang mengimplementasikan 
-%    fungsi void printMatrix(int **matrix, int rows, int cols) untuk mencetak matriks 2D menggunakan pointer ke pointer. 
-%    Lalu, dalam fungsi main, buatlah matriks 2D dan panggil fungsi printMatrix untuk mencetak matriks tersebut.
-   \item Create a program in C or C++ that implements void printMatrix(int **matrix, int rows, int cols) function
-   to print out a 2D matrix using pointer to pointer. And then in the main function, create a 2D matrix and call the
-   printMatrix function to print said matrix.
+    %    \item Bagaimana cara mendeklarasikan pointer ke array multidimensi?
+    \item Explain how to declare a pointer to a multidimensional array?
+          %    \item Buatlah program dalam bahasa C atau C++ yang mengimplementasikan 
+          %    fungsi void printMatrix(int **matrix, int rows, int cols) untuk mencetak matriks 2D menggunakan pointer ke pointer. 
+          %    Lalu, dalam fungsi main, buatlah matriks 2D dan panggil fungsi printMatrix untuk mencetak matriks tersebut.
+    \item Create a program in C or C++ that implements void printMatrix(int **matrix, int rows, int cols) function
+          to print out a 2D matrix using pointer to pointer. And then in the main function, create a 2D matrix and call the
+          printMatrix function to print said matrix.
 \end{enumerate}
 
 \section{Struct}
@@ -223,7 +223,7 @@ Below is a case example of struct declaration about students data.
 % 	\colorbox{pink}{\parbox{0.8\linewidth}{\textbf{Catatan:}  Menggunakan pointer * untuk data string}}
 % \end{center}
 \begin{center}
-	\colorbox{pink}{\parbox{0.8\linewidth}{\textbf{Note:}  Use pointer * for string data type}}
+    \colorbox{pink}{\parbox{0.8\linewidth}{\textbf{Note:}  Use pointer * for string data type}}
 \end{center}
 
 % Setelah dideklarasikan, sebuah struct akan menjadi tipe data baru. 
@@ -281,12 +281,12 @@ Example:
     % Kemudian, buatlah program untuk menginput data mahasiswa, menampilkan data mahasiswa, dan menghitung rata-rata IPK dari 
     % sejumlah mahasiswa.
     \item Create a struct that represent informations about a students, the informations their name, student ID, and GPA.
-    And then, create a program in insert student informations, display them, and calculate the average GPAs of a
-    certain number of students
-    \item Anda diberikan struct yang merepresentasikan titik dalam sistem koordinat dua dimensi (x, y). 
-    Buatlah sebuah program C untuk menghitung jarak antara dua titik yang diinputkan oleh pengguna menggunakan rumus jarak Euclidean.
+          And then, create a program in insert student informations, display them, and calculate the average GPAs of a
+          certain number of students
+    \item Anda diberikan struct yang merepresentasikan titik dalam sistem koordinat dua dimensi (x, y).
+          Buatlah sebuah program C untuk menghitung jarak antara dua titik yang diinputkan oleh pengguna menggunakan rumus jarak Euclidean.
     \item Create a struct that represents coordinate points in a two dimensional plane (x,y). And then create a C program to calculate
-    the distance between two points that a user inputs with a Euclidean formula. 
+          the distance between two points that a user inputs with a Euclidean formula.
 \end{enumerate}
 
 % \section{Algoritma Sorting}
@@ -308,13 +308,13 @@ There are two types of data sorting, namely :
 % Bubble sort merupakan algoritma pengurutan yang membandingkan dua data yang berdekatan dan menukarnya sampai tidak dalam urutan 
 % yang diinginkan. Bubble sort menggunakan teknik iterasi. Iterasi merupakan proses melakukan perulangan sebanyak data yang diketahui.
 % Intinya pada iterasi melakukan perbandingan antara dua data.
-Bubble sort is a sorting algorithm that compares two adjacent data points and swaps them until they are in the desired order. 
-Bubble sort utilizes iteration method. iteration is a process of repeating a loop as many times as there is known data. 
+Bubble sort is a sorting algorithm that compares two adjacent data points and swaps them until they are in the desired order.
+Bubble sort utilizes iteration method. iteration is a process of repeating a loop as many times as there is known data.
 Essentially, during each iteration, a comparison is made between two data points.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.7\linewidth]{../P4/img/screenshot006.png}
+    \includegraphics[width=0.7\linewidth]{P4/img/screenshot006.png}
     \caption{}
     \label{fig:enam}
 \end{figure}
@@ -345,11 +345,11 @@ void bubbleSort(int arr[], int n) {
 \subsection{Insertion Sort}
 % Insertion sort merupakan teknik sorting dengan cara menyisipkan atau memasukan setiap elemen secara berulang berulang.
 % Konsep insertion sort bisa diibaratkan sebuah kartu.
-Insertion sort is a sorting technique that involves repeatedly inserting or placing each element. Imagine reshuffling a 
+Insertion sort is a sorting technique that involves repeatedly inserting or placing each element. Imagine reshuffling a
 deck of cards to organize it.
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.5\linewidth]{../P4/img/screenshot007.png}
+    \includegraphics[width=0.5\linewidth]{P4/img/screenshot007.png}
     \caption{}
     \label{fig:tujuh}
 \end{figure}
@@ -371,7 +371,7 @@ void insertionSort(int arr[]. int n) {
 \end{lstlisting}
 
 \begin{center}
-	% \colorbox{pink}{\parbox{0.8\linewidth}{\textbf{Catatan:} Terdapat berbagai algoritma sorting lain. Pelajari secara mandiri}}
+    % \colorbox{pink}{\parbox{0.8\linewidth}{\textbf{Catatan:} Terdapat berbagai algoritma sorting lain. Pelajari secara mandiri}}
     \colorbox{pink}{\parbox{0.8\linewidth}{\textbf{Note:} There are other sorting algorithms. Look it up individually}}
 \end{center}
 
@@ -383,11 +383,11 @@ void insertionSort(int arr[]. int n) {
     % Array: [5, 2, 9, 1, 5, 6]
     \item Sort the following array using Bubble Sort:
 
-    Array: [5, 2, 9, 1, 5, 6]
-    \item Hitung kompleksitas waktu (Big O) dari algoritma Insertion Sort saat mengurutkan sebuah array dengan panjang n, 
-    dan jelaskan bagaimana kompleksitas ini dihitung.
-    \item Calculate the time complexity (Big O) of the Insertion Sort algorithm when soring an array of length n, and 
-    explain how this complexity is calculated
+          Array: [5, 2, 9, 1, 5, 6]
+    \item Hitung kompleksitas waktu (Big O) dari algoritma Insertion Sort saat mengurutkan sebuah array dengan panjang n,
+          dan jelaskan bagaimana kompleksitas ini dihitung.
+    \item Calculate the time complexity (Big O) of the Insertion Sort algorithm when soring an array of length n, and
+          explain how this complexity is calculated
 \end{enumerate}
 
 % \section{Algoritma Searching}
@@ -423,7 +423,7 @@ int linearSearch(int arr[], int n, int item) {
     }
     return -1;
 }
-\end{lstlisting}   
+\end{lstlisting}
 
 \subsection{Binary Search}
 % Binary Search adalah teknik pencarian di mana untuk setiap iterasinya kita membagi space pencarian menjadi hanya setengah 
@@ -456,7 +456,7 @@ int binser(int a, int b, int n) {
 \end{lstlisting}
 
 \begin{center}
-	% \colorbox{pink}{\parbox{0.8\linewidth}{\textbf{Catatan:} Terdapat berbagai algoritma searching lain. Pelajari secara mandiri}}
+    % \colorbox{pink}{\parbox{0.8\linewidth}{\textbf{Catatan:} Terdapat berbagai algoritma searching lain. Pelajari secara mandiri}}
     \colorbox{pink}{\parbox{0.8\linewidth}{\textbf{Note:} There are other sorting algorithms. Look it up individually}}
 \end{center}
 
@@ -467,9 +467,9 @@ int binser(int a, int b, int n) {
     % Gunakan algoritma binary search untuk mencari apakah nama "Eve" ada dalam daftar ini. 
     % Jika ya, berapa langkah yang dibutuhkan?
     \item Given the following list of names: ["Alice", "Bob", "Charlie", "David", "Eve", "Frank"].
-    Use the Binary Search algorithm to look for the name "Eve" in this list. If found, how many steps are required?
-    % \item Jelaskan perbedaan antara pencarian linear (sequential search) dan pencarian biner (binary search).
-    %  Kapan Anda akan memilih salah satu metode ini daripada yang lain?
+          Use the Binary Search algorithm to look for the name "Eve" in this list. If found, how many steps are required?
+          % \item Jelaskan perbedaan antara pencarian linear (sequential search) dan pencarian biner (binary search).
+          %  Kapan Anda akan memilih salah satu metode ini daripada yang lain?
     \item Explain the difference between Linear Search (Sequential Search) and Binary Search.
-    in what scenario that you choose one method over the other?
+          in what scenario that you choose one method over the other?
 \end{enumerate}
