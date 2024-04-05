@@ -49,6 +49,7 @@ jobs:
   compile_and_deploy_ENG:
     name: Compile
     runs-on: ubuntu-latest
+    needs: compile_and_deploy_IND
     strategy:
       matrix:
         module:
@@ -74,10 +75,9 @@ jobs:
 
       - name: Rename and Move Compiled PDF
         run: |
-          mkdir -p dist
           MODULE_NAME="${{matrix.module}}"
           MODULE_NAME=${MODULE_NAME//\//_}
-          mv main.pdf dist/$MODULE_NAME.pdf
+          mv main.pdf $MODULE_NAME.pdf
           echo "MODULE_NAME_SANITIZED=${MODULE_NAME}" >> $GITHUB_ENV
 
       - name: Upload Compiled PDF
@@ -89,9 +89,28 @@ jobs:
   merge-artifacts:
     runs-on: ubuntu-latest
     needs: [compile_and_deploy_IND, compile_and_deploy_ENG]
+    strategy:
+      matrix:
+        module:
+          [
+            P1/PengenalanBahasaC_IND,
+            P2/PerulanganPercabanganArrayString_IND,
+            P3/FungsidanRekursi_IND,
+            P4/PointerdanStruct_IND,
+            P1/PengenalanBahasaC_ENG,
+            P2/PerulanganPercabanganArrayString_ENG,
+            P3/FungsidanRekursi_ENG,
+            P4/PointerdanStruct_ENG,
+          ]
     steps:
       # Langkah 1: Checkout kode (jika diperlukan)
       - uses: actions/checkout@v2
+
+      - name: Configure env
+        run: |
+          MODULE_NAME="${{matrix.module}}"
+          MODULE_NAME=${MODULE_NAME//\//_}
+          echo "MODULE_NAME_SANITIZED=${MODULE_NAME}" >> $GITHUB_ENV
 
       - uses: actions/upload-artifact/merge@v4
         with:
