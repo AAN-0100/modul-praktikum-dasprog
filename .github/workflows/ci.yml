@@ -86,29 +86,30 @@ jobs:
           name: ${{env.MODULE_NAME_SANITIZED}}
           path: dist
 
-  organize-and-deploy:
-    needs: [compile_and_deploy_IND, compile_and_deploy_ENG]
+  merge-artifacts:
     runs-on: ubuntu-latest
+    needs: [compile_and_deploy_IND, compile_and_deploy_ENG]
     steps:
+      # Langkah 1: Checkout kode (jika diperlukan)
       - uses: actions/checkout@v2
 
+      # Langkah 2: Mengunduh semua artifacts
       - name: Download all artifacts
         uses: actions/download-artifact@v2
         with:
-          path: artifacts/
+          path: downloaded-artifacts/
 
+      # Langkah 3: Reorganisasi (Opsional)
+      # Anda bisa menambahkan langkah untuk reorganisasi jika perlu
       - name: Reorganize Artifacts
         run: |
-          mkdir -p deploy
-          for module in artifacts/*; do
-            MODULE_NAME=$(basename $module)
-            echo "Reorganizing $MODULE_NAME..."
-            mkdir -p "deploy/$MODULE_NAME"
-            cp -R "$module/*" "deploy/$MODULE_NAME/"
-          done
+          mkdir -p merged-artifacts
+          cp -R downloaded-artifacts/* merged-artifacts/
+          # Contoh reorganisasi, sesuaikan dengan kebutuhan
 
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
+      # Langkah 4: Upload gabungan sebagai artifact baru
+      - name: Upload merged artifact
+        uses: actions/upload-artifact@v2
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./deploy
+          name: merged-artifact
+          path: merged-artifacts/
