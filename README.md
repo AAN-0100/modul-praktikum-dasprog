@@ -8,7 +8,7 @@ Modul Praktikum Dasar Pemrograman ini dirancang untuk membantu mahasiswa memaham
 
 ## Isi Modul
 
-1. **Pengenalan Bahasa C**
+1. **Pengenalan Bahasa C** [IND](https://lab-b300-miot.github.io/modul-praktikum-dasprog/P1_PengenalanBahasaC_IND.pdf) [ENG](https://lab-b300-miot.github.io/modul-praktikum-dasprog/P1_IntroductiontoCLanguage_ENG.pdf)
    - Tujuan
    - Mengenal Bahasa C
    - IDE (Integrated Development Environment)
@@ -16,18 +16,18 @@ Modul Praktikum Dasar Pemrograman ini dirancang untuk membantu mahasiswa memaham
    - Struktur Bahasa Pemrograman C
    - Tipe Data dan Variabel
    - Output dan Input
-2. **Perulangan, Percabangan, Array, dan String**
+2. **Perulangan, Percabangan, Array, dan String** [IND](https://lab-b300-miot.github.io/modul-praktikum-dasprog/P2_PerulanganPercabanganArrayString_IND.pdf) [ENG](https://lab-b300-miot.github.io/modul-praktikum-dasprog/P2_StringArrayBranchingLoop_ENG.pdf)
    - Tujuan
    - Ekspresi Logika dan Perbandingan
    - Percabangan
    - Perulangan
    - Array
    - String
-3. **Fungsi dan Rekursi**
+3. **Fungsi dan Rekursi** [IND](https://lab-b300-miot.github.io/modul-praktikum-dasprog/P3_FungsidanRekursi_IND.pdf) [ENG](https://lab-b300-miot.github.io/modul-praktikum-dasprog/P3_FunctionsandRecursion_ENG.pdf)
    - Tujuan
    - Fungsi
    - Rekursi
-4. **Pointer,Struct, dan Algoritma**
+4. **Pointer,Struct, dan Algoritma** [IND](https://lab-b300-miot.github.io/modul-praktikum-dasprog/P4_PointerdanStruct_IND.pdf) [ENG](https://lab-b300-miot.github.io/modul-praktikum-dasprog/P4_PointerandStruct_ENG.pdf)
    - Tujuan
    - Pointer
    - Struct

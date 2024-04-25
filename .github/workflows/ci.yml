@@ -79,7 +79,7 @@ jobs:
             JUDUL_MODUL_WITH_SPACES=$(echo "$JUDUL_MODUL" | sed -r 's/([a-z])([A-Z])/\1 \2/g')
             JUDUL_MODUL_WITH_SPACES=$(echo "$JUDUL_MODUL_WITH_SPACES" | sed -r 's/and/ and/g')
             JUDUL_MODUL_WITH_SPACES=$(echo "$JUDUL_MODUL_WITH_SPACES" | sed -r 's/to/ to/g')
-            sed -i "s|\\\\def\\\\judul{.*}|\\\\def\\\\judul{$JUDUL_MODUL_WITH_SPACES}|" main.tex
+            sed -i "s|\\\\def\\\\judul{.*}|\\\\def\\\\judul{$JUDUL_MODUL_WITH_SPACES}|" main_ENG.tex
             sed -i 's|% \\input{'${{ matrix.module }}'.tex|\\input{'${{ matrix.module }}'.tex|' main_ENG.tex
           working_directory: .
           docker_image: ghcr.io/xu-cheng/texlive-full:20240315
