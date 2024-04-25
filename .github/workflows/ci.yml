@@ -75,7 +75,7 @@ jobs:
           root_file: main_ENG.tex
           pre_compile: |
             MODULE_NAME="${{ matrix.module }}"
-            JUDUL_MODUL=$(echo "$MODULE_NAME" | sed -e 's|.*/||' -e 's|_IND||')
+            JUDUL_MODUL=$(echo "$MODULE_NAME" | sed -e 's|.*/||' -e 's|_ENG||')
             JUDUL_MODUL_WITH_SPACES=$(echo "$JUDUL_MODUL" | sed -r 's/([a-z])([A-Z])/\1 \2/g')
             JUDUL_MODUL_WITH_SPACES=$(echo "$JUDUL_MODUL_WITH_SPACES" | sed -r 's/and/ and/g')
             JUDUL_MODUL_WITH_SPACES=$(echo "$JUDUL_MODUL_WITH_SPACES" | sed -r 's/to/ to/g')
