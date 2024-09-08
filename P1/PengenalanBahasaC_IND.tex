@@ -28,9 +28,9 @@ Terdapat beberapa standar untuk bahasa C, standar di sini dapat diartikan sebaga
 \subsection*{}Aplikasi atau kegunaan Bahasa C
 \begin{enumerate}
 	\item     Membuat sistem operasi dan program-program sistem.
-	\item Pemrograman yang "dekat" ke perangkat keras (misalnya untuk kontrol peralatan).
+	\item Pemrograman yang "dekat" ke perangkat keras (seperti arduino).
 	\item Membuat tool kit.
-	\item Menulis program aplikasi.
+	\item Menulis program.
 \end{enumerate}
 \section{IDE (Integrated Development Environment)}
 IDE adalah singkatan dari "Integrated Development Environment" dalam bahasa Inggris.
@@ -40,7 +40,6 @@ IDE adalah sebuah perangkat lunak yang dirancang untuk membantu pengembang peran
 Berikut ini adalah daftar aplikasi IDE bahasa C yang dapat digunakan.
 \begin{itemize}
 	\item CodeBlocks
-	\item DevC++
 \end{itemize}
 \section{Membuat proyek baru pada IDE Code::Blocks}
 \subsection{Langkah untuk membuat proyek baru}
@@ -73,14 +72,14 @@ Berikut ini adalah daftar aplikasi IDE bahasa C yang dapat digunakan.
 		      \caption{}
 		      \label{fig:screenshot006}
 	      \end{figure}
-	\item  Pilih compiler (gcc), pilih dirketori untuk menyimpan, dan klik save.
+	\item  Pilih compiler (gcc), pilih direktori untuk menyimpan, dan klik save.
 	      \begin{figure}[H]
 		      \centering
 		      \includegraphics[width=0.7\linewidth]{P1/img/screenshot007.png}
 		      \caption{}
 		      \label{fig:screenshot007}
 	      \end{figure}
-	\item Ketikan kode pada \ref{fig:screenshot008} ke Code::Blocks
+	\item Ketikan kode pada Gambar\ref{fig:screenshot008} ke Code::Blocks
 	      \begin{figure}[H]
 		      \centering
 		      \includegraphics[width=0.7\linewidth]{P1/img/screenshot008.png}
@@ -108,7 +107,7 @@ Berikut ini adalah daftar aplikasi IDE bahasa C yang dapat digunakan.
 % Create a project with name HaloDunia and write the program like can be seen on figure \ref{fig:screenshot008} but change \verb|Hello World!| with \verb|Halo Dunia!|
 \subsection{Tugas Pendahuluan}
 \begin{enumerate}
-	\item Buatlah proyek dengan nama HaloDunia dan tulis program seperti gambar \ref{fig:screenshot008} ubahlah \verb|Hello World!| dengan kata lain!
+	\item Buatlah proyek dengan nama Halo dan tulis program seperti gambar \ref{fig:screenshot008} ubahlah \verb|Hello World!| dengan kata "Selamat Pagi"
 \end{enumerate}
 
 %\begin{enumerate}
@@ -196,17 +195,17 @@ Pada bahasa C, terdapat beberapa tipe data untuk merepresentasikan data yang ber
 	% \end{tabular}
 	\begin{tabular}{|l|l|l|}
 		\hline
-		Tipe Data                      & Ukuran   & Rentang Nilai                   \\ \hline
-		Int (or signed int)            & 2 bytes  & -32,768 to 32,767               \\ \hline
-		unsigned int                   & 2 bytes  & 0 to 65,535                     \\ \hline
-		Short int(or signed short int) & 2 bytes  & -32,768 to 32,767               \\ \hline
-		Long(or singed short int)      & 4 bytes  & -2,147,483,648 to 2,147,483,647 \\ \hline
-		unsigned long                  & 4 bytes  & 0 to 4,294,967,295              \\ \hline
-		float                          & 4 bytes  & 1.2E-38 to 3.4E+38              \\ \hline
-		double                         & 8 bytes  & 2.3E-308 to 1.7E+308            \\ \hline
-		Long double                    & 10 bytes & 3.4E-4932 to 1.1E+4932          \\ \hline
-		char(or signed char)           & 1 byte   & -128 to 127                     \\ \hline
-		unsigned char                  & 1 byte   & 0 to 255                        \\ \hline
+		\textbf{Tipe Data}             & \textbf{Ukuran}   &  \textbf{Rentang Nilai}         \\ \hline
+		Int (or signed int)            & 2 bytes  		   & -32,768 to 32,767               \\ \hline
+		unsigned int                   & 2 bytes  		   & 0 to 65,535                     \\ \hline
+		Short int(or signed short int) & 2 bytes  		   & -32,768 to 32,767               \\ \hline
+		Long(or singed short int)      & 4 bytes  		   & -2,147,483,648 to 2,147,483,647 \\ \hline
+		unsigned long                  & 4 bytes  		   & 0 to 4,294,967,295              \\ \hline
+		float                          & 4 bytes  		   & 1.2E-38 to 3.4E+38              \\ \hline
+		double                         & 8 bytes  		   & 2.3E-308 to 1.7E+308            \\ \hline
+		Long double                    & 10 bytes 		   & 3.4E-4932 to 1.1E+4932          \\ \hline
+		char(or signed char)           & 1 byte  		   & -128 to 127                     \\ \hline
+		unsigned char                  & 1 byte  		   & 0 to 255                        \\ \hline
 	\end{tabular}
 \end{center}
 Untuk menampilkan data pada layar, setiap tipe data memiliki format specifier yang dapat digunakan pada formatted string. Berikut adalah format specifier untuk beberapa tipe data.
@@ -215,15 +214,15 @@ Untuk menampilkan data pada layar, setiap tipe data memiliki format specifier ya
 	\captionof{table}{Format Specifier \label{tab:formatspecifier}}
 	\begin{tabular}{|l|l|}
 		\hline
-		Format Specifier & Tipe Data \\ \hline
-		\%d or \%i       & int       \\ \hline
-		\%f              & float     \\ \hline
-		\%lf             & double    \\ \hline
-		\%c              & char      \\ \hline
-		\%s              & string    \\ \hline
+		\textbf{Format Specifier} & \textbf{Tipe Data} \\ \hline
+		\%d or \%i      		  & int       		   \\ \hline
+		\%f             		  & float     		   \\ \hline
+		\%lf             		  & double   		   \\ \hline
+		\%c             		  & char      		   \\ \hline
+		\%s             		  & string   		   \\ \hline
 	\end{tabular}
 \end{center}
-Masih ada lebih banyak tipe data dari pada yang dituliskan pada Tabel \ref{tab:tipedata}. Tipe-tipe data ini dan spesifikasinya bisa ditemukan dengan mudah di internet.
+Masih ada lebih banyak tipe data daripada yang tertulis pada Tabel \ref{tab:tipedata}. Tipe-tipe data ini dan spesifikasinya bisa ditemukan dengan mudah di internet.
 % There are still more data types that what was written on Table \ref{tab:tipedata}. These data types and its specification can be found easily on the internet.
 
 \subsubsection{Modifier}
@@ -232,13 +231,13 @@ Sedangkan modifier dalam bahasa pemrograman dalah sebuah kata kunci atau keyword
 Kita menggunakan modifier untuk mengubah range dari tipe data dasar untuk menyesuaikan dengan keperluan pemrograman. Ada empat modifier, yaitu:
 \begin{enumerate}
 	\item signed \\
-	      \verb|int value = -10;| (Menggunakan tanda negatif pada variabel bertipe int yang secara default adalah signed integer.)
+	      \verb|int value = -10;| (Dapat menyimpan variabel bertipe int yang nilainya bisa positif maupun negatif.)
 	\item unsigned \\
-	      \verb|unsigned int count = 100;|  (Menggunakan variabel unsigned integer untuk menyimpan bilangan bulat positif tanpa tanda.)
+	      \verb|unsigned int count = 100;|  (Dapat menyimpan variabel bertipe int yang nilainya hanya positif.)
 	\item long \\
-	      \verb|long population = 7500000000;| (Menggunakan tipe data long untuk menyimpan nilai yang lebih besar daripada tipe data int.)
+	      \verb|long population = 7500000000;| (Dapat menyimpan variabel bertipe int yang nilainya lebih besar daripada tipe data int.)
 	\item short \\
-	      \verb|short temperature = 20;| (Menggunakan tipe data short untuk menghemat memori ketika kita tahu bahwa nilai yang akan disimpan akan relatif kecil.)
+	      \verb|short temperature = 20;| (Menggunakan tipe data short untuk menghemat memori ketika kita tahu bahwa nilai yang akan disimpan relatif kecil.)
 \end{enumerate}
 
 
@@ -247,8 +246,8 @@ Variabel merupakan tempat menyimpan data. Mendeklarasikan suatu variabel dapat d
 \begin{lstlisting}[language=c,caption=Deklarasi Variabel C,label=lst:deklarasivariabel,captionpos=t]
 DataType VariableName;
 \end{lstlisting}
-\subsubsection{Operator Aritmatika dan Penugasan (Assignment)}
-Operator penugasan dapat dilakukan pada variabel yang tidak mempunyai \verb*|const| atau merupakan variabel nilai-l. Namun operator aritmatika dapat menerima kedua variabel dengan const atau tidak (nilai-l dan nilai-r).
+\subsubsection{Operator Aritmatika dan Operator Penugasan (Assignment)}
+Operator merupakan simbol yang merepresentasikan operasi untuk dikerjakan pada satu atau lebih operand. Operator Aritmatika dapat digunakan untuk melakukan operasi aritmatika seperti penjumlahan, pengurangan, dsb. Operator Penugasan 
 Tabel di bawah menunjukkan beberapa operator aritmatika di C.
 \begin{center}
 	\captionof{table}{Operator Aritmatika di C \label{tab:operatoraritmatika}}
@@ -282,7 +281,7 @@ Tabel di bawah menunjukkan beberapa operator penugasan.
 		\textless{}\textless{}=        & x \textless{}\textless{}= 3       & x = x \textless{}\textless 3        \\ \hline
 	\end{tabular}
 \end{center}
-Terdapat juga "singkatan" untuk beberapa operator penugasan seperti \verb*|x+=1| dan \verb*|x-1| yaitu \verb*|++| dan \verb*|--| yang masing-masing disebut kenaikan dan penurunan.
+Terdapat juga "singkatan" untuk beberapa operator penugasan seperti \verb*|x+=1| dan \verb*|x-=1| yaitu \verb*|++| dan \verb*|--| yang masing-masing disebut kenaikan dan penurunan.
 Singkatan ini digunakan seperti berikut.
 \begin{verbatim}
     x++;
