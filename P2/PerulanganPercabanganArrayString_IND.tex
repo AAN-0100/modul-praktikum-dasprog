@@ -22,20 +22,20 @@ Berikut adalah operator-operator yang digunakan pada suatu ekspresi perbandingan
 	\captionof{table}{Operator Perbandingan \label{tab:operatorcomp}}
 	\begin{tabular}{|c|l|c|}
 		\hline
-		Operator        & Nama                    & \multicolumn{1}{l|}{Contoh Ekspres} \\ \hline
-		==              & Sama Dengan             & x == y                              \\ \hline
-		!=              & Tidak Sama Dengan       & x != y                              \\ \hline
-		\textgreater{}  & Lebih Dari              & x \textgreater y                    \\ \hline
-		\textless{}     & Kurang Dari             & x \textless y                       \\ \hline
-		\textgreater{}= & Lebih Dari Sama Dengan  & x \textgreater{}= y                 \\ \hline
-		\textless{}=    & Kurang Dari Sama Dengan & x \textless{}= y                    \\ \hline
+		\textbf{Operator} & \textbf{Nama}           & \multicolumn{1}{l|}{\textbf{Contoh Ekspres}} \\ \hline
+		==                & Sama Dengan             & x == y                                       \\ \hline
+		!=                & Tidak Sama Dengan       & x != y                                       \\ \hline
+		\textgreater{}    & Lebih Dari              & x \textgreater y                             \\ \hline
+		\textless{}       & Kurang Dari             & x \textless y                                \\ \hline
+		\textgreater{}=   & Lebih Dari Sama Dengan  & x \textgreater{}= y                          \\ \hline
+		\textless{}=      & Kurang Dari Sama Dengan & x \textless{}= y                             \\ \hline
 	\end{tabular}
 \end{center}
 
-Suatu ekspresi perbandingan akan mengembalikan nilai berupa \verb|true| atau \verb|false| yang ditandakan dengan nilai 0 atau 1.
+Suatu ekspresi perbandingan akan mengembalikan nilai berupa \verb|true| atau \verb|false| yang ditandai dengan nilai 0 atau 1.
 % A Comparison Expression will return boolean value \verb|true| or \verb|false| which is also represented with the value 1 or 0.
 Sebagai contoh:
-As example:
+%As example:
 \begin{verbatim}
     printf("%d",0>1); // Akan Mencetak 0 ke layar
     printf("%d",0<1); // Akan Mencetak 1 ke layar 
@@ -60,7 +60,7 @@ Sama seperti ekspresi perbandingan, ekspresi logika akan mengembalikan nilai ber
 \section{Percabangan}
 \subsection{Pernyataan If}
 % \verb*|if| statement is used to decide which block of code to be executed if the condition is true.
-\verb*|if| digunakan untuk menentukan blok kode C yang dijalankan apabila ekspresi kondisi bernilai benar (TRUE),
+Pernyataan \verb*|if| digunakan untuk menentukan blok kode C yang dijalankan apabila ekspresi kondisi bernilai benar (TRUE),
 \begin{verbatim}
 // Block of code before if
 if (Condition) 
@@ -101,7 +101,7 @@ Jika baris ke 7 diganti dengan \verb|uangSaya=10000| maka output dari program in
 \end{verbatim}
 
 \subsection{Pernyataan If-else}
-Pernyataan else digunakan untuk menentukan blok kode yang di jalankan apabila kondisi salah.
+Pernyataan \verb|else| digunakan untuk menentukan blok kode yang di jalankan apabila kondisi salah.
 % Else statement is used to decide the block of code to be executed if the condition is false.
 \begin{verbatim}
 // Blok kode sebelum if
@@ -151,7 +151,7 @@ Jika baris ke 7 diganti dengan \verb|uangSaya=10000| maka output dari program in
 \end{verbatim}
 
 \subsection{Pernyataan if-else if}
-Statement \verb|else if| digunakan untuk menjalankan blok kode apabila kondisi statement \verb|if| atau \verb|else if| sebelumnya bernilai salah.
+pernyataan \verb|else if| digunakan untuk menjalankan blok kode apabila kondisi statement \verb|if| atau \verb|else if| sebelumnya bernilai salah.
 % The \verb|else if| statement is used to run a block of code when the condition in \verb|if| or the previous \verb|else if| is false.
 \begin{verbatim}
 	// blok kode sebelum if
@@ -231,11 +231,11 @@ Jika baris ke 7 diganti dengan \verb|uangSaya=12000| maka output dari program in
 \end{verbatim}
 
 \subsection{Nested if}
-Nested if merupakan konsep di mana di dalam suatu blok if terdapat statement if.
+Nested if merupakan konsep di mana di dalam suatu blok if terdapat pernyataan if.
 % Nested if is when there is a conditional statements within a block of code inside the conditional statement
 \begin{verbatim}
 // Blok kode sebelum if
-if (Condition1) 
+if (Condition1)
 {
     if (Condition2)
     {
@@ -294,8 +294,8 @@ Berikut contoh penggunaan nested if
 
 \subsection{Tugas Pendahuluan}
 \begin{enumerate}
-	\item Buatlah program yang menerima input 3 buah bilangan bulat A, B, dan C. Outputkanlah 3 bilangan bulat itu ke layar dengan urutan paling kecil ke paling besar. Lakukanlah ini dengan menggunakan statement if, if else, if else if, atau nested if.
-	      %\item Try to make a program that receives 3 integer input A, B, and C. Then outputs those 3 integers to the screen sorted from smallest to largest. Do this only using conditional statements.	
+	\item Buatlah program yang menerima input 3 buah bilangan bulat A, B, dan C. Outputkanlah 3 bilangan bulat itu ke layar dengan urutan paling besar ke paling kecil. Lakukanlah ini dengan menggunakan statement if, if else, if else if, atau nested if.
+	%\item Try to make a program that receives 3 integer input A, B, and C. Then outputs those 3 integers to the screen sorted from smallest to largest. Do this only using conditional statements.	
 \end{enumerate}
 
 \section{Perulangan}
@@ -351,8 +351,9 @@ Pada contoh ini, operasi pada baris 9 membuat variabel \verb|uangSaya| berkurang
 % You can see the line 9 of the code causes the variable \verb|uangSaya| to have its value substracted by 2000 for every loop until \verb|uangSaya| is no longer greater than equal to \verb|hargaRoti|. 
 % The loop condition will be invalid and finaly exits the loop. Then it prints "Uang saya tidak cukup lagi", the command after the while loop statement.
 Kondisi perulangan akan menjadi tidak valid dan akhirnya keluar dari perulangan. Kemudian ia mencetak "Uang saya tidak cukup lagi", perintah setelah pernyataan while loop.
+
 \subsection{do-while loop}
-do-while loop sebenarnya sama seperti while loop hanya saja do-while akan menjalankan perintah pada blok kode didalamnya terlebih dahulu sebelum melakukan pengecekan kondisi.
+do-while loop sebenarnya sama seperti while loop hanya saja do-while akan menjalankan perintah pada blok kode didalamnya sekali sebelum melakukan pengecekan kondisi.
 % do-while loop is very similar to while loop. The only difference is that do-while loop will execute the code block inside it once, and then checks the condition.
 \begin{figure}[H]
 	\centering
@@ -442,17 +443,17 @@ int main()
 }
 \end{lstlisting}
 \begin{center}
-	\colorbox{pink}{\parbox{0.8\linewidth}{\textbf{Catatan:} Terdapat keyword break dan continue digunakan untuk mengendalikan (kontrol) alur pada perulangan. Pelajari secara mandiri!}}
+	\colorbox{pink}{\parbox{0.8\linewidth}{\textbf{Catatan:} Terdapat keyword break dan continue yang bisa digunakan untuk mengendalikan (kontrol) alur pada perulangan. Pelajari secara mandiri!}}
 \end{center}
 
 \subsection{Tugas Pendahuluan}
 \begin{enumerate}
-	\item Implementasikan program dalam bahasa C yang menghitung faktorial dari sebuah bilangan bulat non-negatif yang dimasukkan oleh pengguna menggunakan loop do-while. Tampilkan hasilnya.
-	\item Implementasikan program dalam bahasa C untuk mencari bilangan prima antara 1 dan 100. Gunakan loop for untuk mengiterasi melalui semua angka dan pernyataan continue untuk mengabaikan angka yang bukan prima. Tampilkan semua bilangan prima yang ditemukan.
+	\item Buatlah program dalam bahasa C yang menghitung faktorial dari sebuah bilangan bulat non-negatif yang dimasukkan oleh pengguna menggunakan loop do-while. Tampilkan hasilnya.
+	\item Buatlah program dalam bahasa C untuk mencari bilangan prima antara 1 dan 100. Gunakan loop for untuk mengiterasi melalui semua angka dan pernyataan continue untuk mengabaikan angka yang bukan prima. Tampilkan semua bilangan prima yang ditemukan.
 \end{enumerate}
 
 \section{Array}
-Array atau biasa disebut larik adalah koleksi data dimana setiap elemen mempunyai nama yang sama dan bertipe sama. Setiap elemen diakses berdasarkan  indeks elemennya.
+Array adalah koleksi data dimana setiap elemen mempunyai nama yang sama dan bertipe sama. Setiap elemen diakses berdasarkan  indeks elemennya.
 % Array is a collection of data where each element of it has the same name(indexed) and data type. Every element in an array can be accessed using its element index.
 \subsection{Array 1D}
 Variabel array dimensi satu dideklarasikan dengan menentukan jenis elemen dan jumlah elemen yang di perlukan oleh array.
@@ -465,11 +466,10 @@ Syntax:
 \begin{enumerate}
 	\item \verb*|DataType|.\\
 	      % The data type of the elements in the array, e.g. \verb|float|, \verb|int|, etc.
-	      Jenis elemen data elemen array :\verb*|float|,\verb*|int|,\verb*|char| dsb
+	      Tipe data yang akan digunakan untuk array :\verb*|float|,\verb*|int|,\verb*|char| dsb
 	\item \verb*|variableName|\\
-	      Namariabel mengikuti aturan pemberian nama variabel,
+	      Nama variabel mengikuti aturan pemberian nama variabel,
 	      % variableName follows the variable naming convention
-
 	\item \verb*|arraySize| \\
 	      % Integer more than 0. Defining the number of element an array has.
 	      konstanta integer lebih besar dari 0. \\
@@ -507,7 +507,7 @@ Potongan kode pada Listing \ref{lst:array1d01} akan memberikan output
 \end{verbatim}
 
 \subsection{Array 2D dan Array Multidimensi lainnya}%Array 2D dan Array Multidimensi lainnya}
-Array dimensi dua pada dasarnya hanya merupakan array dimensi satu dari array dimensi satu. Oleh karena itu, untuk mendeklarasikan array dimensi dua kita dapat menggunakan syntax seperti berikut.
+Array dimensi dua pada dasarnya hanya merupakan array dimensi satu di dalam array dimensi satu. Oleh karena itu, untuk mendeklarasikan array dimensi dua kita dapat menggunakan syntax seperti berikut.
 % 2D array is basically a 1D array of 1D array. Intuitively, you can define a 2D array like as seen below:
 \begin{verbatim}
 	DataType variableName[arraySize1][arraySize2];
@@ -528,9 +528,7 @@ Untuk menginisialisasi suatu array multidimensi dapat dilakukan sama seperti arr
 
 \subsection{Tugas Pendahuluan}
 \begin{enumerate}
-	\item Cobalah inisialisasi suatu array multidimensi dengan menggunakan perulangan for.
-	      % \item Try to initialize a multidimensional array with for loop
-	\item Buatlah suatu program untuk mengisi data pada suatu array perdasarkan input dari keyboard.
+	\item Buatlah suatu program yang menerima input dari pengguna berupa angka 1 hingga 9, lalu memasukkan semua angka tersebut ke dalam suatu array!
 	      % \item create a program to fill the data of an array by keyboard input.
 	\item Apakah yang akan terjadi jika suatu array \verb|arr| diakses dengan \verb|arr[-1]|?
 	      % \item What would happen if an array \verb|arr| is accessed with \verb|arr[-1]|?
@@ -637,6 +635,7 @@ Pelajari berbagai fungsinya di \href{http://www.cplusplus.com/}{www.cplusplus.co
 \subsection{Tugas Pendahuluan}
 \begin{enumerate}
 	\item Buatlah program dalam bahasa C yang mengambil dua string dari pengguna dan menentukan apakah kedua string tersebut anagram (mengandung karakter yang sama dalam urutan yang berbeda).
+		  Misalnya kata "usap" dan "sapu".
 	      Tampilkan pesan yang sesuai.
 	\item Jelaskan perbedaan antara string yang dideklarasikan sebagai array karakter (char array) dan string yang dideklarasikan sebagai tipe data string (string literal) dalam bahasa C. Berikan contoh penggunaan keduanya.
 \end{enumerate}
