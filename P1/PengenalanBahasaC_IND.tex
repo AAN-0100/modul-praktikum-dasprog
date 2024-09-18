@@ -107,6 +107,8 @@ Berikut ini adalah daftar aplikasi IDE bahasa C yang dapat digunakan.
 % Create a project with name HaloDunia and write the program like can be seen on figure \ref{fig:screenshot008} but change \verb|Hello World!| with \verb|Halo Dunia!|
 \subsection{Tugas Pendahuluan}
 \begin{enumerate}
+	\item Coba cari IDE lain selain codeblocks, dan jelaskan kelebihan dan kekurangan masing-masing IDE!
+	\item Apa yang membedakan bahasa C daripada bahasa pemrograman yang lain? jelaskan kelebihan dan kekurangannya!
 	\item Buatlah proyek dengan nama HaloDunia dan tulis program seperti gambar \ref{fig:screenshot008} ubahlah \verb|Hello World!| dengan kata yang lain!
 \end{enumerate}
 
@@ -331,7 +333,23 @@ int main()
 % Try to compile the program in Listing\ref{lst:constassignment}, what happened?
 \begin{enumerate}
 	\item Coba jalankan program di Listing \ref{lst:constassignment}, apa yang terjadi?
-	\item Apa saja yang harus dilakukan agar output dari listing \ref{lst:constassignment} adalah 1?
+	\item Apa saja yang harus dilakukan agar output dari listing \ref{lst:constassignment} adalah 1 ?
+\end{enumerate}
+
+\begin{lstlisting}[language=c,caption=Menganalisa tipe data dan format specifier,label=lst:formspec,captionpos=t]
+#include <stdio.h>
+
+int main(){
+    float a = 6.9;
+
+    printf("%d", a);
+}
+\end{lstlisting}
+
+\begin{enumerate}
+	\setcounter{enumi}{2}
+	\item Coba jalankan program  di Listing \ref{lst:formspec}, apa yang terjadi? Mengapa hal itu terjadi?
+	\item Apa yang harus dilakukan agar program pada Listing \ref{lst:formspec} bernilai 6.9 ?
 \end{enumerate}
 
 \section{Output dan Input}
@@ -564,10 +582,10 @@ int main(void)
 
 \subsection{Tugas Pendahuluan}
 \begin{enumerate}
+	\item \verb|scanf("%d", &tinggi)|, code tersebut akan meminta input yang akan dimasukkan pada variabel \verb|tinggi|. Jelaskan mengapa ada "\verb|&|" pada \verb|&tinggi|! apa yang terjadi jika hanya ditulis sebagai \verb|tinggi|!
 	\item Cobalah buat suatu program yang dapat menerima input berupa nama dan NRP kemudian menampilkannya pada layar.
 	\item Buat program yang meminta pengguna memasukkan suatu angka kemudian menampilkan nilai kuadrat dan kubik dari angka tersebut.
 \end{enumerate}
-
 
 \begin{center}
 	\colorbox{cyan!30}{\parbox{0.8\linewidth}{\textbf{Opsional:} Pelajari Git dan Github. Anda dapat memulai pembelajaran dari sumber berikut ini: \\ \href{https://github.com}{GitHub - https://github.com} \\ \href{https://git-scm.com/doc}{Git -https://git-scm.com/doc}}}
