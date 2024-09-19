@@ -105,6 +105,8 @@ Here are several list of C programming language IDE applications that can be use
 % Create a project with name HaloDunia and write the program like can be seen on figure \ref{fig:screenshot008} but change \verb|Hello World!| with \verb|Halo Dunia!|
 \subsection{Pre-lab Assignment}
 \begin{enumerate}
+	\item Try looking for another IDE besides codeblocks, and explain the advantages and disadvantages of each IDE!
+	\item What makes C different from other programming languages? explain the advantages and disadvantages!
 	\item Create a project with name HaloDunia and write the program like can be seen on figure \ref{fig:screenshot008} but change \verb|Hello World!| with other words!
 \end{enumerate}
 
@@ -318,6 +320,7 @@ Bitwise operators are special operators used to handle logical operations on bin
 \begin{center}
 	\colorbox{pink}{\parbox{0.8\linewidth}{\textbf{Notes:} There are several operators in the C language. Please study them by seeking references independently}}
 \end{center}
+
 \subsection{Pre-lab Assignment}
 \begin{lstlisting}[language=c,caption=Using assignment operator in a const variable,label=lst:constassignment,captionpos=t]
 #include <stdio.h>
@@ -336,6 +339,21 @@ int main()
 	\item Try to compile the program in Listing \ref{lst:constassignment}, what happened?
 	% Coba jalankan program di Listing \ref{lst:constassignment}, apa yang terjadi?
 	\item What must be done so that the output of Listing \ref{lst:constassignment} is 1 ?
+
+\end{enumerate}
+\begin{lstlisting}[language=c,caption=Using format specifier,label=lst:formspec,captionpos=t]
+#include <stdio.h>
+int main(){
+    float a = 3.14;
+    printf("%d", a);
+}
+\end{lstlisting}
+\begin{enumerate}
+	\setcounter{enumi}{2}
+	%\item Coba jalankan program  di Listing \ref{lst:formspec}, apa yang terjadi? Mengapa hal itu terjadi?
+	\item Try to compile the program in Listing \ref{lst:formspec}, what happened?
+	%\item Apa yang harus dilakukan agar program pada Listing \ref{lst:formspec} bernilai 6.9 ?
+	\item What must be done so that the program in Listing \ref{lst:formspec} has a score of 3.14?
 \end{enumerate}
 
 \section{Input and Output}
@@ -567,6 +585,7 @@ int main(void)
 
 \subsection{Pre-lab Assignment}
 \begin{enumerate}
+	\item \verb|scanf("%d", &height)|, the code will ask for input to be entered in the variable \verb|height|. Explain why there is "\verb|&|" on \verb|&height|! what happens if it is simply written as \verb|height| whitout \verb|&|!
 	\item Try to build a program to read input for the name and NRP and display it to the screen!
 	\item Try to build a program that asks user to enter a number, then displays the squared dan cubed value of it!
 \end{enumerate}
