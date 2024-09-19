@@ -296,11 +296,11 @@ The following is the ouput of the program's execution.
 % \verb|tukarDanKembalikansumnya(1,2)| tidak bisa dilakukan 
 % karena angka 1 dan 2 bukan variabel dan tidak memiliki 
 % alamat memori.
-When \verb|swapAndReturnTheSum(a,b)| is called,
+When \verb|swap(a,b)| is called,
 the memory address of \verb|a| and \verb|b| is passed into
-the function. Therefore, in line 4-6, the \verb|x| and
+the function. Therefore, in line 4-7, the \verb|x| and
 \verb|y| will point to the memory of the \textbf{actual parameter}
-that is inserted in line 13, therefore we are doing assignments
+that is inserted in line 18, therefore we are doing assignments
 directly to the actual parameter. When passing by reference,
 we can't call the function with parameter that has no memory
 address. As an example \verb|swapAndReturnTheSum(1,2)| cannot be
@@ -309,10 +309,7 @@ done as the number 1 and 2 doesn't have memory address.
 % \subsection{Tugas Pendahuluan}
 \subsection{Pre-lab Assignment}
 \begin{enumerate}
-    \item Buatlah fungsi yang dapat menerima 2 buah bilangan
-          bulat a dan b kemudian mengembalikan nilai dari $a^b$
-    \item Create a function with 2 integer a and
-          b that returns $a^b$.
+    \item Create a function with 2 arguments a and b of integer type that returns $a^2 + b^2$.
           % \item Masalah-masalah apa yang akan lebih mudah 
           % diselesaikan dengan menggunakan fungsi?
     \item What are the problems that can be more easily solved with functions?
@@ -355,5 +352,5 @@ Eventually it became like this:
 \subsection{Pre-lab Assignment}
 \begin{enumerate}
     % \item Diberikan sebuah baris bilangan 1, 5, 14, 30, ... dst. Buatlah sebuah program yang mengimplementasikan fungsi rekursif untuk menentukan bilangan ke-n dari pola tersebut.
-    \item Given a sequence of numbers 1, 5, 14, 30, ... etc. Create a program that implements a recursive function to determine the nth number in the pattern.
+    \item Given a sequence of numbers 1, 5, 14, 30, 55, 91, ... etc. Create a program that implements a recursive function to determine the nth number in the pattern.
 \end{enumerate}
