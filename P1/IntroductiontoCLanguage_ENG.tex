@@ -30,7 +30,7 @@ There are several standards for the C programming language. There are several gu
 	\item Creating operating systems and it's system programs
 	\item Programmin language that is "very close" to hardware (e.g., for device control).
 	\item Developing toolkits
-	\item Writing application programs
+	\item Writing programs
 \end{enumerate}
 \section{IDE (Integrated Development Environment)}
 IDE stands for "Integrated Development Environment" in English. In Bahasa Indonesia, IDE can be translated as "Lingkungan Pengembangan Terintegrasi" or "Ruang Kerja Pengembangan Terpadu." IDE is a software designed to assist software developers in the process of development, coding, and testing computer applications.
@@ -38,7 +38,6 @@ IDE stands for "Integrated Development Environment" in English. In Bahasa Indone
 Here are several list of C programming language IDE applications that can be used.
 \begin{itemize}
 	\item Code::Blocks
-	\item DevC++
 \end{itemize}
 \section{Creating new project in IDE Code::Blocks}
 \subsection{Steps to create a new project}
@@ -78,7 +77,7 @@ Here are several list of C programming language IDE applications that can be use
 		      \caption{}
 		      \label{fig:screenshot007}
 	      \end{figure}
-	\item Write your code \ref{fig:screenshot008} in Code::Blocks
+	\item Write code as in Figure \ref{fig:screenshot008} in Code::Blocks
 	      \begin{figure}[H]
 		      \centering
 		      \includegraphics[width=0.7\linewidth]{P1/img/screenshot008.png}
@@ -106,7 +105,7 @@ Here are several list of C programming language IDE applications that can be use
 % Create a project with name HaloDunia and write the program like can be seen on figure \ref{fig:screenshot008} but change \verb|Hello World!| with \verb|Halo Dunia!|
 \subsection{Pre-lab Assignment}
 \begin{enumerate}
-	\item Create a project with name HaloDunia and write the program like can be seen on figure \ref{fig:screenshot008} but change \verb|Hello World!| with \verb|Halo Dunia!|
+	\item Create a project with name HaloDunia and write the program like can be seen on figure \ref{fig:screenshot008} but change \verb|Hello World!| with other words!
 \end{enumerate}
 
 %\begin{enumerate}
@@ -175,6 +174,7 @@ Code on Listing \ref{lst:helloworld} is a simple program to print "Halo Dunia" t
 \begin{enumerate}
 	\item Try to swap line 6 and line 7 in Listing \ref{lst:helloworld}.Explain what happened?
 	\item What if \verb|return 0;| replaced with \verb|return 1;|?
+	\item What happens if \verb|return 0;| is deleted?
 \end{enumerate}
 
 
@@ -187,17 +187,17 @@ In C programming language, there are several data types to represent integer, re
 	\captionof{table}{Some data types in C programming language \label{tab:tipedata}}
 	\begin{tabular}{|l|l|l|}
 		\hline
-		Data Types                     & Size     & Range Value                     \\ \hline
-		Int (or signed int)            & 2 bytes  & -32,768 to 32,767               \\ \hline
-		unsigned int                   & 2 bytes  & 0 to 65,535                     \\ \hline
-		Short int(or signed short int) & 2 bytes  & -32,768 to 32,767               \\ \hline
-		Long(or singed short int)      & 4 bytes  & -2,147,483,648 to 2,147,483,647 \\ \hline
-		unsigned long                  & 4 bytes  & 0 to 4,294,967,295              \\ \hline
-		float                          & 4 bytes  & 1.2E-38 to 3.4E+38              \\ \hline
-		double                         & 8 bytes  & 2.3E-308 to 1.7E+308            \\ \hline
-		Long double                    & 10 bytes & 3.4E-4932 to 1.1E+4932          \\ \hline
-		char(or signed char)           & 1 byte   & -128 to 127                     \\ \hline
-		unsigned char                  & 1 byte   & 0 to 255                        \\ \hline
+		\textbf{Data Types}            & \textbf{Size} & \textbf{Range Value}            \\ \hline
+		Int (or signed int)            & 2 bytes       & -32,768 to 32,767               \\ \hline
+		unsigned int                   & 2 bytes       & 0 to 65,535                     \\ \hline
+		Short int(or signed short int) & 2 bytes       & -32,768 to 32,767               \\ \hline
+		Long(or singed short int)      & 4 bytes       & -2,147,483,648 to 2,147,483,647 \\ \hline
+		unsigned long                  & 4 bytes       & 0 to 4,294,967,295              \\ \hline
+		float                          & 4 bytes       & 1.2E-38 to 3.4E+38              \\ \hline
+		double                         & 8 bytes       & 2.3E-308 to 1.7E+308            \\ \hline
+		Long double                    & 10 bytes      & 3.4E-4932 to 1.1E+4932          \\ \hline
+		char(or signed char)           & 1 byte        & -128 to 127                     \\ \hline
+		unsigned char                  & 1 byte        & 0 to 255                        \\ \hline
 
 		%     \captionof{table}{Beberapa tipe data di C \label{tab:tipedata}}
 		% 	% \begin{tabular}{|l|l|l|}
@@ -223,12 +223,12 @@ To show the data on screen, every data type has a format specifier that can be u
 	\captionof{table}{Format Specifier \label{tab:formatspecifier}}
 	\begin{tabular}{|l|l|}
 		\hline
-		Format Specifier & Data Types \\ \hline
-		\%d or \%i       & int        \\ \hline
-		\%f              & float      \\ \hline
-		\%lf             & double     \\ \hline
-		\%c              & char       \\ \hline
-		\%s              & string     \\ \hline
+		\textbf{Format Specifier} & \textbf{Data Types} \\ \hline
+		\%d or \%i                & int                 \\ \hline
+		\%f                       & float               \\ \hline
+		\%lf                      & double              \\ \hline
+		\%c                       & char                \\ \hline
+		\%s                       & string              \\ \hline
 	\end{tabular}
 \end{center}
 % Masih ada lebih banyak tipe data dari pada yang dituliskan pada Tabel \ref{tab:tipedata}. Tipe-tipe data ini dan spesifikasinya bisa ditemukan dengan mudah di internet.
@@ -238,9 +238,9 @@ There are still more data types that what was written on Table \ref{tab:tipedata
 In general, a modifier is a word, phrase, or clause that modifies or describes a noun or verb in a sentence. Meanwhile, in programming languages, a modifier is a keyword used to alter the behavior or characteristics of an element in a program, such as variables, functions, or classes. We use modifiers to change the range of basic data types to fit programming needs. There are four modifiers, namely:
 \begin{enumerate}
 	\item signed \\
-	      \verb|int value = -10;| (Using a negative sign for variables of type int, which are signed integers by default.)
+	      \verb|int value = -10;| (Can store integer type variables for negative and positive values)
 	\item unsigned \\
-	      \verb|unsigned int count = 100;|  (Using a negative sign for variables of type int, which are signed integers by default.)
+	      \verb|unsigned int count = 100;|  (Can stroe integer type variables for positive value only)
 	\item long \\
 	      \verb|long population = 7500000000;| (Using the long data type to store values larger than the int data type.)
 	\item short \\
@@ -254,22 +254,20 @@ Variables are places to store data. Declaring a variable can be done in the foll
 DataType VariableName;
 \end{lstlisting}
 \subsubsection{Aithmetic and Assignment Operator }
-Assignment operator can be use in variabel that is not a \verb*|const| or a varable that has -1 value. However, arithmetic operators can accept both variables with 'const' or without ('left-hand' and 'right-hand' values)
-The table below shows some arithmetic operators in C
+Operators are symbols that represent operations to be performed on one or more operands.
+Arithmetic Operators can be used to perform arithmetic operations such as addition, subtraction, etc.
+The Assignment Operator can be used to perform an operation on a variable and change the value of the variable according to the results of the operation.
 \begin{center}
 	\captionof{table}{Arithmetic operator in C programming language\label{tab:operatoraritmatika}}
 	\begin{tabular}{|c|l|c|}
 		\hline
 
-		\multicolumn{1}{|l|}{Operator} & Name           & \multicolumn{1}{l|}{Example} \\ \hline
-
-		% 		\multicolumn{1}{|l|}{\textbf{Operator}} & \textbf{Nama} & \multicolumn{1}{l|}{\textbf{Contoh}} \\ \hline
-
-		+                              & Addition       & \verb|x + y |                \\ \hline
-		-                              & Subtraction    & \verb|x = y|                 \\ \hline
-		*                              & Multiplication & \verb|x * y|                 \\ \hline
-		/                              & Distribution   & \verb|x/y|                   \\ \hline
-		\%                             & Modulo         & \verb|x % y|                 \\ \hline
+		\multicolumn{1}{|l|}{\textbf{Operator}} & \textbf{Name}  & \multicolumn{1}{l|}{\textbf{Example}} \\ \hline
+		+                                       & Addition       & \verb|x + y |                         \\ \hline
+		-                                       & Subtraction    & \verb|x = y|                          \\ \hline
+		*                                       & Multiplication & \verb|x * y|                          \\ \hline
+		/                                       & Distribution   & \verb|x/y|                            \\ \hline
+		\%                                      & Modulo         & \verb|x % y|                          \\ \hline
 	\end{tabular}
 \end{center}
 
@@ -278,7 +276,7 @@ The table below shows some arithmetic operators in C
 	\captionof{table}{Assignment operator \label{tab:operatorpenugasan}}
 	\begin{tabular}{|c|c|c|}
 		\hline
-		\multicolumn{1}{|l|}{Operator} & \multicolumn{1}{l|}{Example}      & \multicolumn{1}{l|}{Similiar meaning} \\ \hline
+		\multicolumn{1}{|l|}{\textbf{Operator}} & \multicolumn{1}{l|}{\textbf{Example}}      & \multicolumn{1}{l|}{\textbf{Similiar meaning}} \\ \hline
 		=                              & x = 5                             & x = 5                                 \\ \hline
 		+=                             & x += 3                            & x = x + 3                             \\ \hline
 		-=                             & x -= 3                            & x = x - 3                             \\ \hline
@@ -292,7 +290,7 @@ The table below shows some arithmetic operators in C
 		\textless{}\textless{}=        & x \textless{}\textless{}= 3       & x = x \textless{}\textless 3          \\ \hline
 	\end{tabular}
 \end{center}
-There are also 'abbreviations' for some assignment operators such as \verb*|x+=1| and \verb*|x-1|, which \verb*|++| and \verb*|--|. There are also 'abbreviations' for some assignment operators such as.
+There are also 'abbreviations' for some assignment operators such as \verb*|x+=1| and \verb*|x-=1|, which \verb*|++| and \verb*|--|.
 \begin{verbatim}
     x++;
     x--;
@@ -307,7 +305,7 @@ Bitwise operators are special operators used to handle logical operations on bin
 	\captionof{table}{Bitwise operator\label{tab:operatorbitwise}}
 	\begin{tabular}{|c|c|c|c|c|c|}
 		\hline
-		\multicolumn{1}{|l|}{Operator} & \multicolumn{1}{|l|}{Name} & \multicolumn{1}{|l|}{Example}   & \multicolumn{1}{|l|}{Binary}      & \multicolumn{1}{|l|}{Result (binary)} & \multicolumn{1}{|l|}{Result (decimal)} \\ \hline
+		\multicolumn{1}{|l|}{\textbf{Operator}} & \multicolumn{1}{|l|}{\textbf{Name}} & \multicolumn{1}{|l|}{\textbf{Example}}   & \multicolumn{1}{|l|}{\textbf{Binary}}      & \multicolumn{1}{|l|}{\textbf{Result (binary)}} & \multicolumn{1}{|l|}{\textbf{Result (decimal)}} \\ \hline
 		\&                             & AND                        & 10 \& 12                        & 1010 \& 1100                      & 1000                                  & 8                                      \\ \hline
 		|                              & OR                         & 10 | 12                         & 1010 | 1100                       & 1110                                  & 14                                     \\ \hline
 		\textasciicircum{}             & XOR                        & 10 \textasciicircum 12          & 1010 \textasciicircum 1100        & 0110                                  & 6                                      \\ \hline
@@ -329,12 +327,16 @@ int main()
 	//variable declaration
     const int x=0;
     x=1;
-	return 0;
+		printf(x);
+		return 0;
 }
 \end{lstlisting}
-Try to compile the program in Listing\ref{lst:constassignment}, what happened?
-% Coba jalankan program di Listing \ref{lst:constassignment}, apa yang terjadi?
 
+\begin{enumerate}
+	\item Try to compile the program in Listing \ref{lst:constassignment}, what happened?
+	% Coba jalankan program di Listing \ref{lst:constassignment}, apa yang terjadi?
+	\item What must be done so that the output of Listing \ref{lst:constassignment} is 1 ?
+\end{enumerate}
 
 \section{Input and Output}
 
@@ -366,9 +368,9 @@ The format specifier for each data types can be seen on Table \ref{tab:formatspe
 			% \item Seluruh program C harus berisi fungsi main() tempat program memulai menjalankan kode. 
 			\item All C program must have main() function where the program needs to run the code.
 			      % \item Fungsi \verb*|printf()| adalah library untuk mengirim output yang telah diformat ke layar.  Fungsi \verb*|printf()|  mencetak string dalam tanda dua tanda petik. 
-			\item \verb*|printf()| function is a function from stdio.h library. This function outputs the string inside the symbol " to the screen.
+			\item \verb*|printf()| function is a function from stdio.h library. This function outputs the string inside the symbol "" to the screen.
 			\item \verb*|return 0;| statement in the \verb*|main()| function tells the program to exit.
-			\item \verb*|return 0;| pernyataan di \verb*|main()| fungsi memberitahu program untuk keluar.
+			%\item \verb*|return 0;| pernyataan di \verb*|main()| fungsi memberitahu program untuk keluar.
 		\end{itemize}
 	\item [Contoh \thesubsection.2] Printing integer.
 	      \begin{lstlisting}[language=c,captionpos=t]
@@ -438,7 +440,7 @@ Function \verb*|scanf(const char *format, ...)| reads input according to the for
 	      % Karakter Whitespace,Karakter Non-whitespace  dan  Format specifiers. 
 	\item Return Value \\
 	      % Ketika berhasil maka fungsi mengembalikan jumlah item dari argumen yang berhasil di baca.
-	      The function will return the number of arguments it has sucessfully read.
+	      The function will return the value of arguments it has sucessfully read.
 
 \end{enumerate}
 
@@ -471,7 +473,7 @@ int main()
 	      \begin{description}
 		      \item [Row 9]\verb|scanf("%f",&Area);| requesting input for triangle base
 		      \item [Row 11]\verb|scanf("%f",&Height);| requesting input for triangle height
-		      \item [Row 13]\verb|printf("Triangle Area = %.2f", Area);|,  \verb|.2| si \verb|%.2f| indicating that only 2 digits after the decimal point need to be printed
+		      \item [Row 13]\verb|printf("Triangle Area = %.2f", Area);|,  \verb|.2| in \verb|%.2f| indicating that only 2 digits after the decimal point need to be printed
 	      \end{description}
 
 	\item[Example \thesubsection.5] Program to input name and email.\\
@@ -509,7 +511,7 @@ Some characters can't be written on the format string because they are used to f
 	\captionof{table}{Escape Sequence \label{tab:escapesequence}}
 	\begin{tabular}{|l|l|l|}
 		\hline
-		Escape sequence                  & Output          \\ \hline
+		\textbf{Escape sequence}         & \textbf{Output} \\ \hline
 		\textbackslash{}a                & Bell, alarm     \\ \hline
 		\textbackslash{}b                & Backspace       \\ \hline
 		\textbackslash{}f                & Change Page     \\ \hline
@@ -565,8 +567,8 @@ int main(void)
 
 \subsection{Pre-lab Assignment}
 \begin{enumerate}
-	\item Try to build a program to read input for the name and NRP and display it to the screen.
-	\item Try to build a program that asks user to enter a Celcius temperature and then convert it to Farenheit.  .
+	\item Try to build a program to read input for the name and NRP and display it to the screen!
+	\item Try to build a program that asks user to enter a number, then displays the squared dan cubed value of it!
 \end{enumerate}
 
 \begin{center}
