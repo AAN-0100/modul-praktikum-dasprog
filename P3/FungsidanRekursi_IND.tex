@@ -20,7 +20,7 @@ Keuntungan menggunakan fungsi pada bahasa pemrograman C adalah:
           % \item We can call C functions any number of times in a program and from any place in a program.
           Kita dapat memanggil fungsi C berapa kali pun dalam suatu program dan dari mana saja dalam suatu program.
           % \item Large C codes can be splitted to several function, thus easier to track.
-    \item Program c yang besar dapat dibagi ke dalam beberapa fungsi sehingga dapat dengan mudah untuk dilacak.
+    \item Program C yang besar dapat dibagi ke dalam beberapa fungsi sehingga dapat dengan mudah untuk dilacak.
 \end{itemize}
 \subsection{Function Declaration}
 % Every C program has atleast one function, that is the main() function. You can also define functions other than main().
@@ -145,7 +145,7 @@ Jika suatu fungsi diharapkan untuk menggunakan argumen, maka variabel sebagai pa
               \label{fig:parameterformalaktual}
           \end{figure}
 \end{enumerate}
-\subsection{Parameter Passing}
+\subsection{Passing Parameter}
 Passing parameter merupakan aktivitas menyalurkan nilai pada parameter saat memanggil fungsi. Pada umumnya, dikenal dua macam passing parameter yaitu:
 % To use a function with parameter, the parameters must be passed to the function first.
 % In general, there are two ways to pass paramater to a function
@@ -233,12 +233,13 @@ Apabila program tersebut dijalankan, maka akan muncul output
     b: 1
 \end{verbatim}
 
-Ketika fungsi \verb|swapAndReturnTheSum(a,b)| dipanggil, alamat memori variabel a dan b "dipassingkan" pada fungsinya. Sehingga pada pada potongan kode di baris 4-6, x dan y akan mengacu pada memori parameter aktual yang dimasukkan di baris ke 13. Ketika melakukan passing by reference, kita tidak bisa memanggil fungsi dengan parameter yang tidak memiliki alamat memori. Sebagai contoh \verb|tukarDanKembalikansumnya(1,2)| tidak bisa dilakukan karena angka 1 dan 2 bukan variabel dan tidak memiliki alamat memori.
+Ketika fungsi \verb|swap(a,b)| dipanggil, alamat memori variabel a dan b "dipassingkan" pada fungsinya. Sehingga pada pada potongan kode di baris 4-7, x dan y akan mengacu pada memori parameter aktual yang dimasukkan di baris ke 18. Ketika melakukan passing by reference, kita tidak bisa memanggil fungsi dengan parameter yang tidak memiliki alamat memori. Sebagai contoh \verb|tukarDanKembalikansumnya(1,2)| tidak bisa dilakukan karena angka 1 dan 2 bukan variabel dan tidak memiliki alamat memori.
 % When the function \verb|swapAndReturnTheSum(a,b)| is called, the memory address of \verb|a| and \verb|b| is passed on to the function. Therefore, in line 4-6, the \verb|x| and \verb|y| will point to the memory of the actual parameter that is inputted in line 13, so we are doing assignments directly to the actual parameter. When passing by reference, we can't call the function with parameter that has no memory address. As example \verb|swapAndReturnTheSum(1,2)| cannot be done as the number 1 and 2 doesn't have memory address.
 
 \subsection{Tugas Pendahuluan}
 \begin{enumerate}
-    \item Buatlah fungsi yang dapat menerima 2 buah bilangan bulat a dan b kemudian mengembalikan nilai dari $a^b$
+    \item Apa kelebihan dan kekurangan menggunakan fungsi?
+    \item Buatlah fungsi yang dapat menerima 2 buah bilangan bulat a dan b kemudian mengembalikan nilai dari $a^2 + b^2$
           % \item Create a function that can take 2 integer a and b then returns $a^b$
     \item Masalah-masalah apa yang akan lebih mudah diselesaikan dengan menggunakan fungsi?
           % \item What problems that can be solved easier with functions?
@@ -277,5 +278,7 @@ Akhirnya menjadi seperti ini:
 
 \subsection{Tugas Pendahuluan}
 \begin{enumerate}
-    \item Diberikan sebuah baris bilangan 1, 5, 14, 30, ... dst. Buatlah sebuah program yang mengimplementasikan fungsi rekursif untuk menentukan bilangan ke-n dari pola tersebut.
+    \item Apa saja masalah yang bisa diselesaikan menggunakan fungsi rekursi?
+    \item Apa yang terjadi jika pada Listing \ref{lst:recursionexample01}, baris ke-2 dan ke-3 dihapus?
+    \item Diberikan sebuah baris bilangan 1, 5, 14, 30, 55, 91, ... dst. Buatlah sebuah program yang mengimplementasikan fungsi rekursif untuk menentukan bilangan ke-n dari pola tersebut.
 \end{enumerate}

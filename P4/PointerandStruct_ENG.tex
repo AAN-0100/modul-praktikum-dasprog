@@ -35,7 +35,7 @@ If there are any variable \verb|var| in your program, \verb|&var| will return it
 \end{center}
 
 % \subsection{Pengenalan Pointer}
-\subsection{Introduction to Pinters}
+\subsection{Introduction to Pointers}
 
 % Pointer(variabel penunjuk) adalah variabel khusus yang digunakan untuk menyimpan alamat, bukan nilai.
 Pointers is a special variable that serves to save addresses, not value.
@@ -157,6 +157,7 @@ int main(void)
 % \subsection{Tugas Pendahuluan}
 \subsection{Pre-lab Assignment}
 \begin{enumerate}
+    \item Explain everything you know about pointer!
     %    \item Bagaimana cara mendeklarasikan pointer ke array multidimensi?
     \item Explain how to declare a pointer to a multidimensional array?
           %    \item Buatlah program dalam bahasa C atau C++ yang mengimplementasikan 
@@ -268,23 +269,24 @@ To access members from a struct, we use a dot (.) operator after its variable na
 
 Example:
 \begin{lstlisting}[language=c]
-    mhs1.age = 20;
-    mhs1.nama = iqbal;
+    mhs1.age = 69;
+    mhs1.nama = Surya;
     
-    mhs2.nama = fatur;
-    mhs2.age = 21;
+    mhs2.nama = Pebrianto;
+    mhs2.age = 42;
 \end{lstlisting}
 
 \subsection{Pre-lab Assignment}
 \begin{enumerate}
+    \item what is the advantages of using struct!
     % \item Buatlah sebuah struct yang merepresentasikan informasi tentang seorang mahasiswa, yang memiliki nama, nim, dan nilai IPK. 
     % Kemudian, buatlah program untuk menginput data mahasiswa, menampilkan data mahasiswa, dan menghitung rata-rata IPK dari 
     % sejumlah mahasiswa.
     \item Create a struct that represent informations about a students, the informations their name, student ID, and GPA.
           And then, create a program in insert student informations, display them, and calculate the average GPAs of a
           certain number of students
-    \item Anda diberikan struct yang merepresentasikan titik dalam sistem koordinat dua dimensi (x, y).
-          Buatlah sebuah program C untuk menghitung jarak antara dua titik yang diinputkan oleh pengguna menggunakan rumus jarak Euclidean.
+    %\item Anda diberikan struct yang merepresentasikan titik dalam sistem koordinat dua dimensi (x, y).
+    %      Buatlah sebuah program C untuk menghitung jarak antara dua titik yang diinputkan oleh pengguna menggunakan rumus jarak Euclidean.
     \item Create a struct that represents coordinate points in a two dimensional plane (x,y). And then create a C program to calculate
           the distance between two points that a user inputs with a Euclidean formula.
 \end{enumerate}
@@ -381,6 +383,7 @@ void insertionSort(int arr[]. int n) {
     % \item Urutkan array berikut menggunakan algoritma Bubble Sort:
 
     % Array: [5, 2, 9, 1, 5, 6]
+    \item What is Big O notation?
     \item Sort the following array using Bubble Sort:
 
           Array: [5, 2, 9, 1, 5, 6]
@@ -466,10 +469,8 @@ int binser(int a, int b, int n) {
     % \item Anda memiliki daftar nama berikut: ["Alice", "Bob", "Charlie", "David", "Eve", "Frank"]. 
     % Gunakan algoritma binary search untuk mencari apakah nama "Eve" ada dalam daftar ini. 
     % Jika ya, berapa langkah yang dibutuhkan?
-    \item Given the following list of names: ["Alice", "Bob", "Charlie", "David", "Eve", "Frank"].
-          Use the Binary Search algorithm to look for the name "Eve" in this list. If found, how many steps are required?
-          % \item Jelaskan perbedaan antara pencarian linear (sequential search) dan pencarian biner (binary search).
-          %  Kapan Anda akan memilih salah satu metode ini daripada yang lain?
+    \item There is data as follows: [49, 60, 69, 42, 1, 97, 65, 77, 100, 28, 46]. Use the binary search algorithm to find out whether there are prime numbers in the data!
     \item Explain the difference between Linear Search (Sequential Search) and Binary Search.
           in what scenario that you choose one method over the other?
+    \item Try looking for other searching algorithms, and explain their advantages and disadvantages!
 \end{enumerate}

@@ -28,9 +28,9 @@ Terdapat beberapa standar untuk bahasa C, standar di sini dapat diartikan sebaga
 \subsection*{}Aplikasi atau kegunaan Bahasa C
 \begin{enumerate}
 	\item     Membuat sistem operasi dan program-program sistem.
-	\item Pemrograman yang "dekat" ke perangkat keras (misalnya untuk kontrol peralatan).
+	\item Pemrograman yang "dekat" ke perangkat keras (seperti arduino).
 	\item Membuat tool kit.
-	\item Menulis program aplikasi.
+	\item Menulis program.
 \end{enumerate}
 \section{IDE (Integrated Development Environment)}
 IDE adalah singkatan dari "Integrated Development Environment" dalam bahasa Inggris.
@@ -40,7 +40,6 @@ IDE adalah sebuah perangkat lunak yang dirancang untuk membantu pengembang peran
 Berikut ini adalah daftar aplikasi IDE bahasa C yang dapat digunakan.
 \begin{itemize}
 	\item CodeBlocks
-	\item DevC++
 \end{itemize}
 \section{Membuat proyek baru pada IDE Code::Blocks}
 \subsection{Langkah untuk membuat proyek baru}
@@ -73,14 +72,14 @@ Berikut ini adalah daftar aplikasi IDE bahasa C yang dapat digunakan.
 		      \caption{}
 		      \label{fig:screenshot006}
 	      \end{figure}
-	\item  Pilih compiler (gcc), pilih dirketori untuk menyimpan, dan klik save.
+	\item  Pilih compiler (gcc), pilih direktori untuk menyimpan, dan klik save.
 	      \begin{figure}[H]
 		      \centering
 		      \includegraphics[width=0.7\linewidth]{P1/img/screenshot007.png}
 		      \caption{}
 		      \label{fig:screenshot007}
 	      \end{figure}
-	\item Ketikan kode pada \ref{fig:screenshot008} ke Code::Blocks
+	\item Ketikan kode pada Gambar\ref{fig:screenshot008} ke Code::Blocks
 	      \begin{figure}[H]
 		      \centering
 		      \includegraphics[width=0.7\linewidth]{P1/img/screenshot008.png}
@@ -108,7 +107,9 @@ Berikut ini adalah daftar aplikasi IDE bahasa C yang dapat digunakan.
 % Create a project with name HaloDunia and write the program like can be seen on figure \ref{fig:screenshot008} but change \verb|Hello World!| with \verb|Halo Dunia!|
 \subsection{Tugas Pendahuluan}
 \begin{enumerate}
-	\item Buatlah proyek dengan nama HaloDunia dan tulis program seperti gambar \ref{fig:screenshot008} ubahlah \verb|Hello World!| dengan kata lain!
+	\item Coba cari IDE lain selain codeblocks, dan jelaskan kelebihan dan kekurangan masing-masing IDE!
+	\item Apa yang membedakan bahasa C daripada bahasa pemrograman yang lain? jelaskan kelebihan dan kekurangannya!
+	\item Buatlah proyek dengan nama HaloDunia dan tulis program seperti gambar \ref{fig:screenshot008} ubahlah \verb|Hello World!| dengan kata yang lain!
 \end{enumerate}
 
 %\begin{enumerate}
@@ -177,6 +178,7 @@ Kode pada listing \ref{lst:helloworld} adalah program mudah untuk mencetak "Halo
 \begin{enumerate}
 	\item Cobalah untuk menukar baris 6 dan baris 7 di listing \ref{lst:helloworld}. Apa yang terjadi? Jelaskan!
 	\item Bagaimana jika \verb|return 0;| diganti dengan \verb|return 1;|?
+	\item Apa yang terjadi jika \verb|return 0;| dihapus?
 \end{enumerate}
 
 
@@ -196,17 +198,17 @@ Pada bahasa C, terdapat beberapa tipe data untuk merepresentasikan data yang ber
 	% \end{tabular}
 	\begin{tabular}{|l|l|l|}
 		\hline
-		Tipe Data                      & Ukuran   & Rentang Nilai                   \\ \hline
-		Int (or signed int)            & 2 bytes  & -32,768 to 32,767               \\ \hline
-		unsigned int                   & 2 bytes  & 0 to 65,535                     \\ \hline
-		Short int(or signed short int) & 2 bytes  & -32,768 to 32,767               \\ \hline
-		Long(or singed short int)      & 4 bytes  & -2,147,483,648 to 2,147,483,647 \\ \hline
-		unsigned long                  & 4 bytes  & 0 to 4,294,967,295              \\ \hline
-		float                          & 4 bytes  & 1.2E-38 to 3.4E+38              \\ \hline
-		double                         & 8 bytes  & 2.3E-308 to 1.7E+308            \\ \hline
-		Long double                    & 10 bytes & 3.4E-4932 to 1.1E+4932          \\ \hline
-		char(or signed char)           & 1 byte   & -128 to 127                     \\ \hline
-		unsigned char                  & 1 byte   & 0 to 255                        \\ \hline
+		\textbf{Tipe Data}             & \textbf{Ukuran}   &  \textbf{Rentang Nilai}         \\ \hline
+		Int (or signed int)            & 2 bytes  		   & -32,768 to 32,767               \\ \hline
+		unsigned int                   & 2 bytes  		   & 0 to 65,535                     \\ \hline
+		Short int(or signed short int) & 2 bytes  		   & -32,768 to 32,767               \\ \hline
+		Long(or singed short int)      & 4 bytes  		   & -2,147,483,648 to 2,147,483,647 \\ \hline
+		unsigned long                  & 4 bytes  		   & 0 to 4,294,967,295              \\ \hline
+		float                          & 4 bytes  		   & 1.2E-38 to 3.4E+38              \\ \hline
+		double                         & 8 bytes  		   & 2.3E-308 to 1.7E+308            \\ \hline
+		Long double                    & 10 bytes 		   & 3.4E-4932 to 1.1E+4932          \\ \hline
+		char(or signed char)           & 1 byte  		   & -128 to 127                     \\ \hline
+		unsigned char                  & 1 byte  		   & 0 to 255                        \\ \hline
 	\end{tabular}
 \end{center}
 Untuk menampilkan data pada layar, setiap tipe data memiliki format specifier yang dapat digunakan pada formatted string. Berikut adalah format specifier untuk beberapa tipe data.
@@ -215,15 +217,15 @@ Untuk menampilkan data pada layar, setiap tipe data memiliki format specifier ya
 	\captionof{table}{Format Specifier \label{tab:formatspecifier}}
 	\begin{tabular}{|l|l|}
 		\hline
-		Format Specifier & Tipe Data \\ \hline
-		\%d or \%i       & int       \\ \hline
-		\%f              & float     \\ \hline
-		\%lf             & double    \\ \hline
-		\%c              & char      \\ \hline
-		\%s              & string    \\ \hline
+		\textbf{Format Specifier} & \textbf{Tipe Data} \\ \hline
+		\%d or \%i      		  & int       		   \\ \hline
+		\%f             		  & float     		   \\ \hline
+		\%lf             		  & double   		   \\ \hline
+		\%c             		  & char      		   \\ \hline
+		\%s             		  & string   		   \\ \hline
 	\end{tabular}
 \end{center}
-Masih ada lebih banyak tipe data dari pada yang dituliskan pada Tabel \ref{tab:tipedata}. Tipe-tipe data ini dan spesifikasinya bisa ditemukan dengan mudah di internet.
+Masih ada lebih banyak tipe data daripada yang tertulis pada Tabel \ref{tab:tipedata}. Tipe-tipe data ini dan spesifikasinya bisa ditemukan dengan mudah di internet.
 % There are still more data types that what was written on Table \ref{tab:tipedata}. These data types and its specification can be found easily on the internet.
 
 \subsubsection{Modifier}
@@ -232,13 +234,13 @@ Sedangkan modifier dalam bahasa pemrograman dalah sebuah kata kunci atau keyword
 Kita menggunakan modifier untuk mengubah range dari tipe data dasar untuk menyesuaikan dengan keperluan pemrograman. Ada empat modifier, yaitu:
 \begin{enumerate}
 	\item signed \\
-	      \verb|int value = -10;| (Menggunakan tanda negatif pada variabel bertipe int yang secara default adalah signed integer.)
+	      \verb|int value = -10;| (Dapat menyimpan variabel bertipe int yang nilainya bisa positif maupun negatif.)
 	\item unsigned \\
-	      \verb|unsigned int count = 100;|  (Menggunakan variabel unsigned integer untuk menyimpan bilangan bulat positif tanpa tanda.)
+	      \verb|unsigned int count = 100;|  (Dapat menyimpan variabel bertipe int yang nilainya hanya positif.)
 	\item long \\
-	      \verb|long population = 7500000000;| (Menggunakan tipe data long untuk menyimpan nilai yang lebih besar daripada tipe data int.)
+	      \verb|long population = 7500000000;| (Dapat menyimpan variabel bertipe int yang nilainya lebih besar daripada tipe data int.)
 	\item short \\
-	      \verb|short temperature = 20;| (Menggunakan tipe data short untuk menghemat memori ketika kita tahu bahwa nilai yang akan disimpan akan relatif kecil.)
+	      \verb|short temperature = 20;| (Menggunakan tipe data short untuk menghemat memori ketika kita tahu bahwa nilai yang akan disimpan relatif kecil.)
 \end{enumerate}
 
 
@@ -247,8 +249,10 @@ Variabel merupakan tempat menyimpan data. Mendeklarasikan suatu variabel dapat d
 \begin{lstlisting}[language=c,caption=Deklarasi Variabel C,label=lst:deklarasivariabel,captionpos=t]
 DataType VariableName;
 \end{lstlisting}
-\subsubsection{Operator Aritmatika dan Penugasan (Assignment)}
-Operator penugasan dapat dilakukan pada variabel yang tidak mempunyai \verb*|const| atau merupakan variabel nilai-l. Namun operator aritmatika dapat menerima kedua variabel dengan const atau tidak (nilai-l dan nilai-r).
+\subsubsection{Operator Aritmatika dan Operator Penugasan (Assignment)}
+Operator merupakan simbol yang merepresentasikan operasi untuk dikerjakan pada satu atau lebih operand.
+Operator Aritmatika dapat digunakan untuk melakukan operasi aritmatika seperti penjumlahan, pengurangan, dsb.
+Operator Penugasan dapat digunakan untuk melakukan suatu operasi pada sebuah variabel dan mengubah nilai variabel tersebut sesuai hasil operasinya.
 Tabel di bawah menunjukkan beberapa operator aritmatika di C.
 \begin{center}
 	\captionof{table}{Operator Aritmatika di C \label{tab:operatoraritmatika}}
@@ -268,21 +272,21 @@ Tabel di bawah menunjukkan beberapa operator penugasan.
 	\captionof{table}{Operator Penugasan \label{tab:operatorpenugasan}}
 	\begin{tabular}{|c|c|c|}
 		\hline
-		\multicolumn{1}{|l|}{Operator} & \multicolumn{1}{l|}{Contoh}       & \multicolumn{1}{l|}{Arti yang sama} \\ \hline
-		=                              & x = 5                             & x = 5                               \\ \hline
-		+=                             & x += 3                            & x = x + 3                           \\ \hline
-		-=                             & x -= 3                            & x = x - 3                           \\ \hline
-		*=                             & x *= 3                            & x = x * 3                           \\ \hline
-		/=                             & x /= 3                            & x = x / 3                           \\ \hline
-		\%=                            & x \%= 3                           & x = x \% 3                          \\ \hline
-		\&=                            & x \&= 3                           & x = x \& 3                          \\ \hline
-		|=                             & x |= 3                            & x = x | 3                           \\ \hline
-		\textasciicircum{}=            & x \textasciicircum{}= 3           & x = x \textasciicircum 3            \\ \hline
-		\textgreater{}\textgreater{}=  & x \textgreater{}\textgreater{}= 3 & x = x \textgreater{}\textgreater 3  \\ \hline
-		\textless{}\textless{}=        & x \textless{}\textless{}= 3       & x = x \textless{}\textless 3        \\ \hline
+		\multicolumn{1}{|l|}{\textbf{Operator}} & \multicolumn{1}{l|}{\textbf{Contoh}} & \multicolumn{1}{l|}{\textbf{Arti yang sama}} \\ \hline
+		=                                       & x = 5                                & x = 5                                        \\ \hline
+		+=                                      & x += 3                               & x = x + 3                                    \\ \hline
+		-=                                      & x -= 3                               & x = x - 3                                    \\ \hline
+		*=                                      & x *= 3                               & x = x * 3                                    \\ \hline
+		/=                                      & x /= 3                               & x = x / 3                                    \\ \hline
+		\%=                                     & x \%= 3                              & x = x \% 3                                   \\ \hline
+		\&=                                     & x \&= 3                              & x = x \& 3                                   \\ \hline
+		|=                                      & x |= 3                               & x = x | 3                                    \\ \hline
+		\textasciicircum{}=                     & x \textasciicircum{}= 3              & x = x \textasciicircum 3                     \\ \hline
+		\textgreater{}\textgreater{}=           & x \textgreater{}\textgreater{}= 3    & x = x \textgreater{}\textgreater 3           \\ \hline
+		\textless{}\textless{}=                 & x \textless{}\textless{}= 3          & x = x \textless{}\textless 3                 \\ \hline
 	\end{tabular}
 \end{center}
-Terdapat juga "singkatan" untuk beberapa operator penugasan seperti \verb*|x+=1| dan \verb*|x-1| yaitu \verb*|++| dan \verb*|--| yang masing-masing disebut kenaikan dan penurunan.
+Terdapat juga "singkatan" untuk beberapa operator penugasan seperti \verb*|x+=1| dan \verb*|x-=1| yaitu \verb*|++| dan \verb*|--| yang masing-masing disebut kenaikan dan penurunan.
 Singkatan ini digunakan seperti berikut.
 \begin{verbatim}
     x++;
@@ -292,7 +296,7 @@ Singkatan ini digunakan seperti berikut.
 \end{verbatim}
 
 \subsubsection{Operator Bitwise}
-Bitwise adalah operator khusus untuk menangani operasi logika bilangan biner dalam bentuk bit. \\
+Bitwise adalah operator khusus untuk menangani operasi logika bilangan biner dalam bentuk bit.
 Bilangan biner sendiri merupakan jenis bilangan yang hanya terdiri dari 2 jenis angka, yakni 0 dan 1.
 Jika nilai asal yang dipakai bukan bilangan biner, akan dikonversi secara otomatis oleh compiler C menjadi bilangan biner. Misalnya 7 desimal = 0111 dalam bilangan biner.
 \\
@@ -300,19 +304,20 @@ Jika nilai asal yang dipakai bukan bilangan biner, akan dikonversi secara otomat
 	\captionof{table}{Operator Bitwise \label{tab:operatorbitwise}}
 	\begin{tabular}{|c|c|c|c|c|c|}
 		\hline
-		\multicolumn{1}{|l|}{Operator} & \multicolumn{1}{|l|}{Nama} & \multicolumn{1}{|l|}{Contoh}    & \multicolumn{1}{|l|}{Biner}       & \multicolumn{1}{|l|}{Hasil (biner)} & \multicolumn{1}{|l|}{Hasil (decimal)} \\ \hline
-		\&                             & AND                        & 10 \& 12                        & 1010 \& 1100                      & 1000                                & 8                                     \\ \hline
-		|                              & OR                         & 10 | 12                         & 1010 | 1100                       & 1110                                & 14                                    \\ \hline
-		\textasciicircum{}             & XOR                        & 10 \textasciicircum 12          & 1010 \textasciicircum 1100        & 0110                                & 6                                     \\ \hline
-		$\sim$                         & NOT                        & $\sim$10                        & $\sim$1010                        & 0101                                & -11 (two complement)                  \\ \hline
-		\textless{}\textless{}         & Left shift                 & 10 \textless{}\textless 1       & 1010 \textless{}\textless 1       & 10100                               & 20                                    \\ \hline
-		\textgreater{}\textgreater{}   & Right shift                & 10 \textgreater{}\textgreater 1 & 1010 \textgreater{}\textgreater 1 & 101                                 & 5                                     \\ \hline
+		\multicolumn{1}{|l|}{\textbf{Operator}} & \multicolumn{1}{|l|}{\textbf{Nama}} & \multicolumn{1}{|l|}{\textbf{Contoh}} & \multicolumn{1}{|l|}{\textbf{Biner}} & \multicolumn{1}{|l|}{\textbf{Hasil (biner)}} & \multicolumn{1}{|l|}{\textbf{Hasil (decimal)}} \\ \hline
+		\&                                      & AND                                 & 10 \& 12                              & 1010 \& 1100                         & 1000                                         & 8                                              \\ \hline
+		|                                       & OR                                  & 10 | 12                               & 1010 | 1100                          & 1110                                         & 14                                             \\ \hline
+		\textasciicircum{}                      & XOR                                 & 10 \textasciicircum 12                & 1010 \textasciicircum 1100           & 0110                                         & 6                                              \\ \hline
+		$\sim$                                  & NOT                                 & $\sim$10                              & $\sim$1010                           & 0101                                         & -11 (two complement)                           \\ \hline
+		\textless{}\textless{}                  & Left shift                          & 10 \textless{}\textless 1             & 1010 \textless{}\textless 1          & 10100                                        & 20                                             \\ \hline
+		\textgreater{}\textgreater{}            & Right shift                         & 10 \textgreater{}\textgreater 1       & 1010 \textgreater{}\textgreater 1    & 101                                          & 5                                              \\ \hline
 	\end{tabular}
 \end{center}
 
 \begin{center}
 	\colorbox{pink}{\parbox{0.8\linewidth}{\textbf{Catatan:} Terdapat beberapa operator dalam Bahasa C. Silahkan pelajari dengan mencari referensi secara mandiri.}}
 \end{center}
+
 \subsection{Tugas Pendahuluan}
 \begin{lstlisting}[language=c,caption=Menggunakan operator penugasan pada variabel const,label=lst:constassignment,captionpos=t]
 #include <stdio.h>
@@ -321,12 +326,31 @@ int main()
     //deklarasi variabel const
     const int x=0;
     x=1;
+	printf(x);
 	return 0;
 }
 \end{lstlisting}
 % Try to compile the program in Listing\ref{lst:constassignment}, what happened?
-Coba jalankan program di Listing \ref{lst:constassignment}, apa yang terjadi?
+\begin{enumerate}
+	\item Coba jalankan program di Listing \ref{lst:constassignment}, apa yang terjadi?
+	\item Apa saja yang harus dilakukan agar output dari listing \ref{lst:constassignment} adalah 1 ?
+\end{enumerate}
 
+\begin{lstlisting}[language=c,caption=Menganalisa tipe data dan format specifier,label=lst:formspec,captionpos=t]
+#include <stdio.h>
+
+int main(){
+    float a = 6.9;
+
+    printf("%d", a);
+}
+\end{lstlisting}
+
+\begin{enumerate}
+	\setcounter{enumi}{2}
+	\item Coba jalankan program  di Listing \ref{lst:formspec}, apa yang terjadi? Mengapa hal itu terjadi?
+	\item Apa yang harus dilakukan agar program pada Listing \ref{lst:formspec} bernilai 6.9 ?
+\end{enumerate}
 
 \section{Output dan Input}
 
@@ -346,24 +370,25 @@ Format specifier untuk beberapa tipe data dapat dilihat pada Tabel \ref{tab:form
 \begin{description}
 	\item[Contoh \thesubsection.1]  Mencetak teks ke layar.
 		\begin{lstlisting}[language=c,caption = Mencetak Tulisan "C Programming" Ke layar,captionpos=t]
-		#include <stdio.h>    
+		#include <stdio.h>
 		int main()
 		{ 
 			// Mencetak teks yang ditulis dalam simbol "
 			printf("C Programming");
 			return 0;
 		}
-	\end{lstlisting}
+		\end{lstlisting}
+
 		\begin{itemize}
 			\item Seluruh program C harus berisi fungsi main() tempat program memulai menjalankan kode.
 			      % \item All C program must have main() function where the program needs to run the code.
-			\item Fungsi \verb*|printf()| adalah library untuk mengirim output yang telah diformat ke layar.  Fungsi \verb*|printf()|  mencetak string dalam tanda dua tanda petik.
+			\item Fungsi \verb*|printf()| adalah library untuk mengirim output yang telah diformat ke layar.  Fungsi \verb*|printf()|  mencetak string yang berada diantara dua tanda petik.
 			      % \item \verb*|printf()| function is a function from stdio.h library. This function outputs the string inside the symbol " to the screen.
 			      % \item \verb*|return 0;| statement in the \verb*|main()| function tells the program to exit.
 			\item \verb*|return 0;| pernyataan di \verb*|main()| fungsi memberitahu program untuk keluar.
 		\end{itemize}
 	\item [Contoh \thesubsection.2] Mencetak integer.
-	      \begin{lstlisting}[language=c,captionpos=t]
+		\begin{lstlisting}[language=c,captionpos=t]
 		#include <stdio.h>
 		int main()
 		{
@@ -373,16 +398,15 @@ Format specifier untuk beberapa tipe data dapat dilihat pada Tabel \ref{tab:form
 		}
 	\end{lstlisting}
 
-
-	      Pada contoh ini digunakan format specifier \verb*|%d| untuk mencetak tipe data \verb*|int|. \verb*|%d| pada tex akan digantikan oleh isi dari \verb*|testInteger|.
-	      % The code above uses the format specifier \verb*|%d| to prints \verb*|int| data type. The \verb*|%d| part of the string will be replaced with the value of \verb*|testInteger|.
+	    Pada contoh ini digunakan format specifier \verb*|%d| untuk mencetak tipe data \verb*|int|. \verb*|%d| pada teks akan digantikan oleh isi dari \verb*|testInteger|.
+	    % The code above uses the format specifier \verb*|%d| to prints \verb*|int| data type. The \verb*|%d| part of the string will be replaced with the value of \verb*|testInteger|.
 
 	\item[Contoh \thesubsection.3] Keluaran bilangan real (float atau double)
-		\begin{itemize}\label{eq:LuasSegitiga}
-			\item \verb|Base|  : menggunakan \verb|float| tipe data.
-			\item \verb|Height|: menggunakan \verb|float| tipe data.
-			\item \verb|Area|  : menggunakan \verb|float| tipe data.
-			      \begin{equation}
+		\begin{itemize}
+			\item \verb|Base|  : menggunakan tipe data \verb|float|.
+			\item \verb|Height|: menggunakan tipe data \verb|float|.
+			\item \verb|Area|  : menggunakan tipe data \verb|float|.
+			      \begin{equation}\label{eq:LuasSegitiga}
 				      Luas = \frac{1}{2} \times Alas \times Tinnggi
 			      \end{equation}
 		\end{itemize}
@@ -427,10 +451,9 @@ Fungsi  \verb*|scanf(const char *format, ...)| membaca input dengan format.
 	\end{verbatim}
 	\item Parameter \\
 	      % Format string in C consist of one or more whitespace, non-whitespace, and format specifiers.
-	      Format string pada C yang terdiri dari satu atau lebih yang terdiri dari \\
-	      Karakter Whitespace,Karakter Non-whitespace  dan  Format specifiers.
+	      Format string pada C terdiri dari satu atau lebih Karakter Whitespace, Karakter Non-whitespace dan Format specifiers.
 	\item Return Value \\
-	      Ketika berhasil maka fungsi mengembalikan jumlah item dari argumen yang berhasil di baca.
+	      Ketika berhasil maka fungsi mengembalikan nilai dari argumen yang berhasil di baca.
 	      % The function will return the number of arguments it has sucessfully read.
 
 \end{enumerate}
@@ -464,31 +487,31 @@ int main()
 	      \begin{description}
 		      \item [Baris 9]\verb|scanf("%f",&Alas);| meminta masukan untuk alas segitiganya
 		      \item [Baris 11]\verb|scanf("%f",&Tinggi);| meminta masukan tinggi segitiganya
-		      \item [Baris 13]\verb|printf("Triangle Area = %.2f", Luas);|,  \verb|.2| si \verb|%.2f| menandakan bahwa hanya 2 angka di belakang koma(decimal point) yang perlu dicetak.
+		      \item [Baris 13]\verb|printf("Triangle Area = %.2f", Luas);|,  "\verb|.2|" di "\verb|%.2f|" menandakan bahwa hanya 2 angka di belakang koma(decimal point) yang perlu dicetak.
 	      \end{description}
 
 	\item[Contoh \thesubsection.5] Program untuk memasukkan nama dan email.\\
-		Pada contoh ini dipelajari bagaimana cara menginputkan string atau text dari keyboard dan mencetak kelayar. Input dari contoh program ini ada dua yang terdiri dari \verb|snama| dan \verb|sAlamatEmail|. Oleh karena text berisi banyak karakter maka masing-masing variabel dideklarasikan sebagai kumpulan karakter dengan jumlah karakter untuk sNama=20 dan sAlamatEmail=30.
+		Pada contoh ini dipelajari bagaimana cara menginputkan string atau text dari keyboard dan mencetak kelayar. Input dari contoh program ini ada dua yang terdiri dari \verb|sName| dan \verb|sEmail|. Oleh karena text berisi banyak karakter maka masing-masing variabel dideklarasikan sebagai kumpulan karakter dengan jumlah karakter untuk sNama=20 dan sAlamatEmail=30.
 		% This example shows how to input string or text from keyboard and outputs it on the screen. Input from this program consist of \verb|sName| and \verb|sEmail|.
 		\begin{figure}[H]
 			\begin{lstlisting}[language=c]
-		#include <stdio.h>
-		
-		int main () 
-		{
-			char sName[20], sEmail[30];
-			
-			printf("Masukkan Nama: ");
-			scanf("%19s", sName);
-			
-			printf("Masukkan Email: ");
-			scanf("%29s", sEmail);
-			
-			printf("Nama : %s\n", sName);
-			printf("Email:%s", sEmail);
-			return(0);
-		}
-	\end{lstlisting}
+				#include <stdio.h>
+				
+				int main () 
+				{
+					char sName[20], sEmail[30];
+					
+					printf("Masukkan Nama: ");
+					scanf("%19s", sName);
+					
+					printf("Masukkan Email: ");
+					scanf("%29s", sEmail);
+					
+					printf("Nama : %s\n", sName);
+					printf("Email:%s", sEmail);
+					return(0);
+				}
+			\end{lstlisting}
 		\end{figure}
 \end{description}
 
@@ -503,18 +526,18 @@ Escape Sequence adalah urutan karakter yang digunakan untuk memformat output dan
 	\captionof{table}{Escape Sequence \label{tab:escapesequence}}
 	\begin{tabular}{|l|l|l|}
 		\hline
-		Escape sequence                  & Output berupa   \\ \hline
-		\textbackslash{}a                & bell, alarm     \\ \hline
-		\textbackslash{}b                & Backspace       \\ \hline
-		\textbackslash{}f                & Ganti halaman   \\ \hline
-		\textbackslash{}n                & Ganti baris     \\ \hline
-		\textbackslash{}r                & Carriage return \\ \hline
-		\textbackslash{}t                & tab horisontal  \\ \hline
-		\textbackslash{}v                & tab vertikal    \\ \hline
-		\textbackslash{}'                & Petik tunggal   \\ \hline
-		\textbackslash{}"                & Petik Ganda     \\ \hline
-		\textbackslash{}?                & Tanda tanya     \\ \hline
-		\textbackslash{}\textbackslash{} & Backslash       \\ \hline
+		\textbf{Escape sequence}         & \textbf{Output berupa} \\ \hline
+		\textbackslash{}a                & bell, alarm     	      \\ \hline
+		\textbackslash{}b                & Backspace       	      \\ \hline
+		\textbackslash{}f                & Ganti halaman   	      \\ \hline
+		\textbackslash{}n                & Ganti baris     	      \\ \hline
+		\textbackslash{}r                & Carriage return 	      \\ \hline
+		\textbackslash{}t                & tab horisontal  	      \\ \hline
+		\textbackslash{}v                & tab vertikal    	      \\ \hline
+		\textbackslash{}'                & Petik tunggal   	      \\ \hline
+		\textbackslash{}"                & Petik Ganda     	      \\ \hline
+		\textbackslash{}?                & Tanda tanya     	      \\ \hline
+		\textbackslash{}\textbackslash{} & Backslash       	      \\ \hline
 	\end{tabular}
 \end{table}
 
@@ -536,7 +559,7 @@ int main()
 			\label{fig:screenshot0006}
 		\end{figure}
 
-	\item[Contoh \thesubsection.7] Menggunakan escape sequence \verb*|\t| mengubah tab.
+	\item[Contoh \thesubsection.7] Menggunakan escape sequence \verb*|\t| untuk mengubah tab.
 		\begin{lstlisting}[language=c]
 #include <stdio.h>
 int main(void)
@@ -559,8 +582,9 @@ int main(void)
 
 \subsection{Tugas Pendahuluan}
 \begin{enumerate}
+	\item \verb|scanf("%d", &tinggi)|, code tersebut akan meminta input yang akan dimasukkan pada variabel \verb|tinggi|. Jelaskan mengapa ada "\verb|&|" pada \verb|&tinggi|! apa yang terjadi jika hanya ditulis sebagai \verb|tinggi|!
 	\item Cobalah buat suatu program yang dapat menerima input berupa nama dan NRP kemudian menampilkannya pada layar.
-	\item Buat program yang meminta pengguna memasukkan suhu dalam Celsius dan kemudian mengonversinya ke Fahrenheit.
+	\item Buat program yang meminta pengguna memasukkan suatu angka kemudian menampilkan nilai kuadrat dan kubik dari angka tersebut.
 \end{enumerate}
 
 \begin{center}
