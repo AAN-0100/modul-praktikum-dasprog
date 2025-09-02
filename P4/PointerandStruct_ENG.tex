@@ -1,5 +1,4 @@
-% \section{Tujuan}
-\section{Goals}
+\section*{Goals}
 \begin{itemize}[label=$\bullet$, itemsep=-1pt, leftmargin=*]
     % \item Mahasiswa mengerti tentang konsep pointer pada bahasa pemrograman C.
     \item Students are able to understand the concept of pointers in C.
@@ -13,464 +12,440 @@
     \item Students are able to apply the conceptof searching and sorting algorithm in C.
 \end{itemize}
 
-% \section{Pointer}
-\section{Pointers}
-% \subsection{Alamat Memori}
-\subsection{Memory Address}
-% Setiap variabel, fungsi, struct, ataupun objek lain yang dibuat dalam program mempunyai lokasi masing-masing pada memori. 
-% Alokasi setiap variabel disimpan dalam alamat memori tertentu.
-Every variables, functions, structs, or any object in a program have their own memory allocation.
-Said Allocations are saved in certain memory addresses
+\section{Pointer}
 
-% Jika  terdapat variabel \verb|var| di program Anda, \verb|&var| akan memberi alamatnya di memori.
-If there are any variable \verb|var| in your program, \verb|&var| will return its address in memory
+A pointer is a variable that stores the memory address of another variable.
+A variable created in C occupies a space in memory, and this space has an address called a memory address.
+We can obtain the memory address using the \& operator. \\
+Example:
 \begin{lstlisting}[language=c]
-    int var = 5;
-    printf("%d\n", var);
-    printf("%p\n", &var);
+	int a = 10;
+	printf("%d\n", a); // output 10
+	printf("%p\n", &a); // output the address of variable a
 \end{lstlisting}
-\begin{center}
-    % \colorbox{pink}{\parbox{0.8\linewidth}{\textbf{Catatan:} Output bisa berbeda-beda di tiap eksekusi.}}
-    \colorbox{pink}{\parbox{0.8\linewidth}{\textbf{Catatan:} Output may differ in each execution.}}
-\end{center}
 
-% \subsection{Pengenalan Pointer}
-\subsection{Introduction to Pointers}
+\subsection{Declaration and Initialization}
 
-% Pointer(variabel penunjuk) adalah variabel khusus yang digunakan untuk menyimpan alamat, bukan nilai.
-Pointers is a special variable that serves to save addresses, not value.
-
-% Deklarasi variabel pointer menggunakan operator \verb|*| di antara tipe data dan nama variabelnya.
-To declare a pointer variable, use \verb|*| operator between the data type and it's variable name.
-\begin{lstlisting}[language=c]
-	#include <stdio.h>
-int main()
+To declare a pointer, it is similar to declaring a variable but with a * after the data type
 {
-	int* p; // atau
-    int * p2;
+\captionsetup[lstlisting]{labelformat=empty, justification=raggedright, singlelinecheck=false} %caption without label and aligned left
+\begin{lstlisting}[language=c, caption={Syntax}]
+	data_type *name;
+\end{lstlisting}
+}
+To initialize, assign it the address of another variable.
+Example:
+\begin{lstlisting}[language=c]
+	int number;
+	int *ptr = &number; // initialize pointer ptr to point to number
+
+	printf("%p\n", &number); // output address of number
+	printf("%p\n", ptr);    // output address of number
+\end{lstlisting}
+
+\subsection{Dereference}
+
+Dereference is the term used to get the value of the variable pointed to by a pointer.
+Example:
+\begin{lstlisting}[language=c]
+	int number = 10;
+	int *ptr = &number;
+
+	printf("%d\n", number); // output value of number
+	printf("%d\n", *ptr);  // output value of number
+\end{lstlisting}
+\begin{verbatim}
+	Output:
+	10
+	10
+\end{verbatim}
+
+\subsection{Pointer with Variables}
+
+Using a pointer, we can access a variable without calling the variable itself.
+We only need to call the pointer.
+Example:
+\begin{lstlisting}[language=c]
+	int number = 5;
+	int *ptr = &number;
+
+	printf("%d\n", number);
+
+	*ptr = 15; // access the variable number using the pointer
+
+	printf("%d\n", number);  
+\end{lstlisting}
+\begin{verbatim}
+    Output:
+    5
+    15
+\end{verbatim}
+In the example above, the variable \texttt{number} is accessed using the pointer \texttt{ptr}, so its value changes.
+
+\subsection{Pointer with Arrays}
+
+Pointers can also store the memory address of an array.
+In C, the name of an array stores the address of its first element.
+Example:
+\begin{lstlisting}[language=c]
+	int arr[5] = {10, 20, 30, 40, 50};
+	printf("%p\n", arr);     // address of first element (arr[0])
+	printf("%p\n", &arr[0]); // address of first element (arr[0])
+\end{lstlisting}
+Thus, the name of an array can be considered as a pointer pointing to the first element of the array.
+Example of accessing the first element:
+\begin{lstlisting}[language=c]
+	int arr[5] = {10, 20, 30, 40, 50};
+	printf("%d\n", arr[0]); // access first element
+	printf("%d\n", *arr);   // access first element    
+\end{lstlisting}
+\begin{verbatim}
+    Output:
+    10
+    10
+\end{verbatim}
+To access the next elements, simply increment the pointer:
+\begin{lstlisting}[language=c]
+	int arr[5] = {10, 20, 30, 40, 50};
+	printf("%d\n", *(arr+1)); // access second element
+	printf("%d\n", *(arr+2)); // access third element    
+\end{lstlisting}
+\begin{verbatim}
+    Output:
+    20
+    30
+\end{verbatim}
+We can also use a loop:
+\begin{lstlisting}[language=c]
+	int arr[5] = {10, 20, 30, 40, 50};
+	for(int i=0;i<5;i++){
+		printf("%d\n", *(arr+i));
+	}
+\end{lstlisting}    
+\begin{verbatim}
+	Output:
+	10
+	20
+	30
+	40
+	50
+\end{verbatim}
+Pointers can also modify the values of an array:
+\begin{lstlisting}[language=c]
+	int arr[3] = {1, 2, 3};
+	int *ptr = arr; // pointer pointing to arr
+
+	*(ptr+1) = 4; // change value at arr index 1
+
+	printf("%d\n", arr[1]);
+\end{lstlisting}
+\begin{verbatim}
+	Output:
+	4
+\end{verbatim}
+
+\subsection{Pointer and Functions}
+
+Using pointers, we can pass a variable from outside a function and modify its value inside the function.
+This is called passing parameters by reference, whereas passing arguments normally is called passing parameters by value.
+
+\subsubsection{Passing by Value}
+
+By default, a C function only sends the value of an argument to the parameter inside the function.
+So even if the values are the same, the variables are different.
+Example:
+
+\begin{lstlisting}[language=c]
+#include <stdio.h>
+
+void change(int x) {
+	printf("%d ", x);
+	x = 20;   // modify local variable x
+	printf("%d\n", x);
+}
+
+int main() {
+	int a = 10;
+	change(a);
+	printf("%d\n", a);
+}
+\end{lstlisting}
+\begin{verbatim}
+	Output:
+	10 20
+	10
+\end{verbatim}
+From the example above, the value of variable \texttt{a} remains 10, even though variable \texttt{x} changed.
+This is because only the value 10 is sent into the function and copied to variable \texttt{x}, not the variable \texttt{a} itself.
+
+\subsubsection{Passing by Reference}
+
+Used to modify a variable outside the function using a pointer.
+Example:
+\begin{lstlisting}[language=c]
+#include <stdio.h>
+
+void change(int *x) { // parameter is a pointer
+	*x = 20;   // change the value at address x
+}
+
+int main() {
+	int a = 10;
+	change(&a);   // send address of a
+	printf("%d\n", a);
+}
+\end{lstlisting}
+\begin{verbatim}
+	Output:
+	20
+\end{verbatim}
+From the example above, the value of \texttt{a} changes even though the modification is inside the function because passing by reference is used.
+This can be used to create a function that swaps the values of two variables:
+\begin{lstlisting}[language=c]
+#include <stdio.h>
+
+void swap(int *x, int *y) {
+	int temp = *x;
+	*x = *y;
+	*y = temp;
+}
+
+int main() {
+	int a = 5, b = 10;
+	swap(&a, &b);
+	printf("a = %d, b = %d\n", a, b);
+}
+\end{lstlisting}
+\begin{verbatim}
+	Output:
+	a = 10, b = 5
+\end{verbatim}
+Passing by reference can also be used to pass an array as a function parameter.
+Example:
+\begin{lstlisting}[language=c]
+void printArray(int *arr, int n) { // pointer as parameter for array
+	for (int i = 0; i < n; i++) {
+		printf("%d ", *(arr + i));
+	}
+	printf("\n");
+}
+
+int main() {
+	int data[5] = {1, 2, 3, 4, 5};
+	printArray(data, 5); // pass array to function
+}
+\end{lstlisting}
+\begin{verbatim}
+    Output:
+    1 2 3 4 5     
+\end{verbatim}
+
+\subsection*{Pre-lab Assignment 1}
+\begin{enumerate}
+    \item What are the uses of pointers? Explain!
+    \item How do you declare a pointer to a multidimensional array?
+    \item Consider the following code:
+    \begin{lstlisting}[language=c]
+#include <stdio.h>
+
+int main() {
+	int arr[4] = {25, 50, 75, 100};
+
+	for (int i = 0; i < 4; i++) {
+		printf("%d\n", *(arr++));
+	}
+}
+\end{lstlisting}
+    The code above contains an error. Why does this error occur? What is the solution?
+    \item Explain what you know about pointers to pointers! Give an example of its usage!
+    \item Study sorting algorithms! Write down what you have learned!
+\end{enumerate}
+
+\section{Struct}
+
+Struct is a way to group several variables (which can be of different types) into one.
+If an array can store many data of the same type, a struct can store various types of data.
+Example:
+\begin{lstlisting}[language=c]
+#include <stdio.h>
+
+struct Student {
+	int nrp;
+	char name[50];
+	float gpa;
+};
+
+int main() {
+	struct Student s1 = {5024991000, "B300", 3.99};
+
+	printf("NRP   : %d\n", s1.nrp);
+	printf("Name : %s\n", s1.name);
+	printf("GPA  : %.2f\n", s1.gpa);
+
 	return 0;
 }
 \end{lstlisting}
 
+\subsection{Creating a Struct}
 
-% \subsection{Cara Kerja Pointer}
-\subsection{How Pointers Work}
-% Berikut adalah cara kerja dari pointer.
-The following is to show how pointers work.
-% \begin{lstlisting}[language=c, caption={Contoh Program Pointer}]
-\begin{lstlisting}[language=c, caption={Program Example}]
-    #include <stdio.h>
-    int main()
-    {
-       int* pc, c;
-       
-       c = 22;
-       printf("Address of c: %p\n", &c);
-       printf("Value of c: %d\n\n", c);  // 22
-       
-       pc = &c;
-       printf("Address of pointer pc: %p\n", pc);
-       printf("Content of pointer pc: %d\n\n", *pc); // 22
-       
-       c = 11;
-       printf("Address of pointer pc: %p\n", pc);
-       printf("Content of pointer pc: %d\n\n", *pc); // 11
-       
-       *pc = 2;
-       printf("Address of c: %p\n", &c);
-       printf("Value of c: %d\n\n", c); // 2
-       return 0;
-    }
+To create a struct, we use the keyword \texttt{struct}:
+{
+\captionsetup[lstlisting]{labelformat=empty, justification=raggedright, singlelinecheck=false} % caption without label and aligned left
+\begin{lstlisting}[language=c, caption={syntax}]
+	struct Coord {
+		int x;
+		int y;
+	};
 \end{lstlisting}
-
-Explanation:\\
-\begin{enumerate}
-    \item \verb|int* pc, c;|
-          \begin{figure}[H]
-              \centering
-              \includegraphics[width=0.2\linewidth]{P4/img/screenshot001.png}
-              \caption{}
-              \label{fig:satu}
-          \end{figure}
-    \item \verb|c = 22;|
-          \begin{figure}[H]
-              \centering
-              \includegraphics[width=0.2\linewidth]{P4/img/screenshot002.png}
-              \caption{}
-              \label{fig:dua}
-          \end{figure}
-    \item \verb|pc = &c;|
-          \begin{figure}[H]
-              \centering
-              \includegraphics[width=0.2\linewidth]{P4/img/screenshot003.png}
-              \caption{}
-              \label{fig:tiga}
-          \end{figure}
-    \item \verb|c = 11;|
-          \begin{figure}[H]
-              \centering
-              \includegraphics[width=0.2\linewidth]{P4/img/screenshot004.png}
-              \caption{}
-              \label{fig:empat}
-          \end{figure}
-    \item \verb|*pc = 2;|
-          \begin{figure}[H]
-              \centering
-              \includegraphics[width=0.2\linewidth]{P4/img/screenshot005.png}
-              \caption{}
-              \label{fig:lima}
-          \end{figure}
-\end{enumerate}
-
-\subsection{Double Pointer}
-% Variabel pointer juga dapat menunjuk variabel pointer lainnya. 
-% Hal ini disebut dengan double pointer (pointer to pointer). 
-% Untuk mendeklarasikan variabel double pointer, digunakan dua simbol *. 
-% Kegunaan paling umum dari variabel double pointer adalah untuk membuat array dua dimensi secara dinamis.
-A pointer could also point to another pointer variable. This is called a double pointer (pointer to pointer).
-To declare a double pointer, we use two \verb|*| operator between the data type and its variable name.
-The general usage of this double pointer variable is ti create a two dimensional array dinamically.
+}
+Don't forget to add a semicolon at the end of the braces.\\\\
+To access a struct, we need to declare a variable for that struct.
+To access a member of a struct, we call the variable, then use a dot followed by the member name.
+Example:
 \begin{lstlisting}[language=c]
-    int **dbPtr;
-\end{lstlisting}
-Variabel dbPtr di atas menyimpan alamat memori dari variabel pointer lainnya. \\
-Berikut contohnya
+	struct Coord {
+		int x;
+		int y;
+	};
 
-The variable dbPtr above contains a memory address of another pointer variable.\\
-Take a look at the example below.
-% \begin{lstlisting}[language=c,  caption={Contoh Double Pointer}]
-\begin{lstlisting}[language=c,  caption={Double Pointer Example}]
+	int main(){
+		struct Coord p1 = {10, 20}; // create struct variable
+
+		printf("%d %d\n", p1.x, p1.y); // access members of p1
+
+		p1.x = 30; // modify member of p1
+		printf("%d %d\n", p1.x, p1.y);
+	}    
+\end{lstlisting}
+\begin{verbatim}
+    Output:
+    10 20
+    30 20    
+\end{verbatim}
+
+\subsection{Struct and Pointer}
+
+A pointer can be used to point to a struct, and access its members using the arrow operator (->).
+Example:
+\begin{lstlisting}[language=c]
+	struct Coord {
+		int x;
+		int y;
+	};
+
+	int main(){
+		struct Coord p1 = {10, 20};
+		struct Coord *ptr = &p1;
+		
+		printf("%d %d\n", ptr->x, ptr->y);
+	}
+\end{lstlisting}
+\begin{verbatim}
+    Output:
+    10 20   
+\end{verbatim}
+
+\subsection{Array of Structs}
+
+A struct can be used as an array.
+Example:
+\begin{lstlisting}[language=c]
+	struct Student {
+		char nrp[20];
+		char name[50];
+		float gpa;
+	};
+	
+	int main() {
+		struct Student students[2] = {
+			{"5024991001", "student1", 3.1},
+			{"5024991002", "student2", 3.2}
+		};
+	
+		for (int i = 0; i < 2; i++) {
+			printf("%s %s %.2f\n", students[i].nrp, students[i].name, students[i].gpa);
+		}
+	}
+\end{lstlisting}
+\begin{verbatim}
+    Output:
+    5024991001 student1 3.10
+    5024991002 student2 3.20
+\end{verbatim}
+
+\subsection{Nested Struct}
+
+A nested struct is a struct that has a member which is another struct.
+This is useful when the stored data has a hierarchy.
+Example:
+\begin{lstlisting}[language=c]
 #include <stdio.h>
 
-int main(void)
-{
-    int var = 23;
-    int *ptr = &var;
-    int **dbPtr = &ptr;
+// Address struct
+struct Address {
+	char street[50];
+	char city[30];
+};
 
-    printf("%d\n", **dbPtr);
-        
-    return 0;
+// Student struct containing Address struct
+struct Student {
+	char nrp[20];
+	char name[50];
+	float gpa;
+	struct Address address;  // nested struct
+};
+
+int main() {
+	struct Student s1 = {
+		"5024991000", "B300", 3.8,
+		{"ITS Main Street", "Surabaya"}
+	};
+
+	printf("NRP      : %s\n", s1.nrp);
+	printf("Name    : %s\n", s1.name);
+	printf("GPA     : %.2f\n", s1.gpa);
+	printf("Address : %s, %s\n",
+		s1.address.street,
+		s1.address.city);
+
+	return 0;
 }
 \end{lstlisting}
+\begin{verbatim}
+    Output:
+    NRP     : 5024991000
+    Name    : B300
+    GPA     : 3.80
+    Address : ITS Main Street, Surabaya
+\end{verbatim}
 
-% \subsection{Tugas Pendahuluan}
-\subsection{Pre-lab Assignment}
-\begin{enumerate}
-    \item Explain everything you know about pointer!
-    %    \item Bagaimana cara mendeklarasikan pointer ke array multidimensi?
-    \item Explain how to declare a pointer to a multidimensional array?
-          %    \item Buatlah program dalam bahasa C atau C++ yang mengimplementasikan 
-          %    fungsi void printMatrix(int **matrix, int rows, int cols) untuk mencetak matriks 2D menggunakan pointer ke pointer. 
-          %    Lalu, dalam fungsi main, buatlah matriks 2D dan panggil fungsi printMatrix untuk mencetak matriks tersebut.
-    \item Create a program in C or C++ that implements void printMatrix(int **matrix, int rows, int cols) function
-          to print out a 2D matrix using pointer to pointer. And then in the main function, create a 2D matrix and call the
-          printMatrix function to print said matrix.
-\end{enumerate}
+\subsection{Typedef Struct}
 
-\section{Struct}
-% Dalam pemrograman C, struct (atau struktur) adalah kumpulan variabel (bisa dari tipe berbeda) di bawah satu nama. 
-% Tidak seperti array yang hanya dapat menyimpan elemen dengan tipe data sama, 
-% struct dapat mengelompokkan elemen dengan tipe data yang berbeda-beda.
-In C, struct is a collection of variables (could be in various types) under one name. Unlike an array that could only
-store elements with the same data type, struct is able to group elements with different data types.
-
-% \subsection{Deklarasi Struct}
-\subsection{Deklarasi Struct}
-% Seperti variabel, struct harus dideklarasikan terlebih dahulu sebelum bisa digunakan. Pendeklarasian struct menggunakan sintaks 
-% sebagai berikut.
-Similar to variables, a struct must be declare first before use. Below is an example on how to declare a struct.
-
-% \begin{lstlisting}[language=c]
-% struct <nama_struct> {
-%     <tipe_data_member> <nama_member>;
-%     <tipe_data_member> <nama_member>;
-%     <tipe_data_member> <nama_member>;
-%     .
-%     .
-%     .
-% };
-% \end{lstlisting}
-\begin{lstlisting}[language=c]
-    struct <struct_name> {
-        <member_dataType> <member_name>;
-        <member_dataType> <member_name>;
-        <member_dataType> <member_name>;
-        .
-        .
-        .
-    };
-    \end{lstlisting}
-
-Berikut adalah contoh deklarasi struct berdasarkan kasus Mahasiswa.
-Below is a case example of struct declaration about students data.
-% \begin{lstlisting}[language=c]
-% struct Mahasiswa
-% {
-%     char *name;
-%     char *address;
-%     int age;
-% };
-% \end{lstlisting}
-\begin{lstlisting}[language=c]
-    struct Students
-    {
-        char *name;
-        char *address;
-        int age;
-    };
-    \end{lstlisting}
-% \begin{center}
-% 	\colorbox{pink}{\parbox{0.8\linewidth}{\textbf{Catatan:}  Menggunakan pointer * untuk data string}}
-% \end{center}
-\begin{center}
-    \colorbox{pink}{\parbox{0.8\linewidth}{\textbf{Note:}  Use pointer * for string data type}}
-\end{center}
-
-% Setelah dideklarasikan, sebuah struct akan menjadi tipe data baru. 
-% Maka dalam kasus ini, struct Mahasiswa di sini menjadi tipe data baru dengan member-member berupa \verb|nama|, 
-% \verb|address|, dan \verb|age|. Untuk membuat variabel dengan tipe data struct, dilakukan dengan sintaks berikut.
-After declaration, a struct will be its own data type. In this case, \textbf{Students} data type will be its own new data type
-with members such as \verb|name|, \verb|address|, dan \verb|age|. Take a look at an example below to declare a variable
-with the struct data type.
-
-% \begin{lstlisting}[language=c]
-%     struct <nama_struct> <nama_variabel>;
-% \end{lstlisting}
-\begin{lstlisting}[language=c]
-    struct <struct_name> <variable_name>;
-\end{lstlisting}
-
-Example:
-% \begin{lstlisting}[language=c]
-%     struct Mahasiswa mhs1;
-%     struct Mahasiswa mhs2;
-% \end{lstlisting}
-\begin{lstlisting}[language=c]
-    struct Students mhs1;
-    struct Students mhs2;
-\end{lstlisting}
-Contoh di atas menunjukkan terdapat dua variabel \verb|mhs1| dan \verb|mhs2 |bertipe struct \verb|Mahasiswa|.
-The example above shows that there are two variables \verb|mhs1| and \verb|mhs2 with \verb|Mahasiswa| struct data type.
-
-% \subsection{Akses Member Struct}
-\subsection{Struct Member Access}
-Bagaimana cara untuk mengakses member dari variabel struct yang telah dibuat? \\
-Untuk mengakses member-member dari struct, digunakan operator dot (.) setelah nama variabelnya.
-How do you access members from a struct variable? \\
-To access members from a struct, we use a dot (.) operator after its variable name.
-
-% \begin{lstlisting}[language=c]
-%     <nama_variabel>.<member_struct>
-% \end{lstlisting}
-\begin{lstlisting}[language=c]
-    <variable_name>.<member_name>
-\end{lstlisting}
-
+Using \texttt{typedef} allows us to write struct declarations more concisely.
 Example:
 \begin{lstlisting}[language=c]
-    mhs1.age = 69;
-    mhs1.nama = Surya;
-    
-    mhs2.nama = Pebrianto;
-    mhs2.age = 42;
+	typedef struct { // Create struct with typedef
+		char nrp[20];
+		char name[50];
+		float gpa;
+	} Student;
+
+	int main(){
+		Student s1 = {"5024991000", "B300", 3.99}; // declare struct variable without writing struct Student
+
+		printf("NRP   : %d\n", s1.nrp);
+		printf("Name : %s\n", s1.name);
+		printf("GPA  : %.2f\n", s1.gpa);
+		
+		return 0;
+	}
 \end{lstlisting}
 
-\subsection{Pre-lab Assignment}
+\subsection*{Pre-lab Assignment 2}
 \begin{enumerate}
-    \item what is the advantages of using struct!
-    % \item Buatlah sebuah struct yang merepresentasikan informasi tentang seorang mahasiswa, yang memiliki nama, nim, dan nilai IPK. 
-    % Kemudian, buatlah program untuk menginput data mahasiswa, menampilkan data mahasiswa, dan menghitung rata-rata IPK dari 
-    % sejumlah mahasiswa.
-    \item Create a struct that represent informations about a students, the informations their name, student ID, and GPA.
-          And then, create a program in insert student informations, display them, and calculate the average GPAs of a
-          certain number of students
-    %\item Anda diberikan struct yang merepresentasikan titik dalam sistem koordinat dua dimensi (x, y).
-    %      Buatlah sebuah program C untuk menghitung jarak antara dua titik yang diinputkan oleh pengguna menggunakan rumus jarak Euclidean.
-    \item Create a struct that represents coordinate points in a two dimensional plane (x,y). And then create a C program to calculate
-          the distance between two points that a user inputs with a Euclidean formula.
-\end{enumerate}
-
-% \section{Algoritma Sorting}
-\section{Sorting algorithm}
-% Sorting merupakan suatu proses penyortiran atau pengurutan sebuah data.\\
-% Terdapat 2 macam pengurutan data pada sorting yaitu :
-Sorting is a process of arranging or organizing data.\\
-There are two types of data sorting, namely :
-% \begin{enumerate}
-%     \item Berdasarkan ascending (kecil ke besar).
-%     \item Berdasarkan Descending (besar ke kecil).
-% \end{enumerate}
-\begin{enumerate}
-    \item Ascending (small to large).
-    \item Descending (large to small).
-\end{enumerate}
-
-\subsection{Bubble Sort}
-% Bubble sort merupakan algoritma pengurutan yang membandingkan dua data yang berdekatan dan menukarnya sampai tidak dalam urutan 
-% yang diinginkan. Bubble sort menggunakan teknik iterasi. Iterasi merupakan proses melakukan perulangan sebanyak data yang diketahui.
-% Intinya pada iterasi melakukan perbandingan antara dua data.
-Bubble sort is a sorting algorithm that compares two adjacent data points and swaps them until they are in the desired order.
-Bubble sort utilizes iteration method. iteration is a process of repeating a loop as many times as there is known data.
-Essentially, during each iteration, a comparison is made between two data points.
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.7\linewidth]{P4/img/screenshot006.png}
-    \caption{}
-    \label{fig:enam}
-\end{figure}
-% \begin{lstlisting}[language=c,caption=Implementasi Bubble Sort]
-\begin{lstlisting}[language=c,caption=Bubble Sort Implementation]
-void swap ( int * xp , int * yp ) {
-   int temp = *xp;
-   *xp = *yp;
-   *yp = temp;
-}
-
-void bubbleSort(int arr[], int n) {
-   int i, j, swapped;        // optimized with bool `swapped`:
-   for (i = 0; i < n-1; i++) {
-      swapped = 0;
-      for (j = 0; j < n-i-1; j++) {
-         if (arr[j] > arr[j+1]) {
-            swap(&arr[j], &arr[j+1]);
-            swapped = 1;
-         }
-      }
-      if (swapped == 0)
-         break;
-   }
-}
-\end{lstlisting}
-
-\subsection{Insertion Sort}
-% Insertion sort merupakan teknik sorting dengan cara menyisipkan atau memasukan setiap elemen secara berulang berulang.
-% Konsep insertion sort bisa diibaratkan sebuah kartu.
-Insertion sort is a sorting technique that involves repeatedly inserting or placing each element. Imagine reshuffling a
-deck of cards to organize it.
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.5\linewidth]{P4/img/screenshot007.png}
-    \caption{}
-    \label{fig:tujuh}
-\end{figure}
-% \begin{lstlisting}[language=c,caption=Implementasi Insertion Sort],
-\begin{lstlisting}[language=c,caption=Insertion Sort Implementation], 
-void insertionSort(int arr[]. int n) {
-   int i, key, j;
-   for (i = 1; i < n; i++) {
-      key = arr[i];
-      j = i-1;
-    
-      while (j >= 0 && arr[j] > key) {
-         arr[j+1] = arr[j];
-         j = j-1;
-      }
-      arr[j+1] = key;
-   }
-}
-\end{lstlisting}
-
-\begin{center}
-    % \colorbox{pink}{\parbox{0.8\linewidth}{\textbf{Catatan:} Terdapat berbagai algoritma sorting lain. Pelajari secara mandiri}}
-    \colorbox{pink}{\parbox{0.8\linewidth}{\textbf{Note:} There are other sorting algorithms. Look it up individually}}
-\end{center}
-
-% \subsection{Tugas Pendahuluan}
-\subsection{Pre-lab Assignment}
-\begin{enumerate}
-    % \item Urutkan array berikut menggunakan algoritma Bubble Sort:
-
-    % Array: [5, 2, 9, 1, 5, 6]
-    \item What is Big O notation?
-    \item Sort the following array using Bubble Sort:
-
-          Array: [5, 2, 9, 1, 5, 6]
-    \item Hitung kompleksitas waktu (Big O) dari algoritma Insertion Sort saat mengurutkan sebuah array dengan panjang n,
-          dan jelaskan bagaimana kompleksitas ini dihitung.
-    \item Calculate the time complexity (Big O) of the Insertion Sort algorithm when soring an array of length n, and
-          explain how this complexity is calculated
-\end{enumerate}
-
-% \section{Algoritma Searching}
-\section{Searching Algorithm}
-% Searching merupakan proses pencarian sebuah data yang diinginkan.
-Searching is a process of looking the desired data.
-
-\subsection{Linear Search}
-Linear Search bekerja dengan melakukan pengecekan kepada semua elemen yang ada.\\
-Secara garis besar, cara kerja Linear Search adalah:
-
-Linear Search works by checking all of the existing elements.\\
-Essentially, the working principle of Linear Search is:
-
-% \begin{enumerate}
-%     \item Memeriksa item satu per satu.
-%     \item Apabila ditemukan, maka “ketemu”.
-%     \item Jika sampai akhir belum ditemukan, maka item yang dicari tidak ada.
-% \end{enumerate}
-\begin{enumerate}
-    \item Checking items one by one.
-    \item When it is found, the program will execute any statements that needs a condition of an item to be found.
-    \item If the algorithm had checked every single data, then the desired item does not exist.
-\end{enumerate}
-
-% \begin{lstlisting}[language=c,caption=Implementasi Linear Search], 
-\begin{lstlisting}[language=c,caption=Linear Search Implementation], 
-int linearSearch(int arr[], int n, int item) {
-    int i;
-    for(i = 0; i < n; ++i) {
-        if(item == arr[i])
-          return 1;
-    }
-    return -1;
-}
-\end{lstlisting}
-
-\subsection{Binary Search}
-% Binary Search adalah teknik pencarian di mana untuk setiap iterasinya kita membagi space pencarian menjadi hanya setengah 
-% dari space pencarian awal hingga kita menemukan yang kita cari.
-Binary Search is a searching technique where in each iteration we separate the searching space to half the initial searching space
-until we find the desired item.
-
-% \begin{lstlisting}[language=c,caption=Implementasi Binary Search],
-\begin{lstlisting}[language=c,caption=Binary Search Implementation],   
-bool f(int k, int a, int b, int n) {
-   return ((k/a) * (b/a) >= n);
-}
-
-int binser(int a, int b, int n) {
-   int l = 1;
-   int r = 100000;
-   while (r - l > 1) {
-      int mid = (l + r) >> 1;
-      bool can = f(mid);
-      if(can)
-         r = mid;
-      else
-         l = mid + 1;
-   }
-   if (can(l))
-      return l;
-   else
-      return r;
-}
-\end{lstlisting}
-
-\begin{center}
-    % \colorbox{pink}{\parbox{0.8\linewidth}{\textbf{Catatan:} Terdapat berbagai algoritma searching lain. Pelajari secara mandiri}}
-    \colorbox{pink}{\parbox{0.8\linewidth}{\textbf{Note:} There are other sorting algorithms. Look it up individually}}
-\end{center}
-
-% \subsection{Tugas Pendahuluan}
-\subsection{Pre-lab Assignment}
-\begin{enumerate}
-    % \item Anda memiliki daftar nama berikut: ["Alice", "Bob", "Charlie", "David", "Eve", "Frank"]. 
-    % Gunakan algoritma binary search untuk mencari apakah nama "Eve" ada dalam daftar ini. 
-    % Jika ya, berapa langkah yang dibutuhkan?
-    \item There is data as follows: [49, 60, 69, 42, 1, 97, 65, 77, 100, 28, 46]. Use the binary search algorithm to find out whether there are prime numbers in the data!
-    \item Explain the difference between Linear Search (Sequential Search) and Binary Search.
-          in what scenario that you choose one method over the other?
-    \item Try looking for other searching algorithms, and explain their advantages and disadvantages!
+    \item Can a struct be used as a function parameter? How?
+    \item What is a union? How is it different from a struct? Explain!
+    \item If there are three data values, which are assignment score, midterm score, and final exam score.
+    These three values can be stored as integers.
+    In your opinion, is it better to store these three values as an array or a struct? Explain your answer!
 \end{enumerate}
