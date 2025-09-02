@@ -1,4 +1,4 @@
-\section{Tujuan}
+\section*{Tujuan}
 \begin{itemize}[label=$\bullet$, itemsep=-1pt, leftmargin=*]
 	\item Mahasiswa mengenal dan mampu menggunakan ekspresi-ekspresi logika dan perbandingan pada bahasa pemrograman C
 	\item Mahasiswa mengenal dan mampu menggunakan syntax-syntax percabangan pada bahasa pemrograman C
@@ -14,632 +14,876 @@
 	      % \item Students are able to use loops to process data on arrays
 	\item Mahasiswa  dapat mengenal dan menggunakan  string.
 \end{itemize}
-\section{Ekspresi Logika dan Perbandingan}
-\subsection{Ekspresi Perbandingan}
-Berikut adalah operator-operator yang digunakan pada suatu ekspresi perbandingan
-% The following are the operators used in comparison expressions.
+
+\section{percabangan}
+
+pada modul sebelumnya kita sudah mempelajari tentang operator pembanding dan operator logika.
+Kedua operator ini akan sering digunakan dalam percabangan.
 \begin{center}
-	\captionof{table}{Operator Perbandingan \label{tab:operatorcomp}}
-	\begin{tabular}{|c|l|c|}
-		\hline
-		\textbf{Operator} & \textbf{Nama}           & \multicolumn{1}{l|}{\textbf{Contoh Ekspres}} \\ \hline
-		==                & Sama Dengan             & x == y                                       \\ \hline
-		!=                & Tidak Sama Dengan       & x != y                                       \\ \hline
-		\textgreater{}    & Lebih Dari              & x \textgreater y                             \\ \hline
-		\textless{}       & Kurang Dari             & x \textless y                                \\ \hline
-		\textgreater{}=   & Lebih Dari Sama Dengan  & x \textgreater{}= y                          \\ \hline
-		\textless{}=      & Kurang Dari Sama Dengan & x \textless{}= y                             \\ \hline
-	\end{tabular}
+\captionof{table}{Operator Relasional\label{tab:relasional}}
+\begin{tabular}{|c|c|c|}
+\hline
+\textbf{Simbol} & \textbf{Nama Operator} & \textbf{Contoh Sintaks} \\ \hline
+<    & Kurang dari 					& a < b  \\ \hline
+<=   & Kurang dari atau sama dengan & a <= b \\ \hline
+>    & Lebih dari 					& a > b  \\ \hline
+>=   & Lebih dari atau sama dengan 	& a >= b \\ \hline
+==   & Sama dengan 					& a == b \\ \hline
+!=   & Tidak sama dengan 			& a != b \\ \hline
+\end{tabular}
+\captionof{table}{Operator Logika\label{tab:logika}}
+\begin{tabular}{|c|c|c|}
+\hline
+\textbf{Simbol} & \textbf{Nama Operator} & \textbf{Contoh Sintaks} \\ \hline
+\&\&	& AND 	& \verb|a && b| \\ \hline
+||   	& OR 	& \verb!a || b! \\ \hline
+!=    	& NOT 	& \verb|a != b| \\ \hline
+\end{tabular}
 \end{center}
 
-Suatu ekspresi perbandingan akan mengembalikan nilai berupa \verb|true| atau \verb|false| yang ditandai dengan nilai 0 atau 1.
-% A Comparison Expression will return boolean value \verb|true| or \verb|false| which is also represented with the value 1 or 0.
-Sebagai contoh:
-%As example:
-\begin{verbatim}
-    printf("%d",0>1); // Akan Mencetak 0 ke layar
-    printf("%d",0<1); // Akan Mencetak 1 ke layar 
-\end{verbatim}
+\subsection{Pernyataan if}
 
-\subsection{Ekspresi Logika}
-Berikut adalah operator-operator logika yang digunakan pada suatu ekspresi logika
-% The following are the logical operators used on a Logical Expression
-\begin{center}
-	\captionof{table}{Ekspresi Logika \label{tab:operatorlogic}}
-	\begin{tabular}{|c|l|c|}
-		\hline
-		Operator & \multicolumn{1}{c|}{Nama} & Contoh Ekspresi        \\ \hline
-		$\&\&$   & AND                       & $x<5\; \&\& \;x<10$    \\ \hline
-		$||$     & OR                        & $x < 5\; ||\; x < 4  $ \\ \hline
-		$!$      & NOT                       & $!(x <5 \&\& x < 10) $ \\ \hline
-	\end{tabular}
-\end{center}
-Sama seperti ekspresi perbandingan, ekspresi logika akan mengembalikan nilai berupa true atau false
-% Like comparison expression, logical expression will return boolean values.
-
-\section{Percabangan}
-\subsection{Pernyataan If}
-% \verb*|if| statement is used to decide which block of code to be executed if the condition is true.
-Pernyataan \verb*|if| digunakan untuk menentukan blok kode C yang dijalankan apabila ekspresi kondisi bernilai benar (TRUE),
-\begin{verbatim}
-// Block of code before if
-if (Condition) 
+Pernyataan if digunakan untuk menentukan apakah sebuah blok kode dijalankan atau tidak tergantung pada sebuah kondisi.
+Jika kondisinya true, maka blok kode akan dijalankan jika false maka tidak dijalankan.
+if bisa ditulis seperti berikut
 {
- // Blok kode yang akan dieksekusi jika kondisinya benar(True).
-}
-// Blok kode setelah if
-\end{verbatim}
-Sebagai contoh, perhatikan program berikut
-% As example, look at the following code 
-\begin{lstlisting}[language=c,caption =Contoh Pernyataan If,label=lst:ifexample01]
-	include <stdio.h>
-	
-	int main()
-	{
-		//Deklarasi variabel 
-		int uangSaya,hargaRoti;
-		uangSaya = 5000;
-		hargaRoti = 10000;
-		
-		if (uangSaya>=hargaRoti)
-		{
-		    printf("saya bisa beli roti\n");
-		}
-		printf("hehe");
-		return 0;
+\captionsetup[lstlisting]{labelformat=empty, justification=raggedright, singlelinecheck=false} %agar caption tanpa label dan di kiri
+\begin{lstlisting}[language=c, caption={syntax}]
+	if(kondisi){
+		//kode yang dijalankan jika kondisi true
 	}
 \end{lstlisting}
-Keluaran program ini
+}
+Contoh:
+\begin{lstlisting}[language=c]
+#include <stdio.h>
+
+int main() {
+	int angka = 5;
+
+	if (angka > 0) {
+		printf("Angka %d adalah positif\n", angka);
+	}
+
+	return 0;
+}
+\end{lstlisting}
 \begin{verbatim}
-    hehe
-\end{verbatim}
-% If line 7 changed to \verb|uangSaya=10000|, the outputs of the program would be
-Jika baris ke 7 diganti dengan \verb|uangSaya=10000| maka output dari program ini akan menjadi
-\begin{verbatim}
-    saya bisa beli roti
-    hehe
+    Output:
+    Angka 5 adalah positif
 \end{verbatim}
 
-\subsection{Pernyataan If-else}
-Pernyataan \verb|else| digunakan untuk menentukan blok kode yang di jalankan apabila kondisi salah.
-% Else statement is used to decide the block of code to be executed if the condition is false.
-\begin{verbatim}
-// Blok kode sebelum if
-if (Condition) 
+\subsection{Pernyataan if-else}
+
+Pernyataan else digunakan untuk menentukan blok kode yang dijalankan jika kondisi false.
 {
-	// Blok kode yang akan dieksekusi jika kondisinya benar
-} else
-{
-	// Blok kode yang akan dieksekusi jika kondisinya salah
-}
-// Blok kode setelah pernyataan if-else
-\end{verbatim}
-Berikut contoh penggunaan if-else
-% The following is an example of using if-else statement:
-\begin{lstlisting}[language=c,caption = if-else example,label=lst:ifelseexample01]
-	include <stdio.h>
-	
-	int main()
-	{
-		//Deklarasi variabel 
-		int uangSaya,hargaRoti;
-		uangSaya = 5000;
-		hargaRoti = 10000;
-		
-		if (uangSaya>=hargaRoti)
-		{
-		    printf("saya bisa beli roti\n");
-		}
-		else
-		{
-	        printf("saya tidak bisa beli roti\n");	
-		}
-		printf("hehe");
-		return 0;
+\captionsetup[lstlisting]{labelformat=empty, justification=raggedright, singlelinecheck=false} %agar caption tanpa label dan di kiri
+\begin{lstlisting}[language=c, caption={syntax}]
+	if (kondisi) {
+		// kode yang dijalankan jika true
+	} else {
+		// kode yang dijalankan jika false
 	}
 \end{lstlisting}
-Keluaran program adalah sebagai berikut
+}
+Contoh:
+\begin{lstlisting}[language=c]
+#include <stdio.h>
+
+int main() {
+	int angka = -5;
+
+	if (angka > 0) {
+		printf("Angka %d adalah positif\n", angka);
+	}
+	else {
+		printf("Angka %d tidak positif\n", angka);
+	}
+
+	return 0;
+}
+\end{lstlisting}
 \begin{verbatim}
-    saya tidak bisa beli roti
-    hehe
-\end{verbatim}
-Jika baris ke 7 diganti dengan \verb|uangSaya=10000| maka output dari program ini akan menjadi
-% If line 7 changed to \verb|uangSaya=10000|, the outputs of the program would be
-\begin{verbatim}
-    saya bisa beli roti
-    hehe
+	Output:
+	Angka -5 tidak positif
 \end{verbatim}
 
 \subsection{Pernyataan if-else if}
-pernyataan \verb|else if| digunakan untuk menjalankan blok kode apabila kondisi statement \verb|if| atau \verb|else if| sebelumnya bernilai salah.
-% The \verb|else if| statement is used to run a block of code when the condition in \verb|if| or the previous \verb|else if| is false.
-\begin{verbatim}
-	// blok kode sebelum if
-    if (Condition1)
-    {
-	  /* blok kode yang akan dieksekusi jika Kondisi 1
-	  adalah benar*/
-    }
-    else if (Condition2)
-    {
-	  /* blok kode yang akan dieksekusi jika Kondisi 1 salah
-	  dan Kondisi 2 benar */
-    }
-    else if (Condition3)
-    {
-	  /* Blok kode yang akan dieksekusi kapan
-	  Kondisi 1 dan Kondisi 2 salah dan
-	  Kondisi 3 benar*/
-    }
-    ...
-    else if (ConditionN)
-    {
-	  /*Blok kode yang akan dieksekusi kapan
-	  Kondisi 1 hingga KondisiN-1 salah dan
-	  Kondisi N benar*/
-    }
-    else
-    {
-	  /* Blok kode yang akan dieksekusi kapan
-	  Kondisi 1 hingga Kondisi N salah*/
-    }
-	// Blok kode setelah if
-\end{verbatim}
-Berikut contoh penggunaan if-else if
-\begin{lstlisting}[language=c,caption = Contoh if-else if,label=lst:ifelseifexample01]
-	include <stdio.h>
-	
-	int main()
-	{
-		//Deklarasi variabel 
-		int uangSaya,hargaRoti;
-		uangSaya = 5000;
-		hargaRoti = 10000;
-		
-		if (uangSaya>hargaRoti)
-		{
-		    printf("saya bisa beli roti\n");
+
+Pernyataan else if digunakan untuk menentukan kondisi baru jika kondisi sebelumnya false.
+Pernyataan ini bisa digunakan jika terdapat banyak kondisi dengan hasil yang berbeda-beda.
+{
+\captionsetup[lstlisting]{labelformat=empty, justification=raggedright, singlelinecheck=false} %agar caption tanpa label dan di kiri
+\begin{lstlisting}[language=c, caption={syntax}]
+	if (kondisi1) {
+		  // kode yang dijalankan jika kondisi1 true
+		} else if (kondisi2) {
+		  // kode yang dijalankan jika kondisi1 false, dan kondisi2 true
+		} else {
+		  // kode yang dijalankan jika semua kondisi di atas salah
 		}
-		else if(uangSaya==hargaRoti)
-		{
-		    printf("saya bisa beli roti tapi uang saya akan langsung habis\n");
-		}
-		else
-		{
-	        printf("saya tidak bisa beli roti\n");	
-		}
-		printf("hehe");
-		return 0;
-	}
 \end{lstlisting}
-Output dari program ini adalah
+}
+Contoh:
+\begin{lstlisting}[language=c]
+#include <stdio.h>
+
+int main() {
+	int angka = -3;
+
+	if (angka > 0) {
+		printf("Angka %d adalah positif\n", angka);
+	}
+	else if(angka < 0){
+		printf("Angka %d adalah negatif\n", angka);
+	}
+	else{
+		printf("Angka %d adalah 0\n", angka);
+	}
+
+	return 0;
+}
+\end{lstlisting}
 \begin{verbatim}
-    saya tidak bisa beli roti
-    hehe
-\end{verbatim}
-Jika baris ke 7 diganti dengan \verb|uangSaya=10000| maka output dari program ini akan menjadi
-% If line 7 changed to \verb|uangSaya=10000|, the output of the program would be
-\begin{verbatim}
-    saya bisa beli roti tapi uang saya akan langsung habis
-    hehe
-\end{verbatim}
-Jika baris ke 7 diganti dengan \verb|uangSaya=12000| maka output dari program ini akan menjadi
-% If line 7 changed to \verb|uangSaya=12000|, the output of the program would be
-\begin{verbatim}
-    saya bisa beli roti
-    hehe
+	Output:
+	Angka -3 adalah negatif
 \end{verbatim}
 
 \subsection{Nested if}
-Nested if merupakan konsep di mana di dalam suatu blok if terdapat pernyataan if.
-% Nested if is when there is a conditional statements within a block of code inside the conditional statement
-\begin{verbatim}
-// Blok kode sebelum if
-if (Condition1)
-{
-    if (Condition2)
-    {
-        // lakukan sesuatu
-    }
-    else
-    {
-        // lakukan sesuatu yang lain
-    }
-} 
-else
-{
-    // melakukan sesuatu yang lain
+
+Nested if adalah konsep dimana terdapat pernyataan if di dalam pernyataan if
+\\ Contoh:
+\begin{lstlisting}[language=c]
+#include <stdio.h>
+
+int main() {
+	int angka = 3;
+
+	if (angka > 0) {
+		if(angka % 2 == 0){
+			printf("Angka %d adalah genap");
+		}
+		else{
+			printf("Angka %d adalah ganjil");
+		}
+	}
+	else{
+		printf("Angka %d tidak positif");
+	}
+
+	return 0;
 }
+\end{lstlisting}
+\begin{verbatim}
+	Output:
+	Angka 3 adalah ganjil
 \end{verbatim}
 
-Berikut contoh penggunaan nested if
-% Below is an example of using nested if
-
-\begin{lstlisting}[language=c,caption = Contoh nested if,label=lst:nestedifexample01]
-	include <stdio.h>
-	
-	int main()
-	{
-		// Declare the variables
-		int myMoney,breadPrice,friendsMoney;
-		myMoney = 5000;
-		breadPrice = 10000;
-		friendsMoney = 42069;
-		
-		
-		if (myMoney>breadPrice)
-		{
-		    printf("I can buy bread\n");
-		}
-		else if(myMoney==breadPrice)
-		{
-		    printf("I can buy bread but I will ran out of money\n");
-		}
-		else
-		{
-		    if(friendsMoney+myMoney >= breadPrice)
-		    {
-		        printf("I can buy bread if I borrow my friend money\n"); 
-		    }
-		    else
-		    {
-	            printf("I can't buy bread\n");	
-		    }
-		}
-		printf("hehe");
-		return 0;
+\subsection{Operator Kondisional}
+Kita sudah mempelajari terkait operator pada modul sebelumnya.
+Disebutkan bahwa operator kondisional bisa digunakan sebagai pengganti if.
+Operator ini bisa membuat penulisan beberapa baris kode menjadi satu baris saja.
+{
+\captionsetup[lstlisting]{labelformat=empty, justification=raggedright, singlelinecheck=false} %agar caption tanpa label dan di kiri
+\begin{lstlisting}[language=c, caption={syntax}]
+	variabel = kondisi ? nilai_jika_benar : nilai_jika_salah;
+\end{lstlisting}
+}
+Contoh 1:
+\\ Jika menggunakan if kita akan tulis seperti ini:
+\begin{lstlisting}[language=c]
+	int angka = 4;
+	if (angka % 2 == 0) {
+		printf("Genap");
+	} else {
+		printf("Ganjil");
 	}
 \end{lstlisting}
+Jika menggunakan operator kondisional bisa ditulis seperti ini:
+\begin{lstlisting}[language=c]
+	int angka = 4;
+    (angka % 2 == 0) ? printf("Genap") : printf("Ganjil");
+\end{lstlisting}
 
+Contoh 2:
+\\ Jika menggunakan if:
+\begin{lstlisting}[language=c]
+	int a = 5, b = 3, max;
 
-\subsection{Tugas Pendahuluan}
+	if(a>b){
+		max = a;
+	}
+	else{
+		max = b;
+	}
+
+	printf("Nilai terbesar adalah: %d\n", max);
+\end{lstlisting}
+Bisa ditulis sebagai:
+\begin{lstlisting}[language=c]
+	int a = 5, b = 3, max;
+
+	max = (a > b) ? a : b;
+
+	printf("Nilai terbesar adalah: %d\n", max);
+
+	return 0;
+\end{lstlisting}
+
+\subsection{Switch}
+Pernyataan switch bisa digunakan sebagai alternatif dari if-else if.
+Switch bagus digunakan ketika kita memiliki satu variabel dengan nilai terbatas atau diskret (seperti int atau char) 
+dan ingin mengeksekusi salah satu dari beberapa blok kode alternatif.
+{
+\captionsetup[lstlisting]{labelformat=empty, justification=raggedright, singlelinecheck=false} %agar caption tanpa label dan di kiri
+\begin{lstlisting}[language=c, caption={syntax}]
+	switch (ekspresi) {
+		case x:
+			// kode yang dijalankan jika nilai ekspresi adalah x
+			break;
+		case y:
+			// kode yang dijalankan jika nilai ekspresi adalah y
+			break;
+		default:
+			// kode yang dijalankan jika nilai ekspresi tidak ada yang sama dengan setiap case di atas
+		}
+\end{lstlisting}
+}
+Contoh:
+\begin{lstlisting}[language=c]
+	int hari = 4;
+
+    switch (hari) {
+		case 1:
+			printf("Senin");
+			break;
+		case 2:
+			printf("Selasa");
+			break;
+		case 3:
+			printf("Rabu");
+			break;
+		case 4:
+			printf("kamis");
+			break;
+		case 5:
+			printf("Jumat");
+			break;
+		case 6:
+			printf("Sabtu");
+			break;
+		case 7:
+			printf("Minggu");
+			break;
+    }
+\end{lstlisting}
+\begin{verbatim}
+	Output:
+	kamis
+\end{verbatim}
+
+\subsection*{Tugas Pendahuluan 1}
 \begin{enumerate}
-	\item Apa tujuan dari percabangan dalam pemrograman?
-	\item Selain menggunakan statement if, percabangan juga bisa dilakukan dengan statement switch-case. Jelaskan apa saja yang kamu ketahui tentang switch-case!
-	\item Buatlah program yang menerima input 3 buah bilangan bulat A, B, dan C. Outputkanlah 3 bilangan bulat itu ke layar dengan urutan paling besar ke paling kecil. Lakukanlah ini dengan menggunakan statement if, if else, if else if, atau nested if.
-	%\item Try to make a program that receives 3 integer input A, B, and C. Then outputs those 3 integers to the screen sorted from smallest to largest. Do this only using conditional statements.	
+	\item Ketika menulis pernyataan if-else if, urutan penulisan kondisi bisa mempengaruhi jalannya program.
+	Mengapa demikian? Apa yang terjadi jika urutannya salah? Berikan contoh kasus ketika itu terjadi!
+	\item Buatlah program yang menerima input 3 buah bilangan bulat A, B, dan C.
+	Outputkanlah 3 bilangan bulat itu ke layar dengan urutan paling besar ke paling kecil. 
+	Gunakanlah statement if, if else, if else if, atau nested if.
+	\item Perhatikan kode berikut
+	\begin{lstlisting}[language=c]
+	float angka = 3.14;
+	switch(angka) {
+		case 3.14:
+			printf("Pi\n");
+			break;
+	}
+\end{lstlisting}
+	Apa yang terjadi ketika kode di atas dijalankan?
+	Kenapa hal itu terjadi?
 \end{enumerate}
 
 \section{Perulangan}
+
+Perulangan (looping) adalah proses mengeksekusi suatu blok kode berulang kali selama kondisi tertentu terpenuhi.
+Tujuannya untuk menghindari penulisan kode berulang secara manual.
+
 \subsection{Perulangan while}
-Perulangan while akan menjalankan blok kode yang berada di dalamnya selama kondisi perulangan masih bernilai benar.
-% While loop will run the code block within it repeatedly as long as the loop condition is true
-
-
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.4\linewidth]{P2/img/whileloop.png}
-	\caption{Flow chart perulangan while}
-	\label{fig:whileloop}
-\end{figure}
-
-Syntaxnya pada bahasa C adalah sebagai berikut:
-% Its syntax in C programming language is as follows
-\begin{verbatim}
-    while(Condition)
-    {
-        // Blok kode yang akan diulang
-    }
-\end{verbatim}
-
-Sebagai contoh, perhatikan kode berikut
-% As an example, look at the following code
-\begin{lstlisting}[language=c,caption = Contoh Penggunaan while,label=lst:whileexample01]
-int main()
+Perulangan while akan terus menjalankan kodenya selama kondisinya benar.
 {
-	int uangSaya,hargaRoti;
-	uangSaya = 10000;
-	hargaRoti = 2000;
-	while(uangSaya >= hargaRoti)
-	{
-	    printf("Beli roti 1, uang saya sisa %d", uangSaya - hargaRoti);
-	    uangSaya -= hargaRoti;
+\captionsetup[lstlisting]{labelformat=empty, justification=raggedright, singlelinecheck=false} %agar caption tanpa label dan di kiri
+\begin{lstlisting}[language=c, caption={syntax}]
+	while(kondisi){
+		// kode yang dijalankan berulang selama kondisi benar
 	}
-	printf("Uang saya tidak cukup lagi");
-	return 0;
-}
 \end{lstlisting}
-Keluaran program di Listing \ref{lst:whileexample01} adalah sebagai berikut
+}
+Contoh:
+\begin{lstlisting}[language=c]
+	int i = 0;
+	
+	while (i < 10) {
+		printf("%d\n", i);
+		i++;
+	}
+\end{lstlisting}
 \begin{verbatim}
-    Beli roti 1, uang saya sisa 8000
-    Beli roti 1, uang saya sisa 6000
-    Beli roti 1, uang saya sisa 4000
-    Beli roti 1, uang saya sisa 2000
-    Beli roti 1, uang saya sisa 0
-    Uang saya tidak cukup lagi
+	Output:
+    0
+    1
+    2
+    3
+    4
+    5
+    6
+    7
+    8
+    9
 \end{verbatim}
+Pada contoh di atas kode akan berulang selama nilai i kurang dari 10, sehingga ketika nilai i mencapai nilai 10 perulangan berhenti.
 
-Pada contoh ini, operasi pada baris 9 membuat variabel \verb|uangSaya| berkurang 2000 pada setiap pengulangan hingga akhirnya nilai \verb|uangSaya| tidak lebih dari atau sama dengan \verb|hargaRoti| lagi.
-% You can see the line 9 of the code causes the variable \verb|uangSaya| to have its value substracted by 2000 for every loop until \verb|uangSaya| is no longer greater than equal to \verb|hargaRoti|. 
-% The loop condition will be invalid and finaly exits the loop. Then it prints "Uang saya tidak cukup lagi", the command after the while loop statement.
-Kondisi perulangan akan menjadi tidak valid dan akhirnya keluar dari perulangan. Kemudian ia mencetak "Uang saya tidak cukup lagi", perintah setelah pernyataan while loop.
+\subsection{Perulangan do-while}
 
-\subsection{do-while loop}
-do-while loop sebenarnya sama seperti while loop hanya saja do-while akan menjalankan perintah pada blok kode didalamnya sekali sebelum melakukan pengecekan kondisi.
-% do-while loop is very similar to while loop. The only difference is that do-while loop will execute the code block inside it once, and then checks the condition.
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.4\linewidth]{P2/img/dowhileloop.png}
-	\caption{Pernyataan do-while}
-	\label{fig:dowhileloop}
-\end{figure}
-Syntaxnya pada bahasa C adalah sebagai berikut:
-% Its syntax in C is as follows:
-\begin{verbatim}
-    do{
-        // the block of code that will be repeated
-    }while(Condition)
-\end{verbatim}
-Sebagai contoh, perhatikan kode berikut
-% Look at the following example.
-\begin{lstlisting}[language=c,caption = Contoh Penggunaan do-while,label=lst:dowhileexample01]
-int main()
+Perulangan ini sama seperti perulangan while, tetapi blok kodenya akan dijalankan sekali sebelum mengecek kondisi.
 {
-	int uangSaya,hargaRoti;
-	uangSaya = 10000;
-	hargaRoti = 12000;
+\captionsetup[lstlisting]{labelformat=empty, justification=raggedright, singlelinecheck=false} %agar caption tanpa label dan di kiri
+\begin{lstlisting}[language=c, caption={syntax}]
 	do{
-	    printf("Beli roti 1, uang saya sisa %d", uangSaya - hargaRoti);
-	    uangSaya -= hargaRoti;
-	}while(uangSaya >= hargaRoti)
-	printf("Uang saya tidak cukup lagi");
-	return 0;
-}
+		// kode yang dijalankan sekali, lalu cek jika perlu dijalankan lagi
+	} while(kondisi);
 \end{lstlisting}
-Output dari program pada Listing \ref{lst:dowhileexample01} adalah
-% The output of the code above are
+}
+Contoh:
+\begin{lstlisting}[language=c]
+	int i = 3;
+
+	do {
+		printf("%d\n", i);
+		i++;
+	}
+	while (i < 3);
+\end{lstlisting}
 \begin{verbatim}
-    Beli roti 1, uang saya sisa -2000
-    Uang saya tidak cukup lagi
+	Output:
+	3
 \end{verbatim}
-% The variable \verb|uangSaya| is substracted by \verb|hargaRoti| before checking the \verb|uangSaya>=hargaRoti| condition.
-% Had the code above uses while loop, the repeating block of code wouldn't have executed even once.
-Variabel \verb|uangSaya| dikurangi dengan \verb|hargaRoti| sebelum memeriksa \verb|uangSaya>=hargaRoti| kondisi.
-Seandainya kode di atas menggunakan perulangan while, blok kode yang berulang tidak akan dieksekusi sekali pun.
+Contoh di atas outputnya adalah 3, meskipun kondisinya adalah i<3 yang mana bernilai salah, karena kode dijalankan sekali sebelum mengecek kondisi.
+
 \subsection{Perulangan for}
-Misalkan terdapat blok kode while dengan bentuk seperti ini:
-% If you have a block of code like this:
-\begin{verbatim}
-    InitializationStatement; // e.g.: int i = 0;
-    while(Condition){
-        // do something
-        updateStatement; // e.g.: i++ 
-    }
-\end{verbatim}
-Hal ini setara dengan
-\begin{verbatim}
-    for(InitializationStatement;Condition;updateStatement){
-        // do something
-    }
-\end{verbatim}
 
-Sebagai contoh, perhatikan program berikut:
-% As example, look at the following code:
-\begin{lstlisting}[language=c,caption = Contoh Penggunaan for,label=lst:forexample01]
-int main()
+Perulangan for digunakan jika kita tahu berapa kali perulangan yang perlu dilakukan.
 {
-    int i=0;
-    for(i=1;i<10;i++){
-        printf("%d ",i);
-    }
-	return 0;
-}
+\captionsetup[lstlisting]{labelformat=empty, justification=raggedright, singlelinecheck=false} %agar caption tanpa label dan di kiri
+\begin{lstlisting}[language=c, caption={syntax}]
+	for (ekspresi1; ekspresi2; ekspresi3) {
+		// kode yang akan diulang
+	}
 \end{lstlisting}
-Output dari program ini adalah
-% The output of this program are
+}
+Syntax di atas bisa juga ditulis dengan perulangan while menjadi:
+{
+\captionsetup[lstlisting]{labelformat=empty, justification=raggedright, singlelinecheck=false} %agar caption tanpa label dan di kiri
+\begin{lstlisting}[language=c, caption={syntax}]
+	ekspresi1;
+	while(ekspresi2){
+		// blok kode yang akan diulang
+		ekspresi3;
+	}
+\end{lstlisting}
+}
+\begin{enumerate}[label={}, leftmargin=*]
+	\item ekspresi1 : dieksekusi sekali sebelum perulangan dimulai
+	\item ekspresi2 : kondisi yang perlu dipenuhi agar perulangan berjalan.
+	\item ekspresi3 : dieksekusi pada setiap perulangan setelah blok kode dieksekusi
+\end{enumerate}
+Contoh 1:
+\begin{lstlisting}[language=c]
+	for (int i = 0; i < 5; i++) {
+		printf("%d\n", i);
+	}
+\end{lstlisting}
 \begin{verbatim}
-    1 2 3 4 5 6 7 8 9 
+	Output:
+	0
+	1
+	2
+	3
+	4
 \end{verbatim}
-Berikut kode pada Listing \ref{lst:forexample01} jika diubah menjadi bentuk while-loop
-% The following is the code if code in Listing \ref{lst:forexample01} converted to its while-loop form
-\begin{lstlisting}[language=c,caption = For dalam bentuk while,label=lst:forwhileform01]
-int main()
-{
-    int i=0;
-    i=1;
-    while(i<10){
-        printf("%d ",i);
-        i++;
-    }
-	return 0;
-}
+Contoh di atas perulangan terjadi sebanyak 5 kali.
+Karena "int i=0" berarti nilai awal i adalah 0,
+Lalu "i++" berarti nilai i selalu bertambah 1 di setiap akhir perulangan,
+Sehingga ketika nilai i=5 nilai i tidak memenuhi kondisi "i<5" membuat perulangan berhenti.
+\\ Contoh 2:
+\begin{lstlisting}[language=c]
+	for (int i = 0; i <= 10; i = i + 2) {
+		rintf("%d\n", i);
+	}
 \end{lstlisting}
-\begin{center}
-	\colorbox{pink}{\parbox{0.8\linewidth}{\textbf{Catatan:} Terdapat keyword break dan continue yang bisa digunakan untuk mengendalikan (kontrol) alur pada perulangan. Pelajari secara mandiri!}}
-\end{center}
+\begin{verbatim}
+	Output:
+	0
+	2
+	4
+	6
+	8
+	10
+\end{verbatim}
+Contoh di atas perulangan terjadi sebanyak 6 kali.
+Karena "int i=0" berarti nilai awal i adalah 0,
+Lalu "i=i+2" berarti nilai i selalu bertambah 2 di setiap akhir perulangan,
+Sehingga ketika nilai i=12 nilai i tidak memenuhi kondisi "i<=10" membuat perulangan berhenti.
 
-\subsection{Tugas Pendahuluan}
+\subsection{Nested Loop}
+
+Nested loop adalah konsep dimana sebuah perulangan berada di dalam perulangan lain.
+\\ Contoh :
+\begin{lstlisting}[language=c]
+	for (int i = 0; i < 3; i++) {
+		for (int j = 0; j < 2; j++) {
+			printf("i = %d, j = %d\n", i, j);
+		}
+	}
+\end{lstlisting}
+\begin{verbatim}
+	output:
+	i = 0, j = 0
+	i = 0, j = 1
+	i = 1, j = 0
+	i = 1, j = 1
+	i = 2, j = 0
+	i = 2, j = 1
+\end{verbatim}
+Perulangan di luar yang menggunakan variabel "i", berulang sebanyak 3 kali.
+Perulangan di dalam yang menggunakan variabel "j", berulang sebanyak 2 kali.
+Setiap iterasi "i", perulangan "j" akan berjalan sepenuhnya. sehingga:
+\begin{enumerate}[label={}, leftmargin=*]
+	\item saat i=0 \\
+	j=0 -> print i=0, j=0 \\
+	j=1 -> print i=0, j=1
+	\item saat i=1 \\
+	j=0 -> print i=1, j=0 \\
+	j=1 -> print i=1, j=1
+	\item saat i=2 \\
+	j=0 -> print i=2, j=0 \\
+	j=1 -> print i=2, j=1
+\end{enumerate}
+
+\subsection{Break dan Continue}
+
+\subsubsection{Break}
+
+Kita sudah melihat pernyataan break pada sub-bab percabangan bagian switch.
+Disini break digunakan untuk keluar dari pernyataan switch.
+Break juga bisa digunakan untuk keluar dari perulangan sehingga perulangan berhenti.
+\\ Contoh:
+\begin{lstlisting}[language=c]
+	for (int i = 0; i < 5; i++) {
+		if (i == 3) {
+			break;  
+		}
+		printf("%d ", i);
+	}
+\end{lstlisting}
+\begin{verbatim}
+	output:
+	0 1 2
+\end{verbatim}
+Pada contoh di atas perulangan terjadi dari i=0 hingga i=4, tetapi ketika iterasi i=3 perulangan berakhir karena pernyataan break.
+
+\subsubsection{Continue}
+
+Jika pernyataan break membuat sebuah perulangan berhenti.
+Pernyataan continue hanya membuat iterasi saat itu berhenti.
+Contoh:
+\begin{lstlisting}[language=c]
+	for (int i = 0; i < 5; i++) {
+		if (i == 3) {
+			continue;
+		}
+		printf("%d ", i);
+	}
+\end{lstlisting}
+\begin{verbatim}
+	output:
+	0 1 2 4
+\end{verbatim}
+Pada contoh di atas iterasi ketika i=3 dilewati dan masih melanjutkan ke iterasi berikutnya
+
+\subsection*{Tugas Pendahuluan 2}
 \begin{enumerate}
-	\item Apa yang terjadi jika kita menuliskan \verb|break;| dalam blok kode sebuah perulangan?
-	\item Buatlah program dalam bahasa C yang menghitung faktorial dari sebuah bilangan bulat non-negatif yang dimasukkan oleh pengguna menggunakan loop do-while. Tampilkan hasilnya.
-	\item Buatlah program dalam bahasa C untuk mencari bilangan prima antara 1 dan 100. Gunakan loop for untuk mengiterasi melalui semua angka dan pernyataan continue untuk mengabaikan angka yang bukan prima. Tampilkan semua bilangan prima yang ditemukan.
+	\item Perhatikan kode berikut:
+	\begin{lstlisting}[language=c]
+	for(;;){
+		printf("B300 MIOT\n");
+	}	
+\end{lstlisting}
+	Apa yang terjadi jika program tersebut dijalankan? Kenapa hal itu bisa terjadi?
+	\item Perhatikan dua kode berikut:
+	\begin{lstlisting}[language=c]
+	for(int i=0;i<100;i++){
+		break;
+	}
+\end{lstlisting}
+\begin{lstlisting}[language=c]
+	for(int i=0;i<100;i++){
+		continue;
+	}
+\end{lstlisting}
+Apa yang terjadi jika kedua kode di atas dijalankan?
+Jika kamu harus memilih diantara kedua kode di atas, kode mana yang akan kamu pilih? Kenapa?
+	\item Perhatikan kode berikut:
+	\begin{lstlisting}[language=c]
+	for(int i=0;i<10;i++){
+		for(int j=i;j>=0;j--){
+			printf("B300\n");
+		}
+	}
+\end{lstlisting}
+Ketika Perulangan di atas dijalankan, berapa banyak "B300" yang muncul di output?
+	\item Buatlah program dalam bahasa C untuk mendapatkan semua bilangan kuadrat antara 1 sampai 100!
 \end{enumerate}
 
 \section{Array}
-Array adalah koleksi data dimana setiap elemen mempunyai nama yang sama dan bertipe sama. Setiap elemen diakses berdasarkan  indeks elemennya.
-% Array is a collection of data where each element of it has the same name(indexed) and data type. Every element in an array can be accessed using its element index.
-\subsection{Array 1D}
-Variabel array dimensi satu dideklarasikan dengan menentukan jenis elemen dan jumlah elemen yang di perlukan oleh array.
-% One dimensional array variable can be declared by deciding the data type of the element and the number of element that is needed.
 
-Syntax:
-\begin{verbatim}
-    DataType variableName [arraySize];
-\end{verbatim}
-\begin{enumerate}
-	\item \verb*|DataType|.\\
-	      % The data type of the elements in the array, e.g. \verb|float|, \verb|int|, etc.
-	      Tipe data yang akan digunakan untuk array :\verb*|float|,\verb*|int|,\verb*|char| dsb
-	\item \verb*|variableName|\\
-	      Nama variabel mengikuti aturan pemberian nama variabel,
-	      % variableName follows the variable naming convention
-	\item \verb*|arraySize| \\
-	      % Integer more than 0. Defining the number of element an array has.
-	      konstanta integer lebih besar dari 0. \\
-\end{enumerate}
-
-Untuk menginisialisasi array dimensi satu, dapat dilakukan dengan cara seperti berikut:
-% Initializing one dimensional array can be done like shown below:
-\begin{verbatim}
-    int contoh_array[5] = {4,2,0,6,9};
-\end{verbatim}
-
-Data di dalam array dapat akses dengan menggunakan suatu bilangan yang merupakan index dari array tersebut. Perhatikan potongan kode berikut.
-% Data in an array can be accessed by using an integer that is the index of the array. Look at the code below
-
-\begin{lstlisting}[language=c,caption = Contoh Mengakses Array 1D,label=lst:array1d01]
-int main()
+Array adalah kumpulan data dengan tipe data yang sama yang disimpan dalam satu blok memori berurutan.
+Dengan array, kita bisa menyimpan banyak data tanpa perlu membuat banyak variabel satu per satu.
+Untuk mendeklarasikan array, kita bisa deklarasikan dengan cara yang mirip ketika mendeklarasikan variabel.
 {
-    int arr[5] = {4,2,0,6,9};
-    printf("%d\n",arr[0]);
-    printf("%d\n",arr[4]);
-    int i = 0;
-    printf("%d\n",arr[i]);
-    for(i=0;i<5;i++)
-        printf("%d",arr[i]);
+\captionsetup[lstlisting]{labelformat=empty, justification=raggedright, singlelinecheck=false} %agar caption tanpa label dan di kiri
+\begin{lstlisting}[language=c, caption={syntax}]
+	tipe_data nama[ukuran];
+\end{lstlisting}
 }
+Contoh:
+\begin{lstlisting}[language=c]
+	int angka[5]; // array yang berisi 5 buah integer
+	float nilai[10]; // array yang berisi 10 buah bilangan desimal
+	char huruf[20]; // array yang berisi 20 karakter
 \end{lstlisting}
 
-Potongan kode pada Listing \ref{lst:array1d01} akan memberikan output
-% The code in Listing \ref{lst:array1d01} will give output
+\subsection{Inisialisasi Array}
+
+Kita bisa inisialisasi array ketika deklarasi, sama seperti variabel.
+Elemen dalam array, tidak bisa memiliki tipe data yang berbeda.
+\begin{lstlisting}[language=c]
+	int angka[5] = {1, 3, 5, 7, 9};
+\end{lstlisting}
+Jika inisialisasi dilakukan saat deklarasi, kita bisa tidak menuliskan ukuran.
+Compiler akan menyesuaikan jumlah dari elemen yang diinisialisasi.
+\begin{lstlisting}[language=c]
+	int angka[] = {1, 4, 7, 10, 13, 16};
+\end{lstlisting}
+Array di atas secara otomatis berukuran 6.
+
+\subsection{Mengakses Elemen Array}
+
+Untuk mengakses elemen dalam array, kita bisa memanggil nama array dan index dari elemen yang ingin diakses.
+Contoh:
+\begin{lstlisting}[language=c]
+	int angka[5] = {10, 20, 30, 40, 50};
+
+	printf("%d\n", angka[0]); //mengakses array angka indek ke-0
+\end{lstlisting}
+'Ingat index pada array dimulai dari angka 0, sehingga pada contoh di atas, angka 10 berada pada index 0, angka 20 berada pada index 1, dst'
+
+\subsection{Mengubah Elemen Array}
+
+Untuk mengubah elemen dalam array, bisa dilakukan dengan mengakses array tersebut dan menggunakan operator penugasan untuk memasukkan nilai.
+Contoh:
+\begin{lstlisting}[language=c]
+	int angka[5] = {10, 20, 30, 40, 50};
+	
+	angka[0] = 15; // mengubah index ke-0 menjadi 15
+	
+	printf("%d\n", angka[0]);
+\end{lstlisting}
+
+\subsection{Perulangan dalam Array}
+Kita bisa menggunakan perulangan untuk mengakses setiap elemen yang ada dalam array satu-persatu secara berurutan.
+Contoh:
+\begin{lstlisting}
+	int angka[5] = {1, 2, 3, 4, 5};
+
+	for(int i = 0; i < 5; i++) {
+		printf("angka[%d] = %d\n", i, angka[i]);
+	}
+\end{lstlisting}
 \begin{verbatim}
-    4
-    9
-    4
-    42069
+	Output:
+	angka[0] = 1
+	angka[1] = 2
+	angka[2] = 3
+	angka[3] = 4
+	angka[4] = 5
 \end{verbatim}
 
-\subsection{Array 2D dan Array Multidimensi lainnya}%Array 2D dan Array Multidimensi lainnya}
-Array dimensi dua pada dasarnya hanya merupakan array dimensi satu di dalam array dimensi satu. Oleh karena itu, untuk mendeklarasikan array dimensi dua kita dapat menggunakan syntax seperti berikut.
-% 2D array is basically a 1D array of 1D array. Intuitively, you can define a 2D array like as seen below:
-\begin{verbatim}
-	DataType variableName[arraySize1][arraySize2];
-\end{verbatim}
-Hal ini berlaku juga untuk array dengan dimensi lebih dari dua.
-% This also applies to multidimensional array.
-\begin{verbatim}
-    DataType variableName[arraySize1]...[arraySizeN];
-\end{verbatim}
-Akan ada $arraySize_1\times arraySize_2 \times \cdots \times arraySize_n$ elemen yang akan dialokasikan ke memori setelah melakukan array multidimensi seperti itu
-% There will be $arraySize_1\times arraySize_2 \times \cdots \times arraySize_n$ of elements that would be allocated to the memory after doing multidimensional array like that.
+\subsection{Ukuran Array}
 
-Untuk menginisialisasi suatu array multidimensi dapat dilakukan sama seperti array biasa:
-% To initialize multidimensional array, you can do the following:
-\begin{verbatim}
-    int arr[2][2] = {{1,2},{3,4}};
-\end{verbatim}
+Kita sudah tahu ukuran array adalah jumlah elemen yang bisa disimpan oleh sebuah array.
+Untuk mendapatkan nilai ukuran dari array yang ada kita bisa menggunakan sizeof().
+Contoh:
+\begin{lstlisting}[language=c]
+	int angka[5] = {2, 4, 8, 12, 16};
+	
+	int ukuran = sizeof(angka)/sizeof(angka[0]); // mendapatkan ukuran array angka
+	printf("%d", ukuran);
+\end{lstlisting}
+Kita bisa menggunakan sizeof() untuk perulangan, sehingga perulangan bisa dilakukan dengan array ukuran berapapun.
+Contoh:
+\begin{lstlisting}[language=c]
+	int angka[5] = {2, 4, 8, 12, 16};
 
-\subsection{Tugas Pendahuluan}
+	int ukuran = sizeof(angka)/sizeof(angka[0]);
+	for(int i=0;i<ukuran;i++){
+		printf("%d ", angka[i]);
+	}
+\end{lstlisting}
+Pada contoh di atas, kita menggunakan variabel ukuran dari pada sebuah angka konstan.
+
+\subsection{Array Multidimensi}
+
+Array yang kita pelajari sejauh ini adalah array 1D.
+Secara simpel array multidimensi adalah sebuah array di dalam array.
+Biasanya digunakan untuk menyimpan data yang membutuhkan lebih dari 1 index, seperti data dalam tabel yang memiliki baris dan kolom.
+Untuk mendeklarasikan array multidimensi dengan cara:
+{
+\captionsetup[lstlisting]{labelformat=empty, justification=raggedright, singlelinecheck=false} %agar caption tanpa label dan di kiri
+\begin{lstlisting}[language=c, caption={syntax}]
+	int nama[ukuran_1][ukuran_2]...[ukuran_n];
+\end{lstlisting}
+}
+
+\subsubsection{Array 2D}
+
+Bisa disebut sebagai matriks (memiliki baris dan kolom).
+\begin{enumerate}[label={}, leftmargin=*]
+	\item \textbf{Mengakses Elemen Array 2D}\\
+	Untuk mengakses array 2D kita bisa lakukan dengan cara yang sama seperti array 1d
+	Contoh:
+	\begin{lstlisting}[language=c]
+	int matrix[2][3] = { {1, 4, 2}, {3, 6, 8} };
+
+	printf("%d", matrix[0][2]);  // output: 2
+\end{lstlisting}
+	\item \textbf{Mengubah Elemen Array 2D}
+	\begin{lstlisting}[language=c]
+	int matrix[2][3] = { {1, 4, 2}, {3, 6, 8} };
+
+	matrix[0][2] = 5;
+
+	printf("%d", matrix[0][2]);  // output: 5
+\end{lstlisting}
+	\item \textbf{Perulangan Pada Array 2d}\\
+	Perulangan bisa dilakukan menggunakan nested loop
+	Contoh:
+	\begin{lstlisting}[language=c]
+	int matrix[2][3] = { {1, 4, 2}, {3, 6, 8} };
+
+	int i, j;
+	for (i = 0; i < 2; i++) {
+		for (j = 0; j < 3; j++) {
+			printf("%d\n", matrix[i][j]);
+		}
+	}
+\end{lstlisting}
+\end{enumerate}
+
+\subsubsection{Array 3D}
+
+Array 3D bisa dibayangkan seperti kumpulan matriks (2D) yang disusun bertumpuk.
+Jadi kita butuh 3 indeks untuk mengakses sebuah elemen.
+Array 3D biasanya digunakan untuk data yang membutuhkan koordinat 3 dimensi.
+Contoh:
+\begin{lstlisting}[language=c]
+	int cube[2][2][2] = {
+		{ {1, 2}, {3, 4} },
+		{ {5, 6}, {7, 8} }
+	};
+\end{lstlisting}
+Untuk mengakses dan mengubah elemen dalam array 3D caranya sama seperti pada array biasanya.
+
+\subsection*{Tugas Pendahuluan 3}
 \begin{enumerate}
-	\item Buatlah suatu program yang menerima input dari pengguna berupa angka 1 hingga 9, lalu memasukkan semua angka tersebut ke dalam suatu array!
-	      % \item create a program to fill the data of an array by keyboard input.
-	\item Apakah yang akan terjadi jika suatu array \verb|arr| diakses dengan \verb|arr[-1]|?
-	      % \item What would happen if an array \verb|arr| is accessed with \verb|arr[-1]|?
-	\item Apakah yang akan terjadi jika suatu array \verb|arr| dengan ukuran 5 diakses dengan \verb|arr[5]|?
-	      % \item What would happen if an array \verb|arr| with size 5 is accessed with \verb|arr[5]|?
-	\item Lihatlah kode berikut
-	      % \item Look at the following code
-	      \begin{verbatim}
-        for(i=0;i<10;i++){
-            for(j=i;j<10;j++){
-                printf("A");
-            }
-        }
-    \end{verbatim}
-	      % How many "A" will be printed on the screen if that block of code is executed?
-	      Ada berapa banyak huruf A yang akan muncul pada layar jika program tersebut dijalankan?
+	\item Perhatikan kode berikut:
+	\begin{lstlisting}[language=c]
+	int arr[5] = {1, 2, 3, 4, 5};
+
+	printf("%d", arr[-1]);
+\end{lstlisting}
+Apa yang terjadi ketika kode di atas dijalankan? Jelaskan kenapa hal itu terjadi!
+	\item Perhatikan kode berikut:
+	\begin{lstlisting}[language=c]
+	int arr[3] = {0};
+	
+	printf("%d", arr[3]);
+\end{lstlisting}
+Apa yang terjadi ketika kode di atas dijalankan? Jelaskan kenapa hal itu terjadi!
+	\item Buatlah sebuah program sederhana dimana terdapat array yang menyimpan angka 1 hingga 1000!
+
 \end{enumerate}
 
 \section{String}
-Secara umum, string merupakan kumpulan dari satu atau lebih karakter. Spesifik pada bahasa C, string didefinisikan sebagai kumpulan karakter yang diakhiri oleh karakter null \verb|'\0'|.
-\\
-Misalkan string  \verb|"Dasar"|, pada bahasa C direpresentasikan sebagai kumpulan karakter \verb|'D'|, \verb|'a'|, \verb|'s'|, \verb|'a'|, \verb|'r'|, dan \verb|'\0'|.
 
-\subsection{Penggunaan String}
-Karena string tidak lain adalah array dari char, maka cara pembuatan tipe data string dalam bahasa C juga sama seperti cara pembuatan array. Berikut contohnya:
-\begin{lstlisting}[language=c,caption = Contoh String dari Char,label=lst:array1d01]
-	#include <stdio.h>
- 
-	int main(void)
-	{
-	char foo[8] = {'b','e','l','a','j','a','r','\0'};
-	printf("Isi variabel foo adalah %s \n", foo);
-	
-	return 0;
-	}
+String adalah tipe data yang digunakan untuk menyimpan teks/karakter.
+Contohnya, \verb|"Halo Dunia"| adalah sebuah string.
+Dalam bahasa C string adalah sebuah array dari banyak karakter yang diakhiri dengan \verb|\0| (karakter null).
+Contoh:
+\begin{lstlisting}[language=c]
+	char kata[] = "Halo Dunia";
 \end{lstlisting}
+'perhatikan bahwa penulisan string menggunakan tanda kutip ganda ("")'
 
-\verb|‘\0’| adalah salah satu syarat pembuatan string di dalam bahasa C.
-Semua string harus memiliki karakter “khusus” untuk menandakan akhir dari string.
-Tanda \verb|‘\0’| mewakili karakter null yang dipakai oleh compiler bahasa C sebagai tanda akhir sebuah string.
+\subsection{Input dan Output String}
+Kita bisa menggunakan printf() dan scanf() dengan specifier \verb|%s|.
+Contoh 1:
+\begin{lstlisting}[language=c]
+	char kata[] = "Halo Dunia";
 
-Contoh source code penggunaan \verb|scanf| untuk membaca string:
-\begin{lstlisting}[language=c,caption = Contoh String dengan scanf,label=lst:scanf]
-	#include <stdio.h>
-
-	int main() {
-		// Mendeklarasikan variabel untuk menyimpan input dari pengguna
-		int age;
-		float height;
-		char name[50];
-
-		// Meminta pengguna untuk memasukkan usia mereka
-		printf("Masukkan usia Anda: ");
-		scanf("%d", &age);
-		
-		// Meminta pengguna untuk memasukkan tinggi mereka
-		printf("Masukkan tinggi Anda (dalam meter): ");
-		scanf("%f", &height);
-		
-		// Meminta pengguna untuk memasukkan nama mereka
-		printf("Masukkan nama Anda: ");
-		scanf("%s", name);
-
-		// Menampilkan informasi yang dimasukkan pengguna
-		printf("Nama: %s\n", name);
-		printf("Usia: %d tahun\n", age);
-		printf("Tinggi: %.2f meter\n", height);
-
-		return 0;
-	}
+	printf("%s\n", kata);
 \end{lstlisting}
+\begin{verbatim}
+	output:
+	Halo Dunia
+\end{verbatim}
+Contoh 2:
+\begin{lstlisting}[language=c]
+	char nama[20];
 
+	scanf("%s", nama); // input tanpa spasi
 
-Contoh source code penggunaan \verb|gets| untuk membaca string:
-\begin{lstlisting}[language=c,caption = Contoh String dengan gets,label=lst:gets]
-#include <stdio.h>
-
-int main () {
-  
-	char arr[100];
-	while(true)
-	{
-		gets(arr);
-		
-		printf("-- %s\n", arr);
-	}
-  return 0;
-
-}
+	printf("Halo, %s!\n", nama);
 \end{lstlisting}
+\begin{verbatim}
+	output:
+	B300
+	Halo, B300!
+\end{verbatim}
+Jika kita menggunakan \verb|scanf("%s", ...);| kita hanya bisa memberi input tanpa spasi.
+sehingga jika pada contoh input di atas kita memasukkan "B300 MIoT", yang terbaca hanyalah "B300";
+Agar kita bisa memasukkan input dengan banyak kata (ada spasi), 
+kita bisa menggunakan scanf() dengan specifier \verb|%[^\n]s| (specifier ini membuat scanf membaca hingga akhir baris)
+Contoh:
+\begin{lstlisting}[language=c]
+	char str[20];
 
-String yang dibaca dengan mengunakan scanf atau gets akan secara otomatis memiliki \verb|null| character di akhir.
+	scanf("%[^\n]s", str);
+
+	printf("%s", str);
+\end{lstlisting}
+\begin{verbatim}
+	Input:
+	B300 MIoT
+
+	Output:
+	B300 MIoT
+\end{verbatim}
+Selain menggunakan scanf kita juga bisa menggunakan fgets() untuk membaca 1 baris input.
+\begin{lstlisting}[language=c]
+	char str[20];
+
+	fgets(str, sizeof(str), stdin);
+
+	printf("%s", str);
+\end{lstlisting}
+\begin{verbatim}
+	Input:
+	B300 luar biasa
+
+	Output:
+	B300 luar biasa
+\end{verbatim}
 
 \subsection{Fungsi-Fungsi String}
-Dalam bahasa pemrograman C, terdapat library yang dibuat dengan tujuan memudahkan pengguna dalam mengolah string.
-Library tersebut tersimpan dalam \verb|<string.h>|,
-oleh karena itu, untuk mengakses library ini, diperlukan tambahan preprocessor, yaitu:
+Dalam bahasa C terdapat beberapa fungsi string yang berguna untuk melakukan operasi pada sebuah string.
+Untuk menggunakan fungsi-fungsi tersebut kita harus memasukkan header:
 \begin{lstlisting}[language=c]
 	#include <string.h>
 \end{lstlisting}
 
-Pelajari berbagai fungsinya di \href{http://www.cplusplus.com/}{www.cplusplus.com}.
+\subsubsection{strlen()}
+Digunakan untuk mendapatkan panjang dari sebuah string.
+Contoh:
+\begin{lstlisting}[language=c]
+	char string[] = "B300";
 
-\subsection{Tugas Pendahuluan}
+	printf("%d", strlen(string));
+\end{lstlisting}
+\begin{verbatim}
+	Output:
+	4
+\end{verbatim}
+
+\subsubsection{strcpy()}
+Digunakan untuk menyalin (copy) sebuah string ke variabel string lain.
+Contoh:
+\begin{lstlisting}[language=c]
+	char src[] = "miot";
+	char dest[20];
+	
+	strcpy(dest, src);  // menyalin string "miot" ke variabel dest
+	printf("%s", dest);
+\end{lstlisting}
+\begin{verbatim}
+	Output:
+	miot
+\end{verbatim}
+
+\subsubsection{strcat()}
+Digunakan untuk menggabungkan dua buah string.
+Contoh:
+\begin{lstlisting}[language=c]
+	char s1[30] = "B300 ";
+	char s2[] = "MIoT";
+	
+	strcat(s1, s2); menggabungkan "B300 " dengan "MIoT"
+	printf("%s", s1);
+\end{lstlisting}
+\begin{verbatim}
+	output:
+	B300 MIoT	
+\end{verbatim}
+
+\subsubsection{strcmp()}
+Digunakan untuk membandingkan dua string.
+Fungsi ini akan mengembalikan nilai 0 ketika kedua string sama.
+Contoh:
+\begin{lstlisting}[language=c]
+	char s1[] = "Apple";
+	char s2[] = "Apple";
+	
+	int res = strcmp(s1, s2);
+
+	if(res==0){
+		printf("kedua string sama");
+	}
+	else{
+		printf("string berbeda");
+	}
+\end{lstlisting}
+Masih banyak fungsi string yang bisa kalian pelajari.
+Kalian bisa mencari dokumentasi <string.h> untuk mempelajari lebih banyak fungsinya.
+
+\subsection*{Tugas Pendahuluan 4}
 \begin{enumerate}
-	\item Buatlah program dalam bahasa C yang mengambil dua string dari pengguna dan menentukan apakah kedua string tersebut anagram (mengandung karakter yang sama dalam urutan yang berbeda).
-		  Misalnya kata "usap" dan "sapu".
-	      Tampilkan pesan yang sesuai.
-	\item Sebutkan 5 fungsi yang terdapat pada library \verb|string.h|! jelaskan kegunaan masing-masing fungsi tersebut!
-	\item Untuk mengeluarkan output string, selain menggunakan \verb|printf()| kita juga bisa menggunakan \verb|puts()|. Jelaskan kelebihan menggunakan \verb|puts()| jika dibandingkan dengan \verb|printf()|!
+	\item Mengapa dalam bahasa C, string harus mempunyai karakter null '\verb|\0|'? Apa yang terjadi jika sebuah string tidak memiliki karakter null '\verb|\0|'?
+	\item Perhatikan kode berikut:
+	\begin{lstlisting}[language=c]
+	char lab[] = {'B', '3', '0', '0', ' ', 'M', 'I', 'O', 'T', '\0'};
+	
+	for(int i=0;i<sizeof(lab);i++){
+		printf("%c", lab[i]);
+	}	
+\end{lstlisting}
+Cobalah kode di atas! Bagaimana pendapatmu terkait kode di atas? Apakah efisien?
+	\item buatlah program sederhana yang meneremima input \verb|nama_lengkap|, \verb|NRP|, dan \verb|password| dan mengecek apakah passwordnya adalah "B300 MIOT".
+	Jika passwordnya benar maka mengeluarkan output:
+	\begin{verbatim}
+		Halo, nama_lengkap dengan NRP
+		Kamu telah masuk
+	\end{verbatim}
+	Jika passwordnya salah maka outputnya:
+	\begin{verbatim}
+		Halo, nama_lengkap dengan NRP
+		Kamu tidak bisa masuk
+	\end{verbatim}
 \end{enumerate}
