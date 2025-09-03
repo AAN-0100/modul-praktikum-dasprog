@@ -107,7 +107,7 @@ jobs:
 
       - uses: actions/upload-artifact/merge@v4
         with:
-          name: github-pages
+          name: github-pages-${{ github.job }}
 
   deploy:
     name: Deploy
@@ -119,7 +119,7 @@ jobs:
       pages: write
       id-token: write
     environment:
-      name: github-pages
+      name: github-pages-${{ github.job }}
       url: ${{ steps.deployment.outputs.page_url }}
     concurrency:
       group: pages
@@ -128,7 +128,7 @@ jobs:
       - name: Download Artifact
         uses: actions/download-artifact@v4
         with:
-          name: github-pages
+          name: github-pages-${{ github.job }}
           path: dist
 
       - name: Configure Pages
